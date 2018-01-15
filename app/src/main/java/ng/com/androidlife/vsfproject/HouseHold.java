@@ -29,7 +29,7 @@ public class HouseHold extends AppCompatActivity {
             HouseHoldMemberConditionInfantBefore, HouseHoldMemberConditionChildrenBefore, HouseHoldMemberConditionElderlyAfter,
             HouseHoldMemberConditionDisabledAfter, HouseHoldMemberConditionPregnantAfter, HouseHoldMemberConditionLactingAfter,
             HouseHoldMemberConditionInfantAfter, HouseHoldMemberConditionChildrenAfter, HouseHoldMemberAdultMaleLostAfter, HouseHoldMemberAdultFemaleLostAfter,
-            HouseHoldMemberAdultChildrenLostAfter;
+            HouseHoldMemberChildrenLostAfter;
     Button pushBtn;
     TextView genderBefore, genderAfter, genderInformant, AdoptedText;
     EditText ageBefore, ageAfter, ageInformant;
@@ -76,6 +76,15 @@ public class HouseHold extends AppCompatActivity {
         HouseHoldMemberConditionLactingBefore = findViewById(R.id.HouseHoldMemberConditionLactatingBefore);
         HouseHoldMemberConditionInfantBefore = findViewById(R.id.HouseHoldMemberConditionInfantBefore);
         HouseHoldMemberConditionChildrenBefore = findViewById(R.id.HouseHoldMemberConditionChildrenBefore);
+        HouseHoldMemberConditionElderlyAfter = findViewById(R.id.HouseHoldMemberConditionElderlyAfter);
+        HouseHoldMemberConditionDisabledAfter = findViewById(R.id.HouseHoldMemberConditionDisabledAfter);
+        HouseHoldMemberConditionPregnantAfter = findViewById(R.id.HouseHoldMemberConditionPregnantAfter);
+        HouseHoldMemberConditionLactingAfter = findViewById(R.id.HouseHoldMemberConditionLactatingAfter);
+        HouseHoldMemberConditionInfantAfter = findViewById(R.id.HouseHoldMemberConditionInfantAfter);
+        HouseHoldMemberConditionChildrenAfter = findViewById(R.id.HouseHoldMemberConditionChildrenAfter);
+        HouseHoldMemberAdultMaleLostAfter = findViewById(R.id.HouseHoldMemberAdultMaleLostAfter);
+        HouseHoldMemberAdultFemaleLostAfter = findViewById(R.id.HouseHoldMemberAdultFemaleLostAfter);
+        HouseHoldMemberChildrenLostAfter = findViewById(R.id.HouseHoldMemberChildrenLostAfter);
 
         pushBtn = findViewById(R.id.pushBtn);
     }
