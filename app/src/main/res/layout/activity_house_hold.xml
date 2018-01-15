@@ -377,12 +377,13 @@
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Yes" />
+                        android:text="Yes"
+                        android:onClick="YesAdopted"/>
                     <RadioButton
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="No"
-                        android:onClick="ChangeAdopted"/>
+                        android:onClick="NoAdopted"/>
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

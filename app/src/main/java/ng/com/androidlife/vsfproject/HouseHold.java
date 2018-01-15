@@ -68,6 +68,7 @@ public class HouseHold extends AppCompatActivity {
         HouseHoldSizeAdultFemaleAfter = findViewById(R.id.HouseHoldSizeAdultFemaleAfter);
         HouseHoldSizeChildrenMaleAfter = findViewById(R.id.HouseHoldSizeChildrenMmaleAfter);
         HouseHoldSizeChildrenFemaleAfter = findViewById(R.id.HouseHoldSizeChildrenFemaleAfter);
+        AdoptedText = findViewById(R.id.AdoptedText);
         HouseHoldSizeAdoptedNumber = findViewById(R.id.HouseHoldSizeAdoptedNumber);
         HouseHoldSizeAdoptedNames = findViewById(R.id.HouseHoldSizeAdoptedNames);
         HouseHoldMemberConditionElderlyBefore = findViewById(R.id.HouseHoldMemberConditionElderlyBefore);
@@ -109,6 +110,33 @@ public class HouseHold extends AppCompatActivity {
         final String genderInformantVal = genderInformant.getText().toString().trim();
         final String ageInformantVal = ageInformant.getText().toString().trim();
 
+        final String HouseHoldSizeAdultMaleBeforeVal = HouseHoldSizeAdultMaleBefore.getText().toString().trim();
+        final String HouseHoldSizeAdultFemaleBeforeVal = HouseHoldSizeAdultFemaleBefore.getText().toString().trim();
+        final String HouseHoldSizeChildrenMaleBeforeVal = HouseHoldSizeChildrenMaleBefore.getText().toString().trim();
+        final String HouseHoldSizeChildrenFemaleBeforeVal = HouseHoldSizeChildrenFemaleBefore.getText().toString().trim();
+        final String HouseHoldSizeAdultMaleAfterVal = HouseHoldSizeAdultMaleAfter.getText().toString().trim();
+        final String HouseHoldSizeAdultFemaleAfterVal = HouseHoldSizeAdultFemaleAfter.getText().toString().trim();
+        final String HouseHoldSizeChildrenMaleAfterVal = HouseHoldSizeChildrenMaleAfter.getText().toString().trim();
+        final String HouseHoldSizeChildrenFemaleAfterVal = HouseHoldSizeChildrenFemaleAfter.getText().toString().trim();
+        final String AdoptedTextVal = AdoptedText.getText().toString().trim();
+        final String HouseHoldSizeAdoptedNumberVal = HouseHoldSizeAdoptedNumber.getText().toString().trim();
+        final String HouseHoldSizeAdoptedNamesVal = HouseHoldSizeAdoptedNames.getText().toString().trim();
+        final String HouseHoldMemberConditionElderlyBeforeVal = HouseHoldMemberConditionElderlyBefore.getText().toString().trim();
+        final String HouseHoldMemberConditionDisabledBeforeVal = HouseHoldMemberConditionDisabledBefore.getText().toString().trim();
+        final String HouseHoldMemberConditionPregnantBeforeVal = HouseHoldMemberConditionPregnantBefore.getText().toString().trim();
+        final String HouseHoldMemberConditionLactatingBeforeVal = HouseHoldMemberConditionLactingBefore.getText().toString().trim();
+        final String HouseHoldMemberConditionInfantBeforeVal = HouseHoldMemberConditionInfantBefore.getText().toString().trim();
+        final String HouseHoldMemberConditionChildrenBeforeVal = HouseHoldMemberConditionChildrenBefore.getText().toString().trim();
+        final String HouseHoldMemberConditionElderlyAfterVal = HouseHoldMemberConditionElderlyAfter.getText().toString().trim();
+        final String HouseHoldMemberConditionDisabledAfterVal = HouseHoldMemberConditionDisabledAfter.getText().toString().trim();
+        final String HouseHoldMemberConditionPregnantAfterVal = HouseHoldMemberConditionPregnantAfter.getText().toString().trim();
+        final String HouseHoldMemberConditionLactatingAfterVal = HouseHoldMemberConditionLactingAfter.getText().toString().trim();
+        final String HouseHoldMemberConditionInfantAfterVal = HouseHoldMemberConditionInfantAfter.getText().toString().trim();
+        final String HouseHoldMemberConditionChildrenAfterVal = HouseHoldMemberConditionChildrenAfter.getText().toString().trim();
+        final String HouseHoldMemberAdultMaleLostAfterVal = HouseHoldMemberAdultMaleLostAfter.getText().toString().trim();
+        final String HouseHoldMemberAdultFemaleLostAfterVal = HouseHoldMemberAdultFemaleLostAfter.getText().toString().trim();
+        final String HouseHoldMemberChildrenLostAfterVal = HouseHoldMemberChildrenLostAfter.getText().toString().trim();
+
         if (!TextUtils.isEmpty(StateVal)&&
                 !TextUtils.isEmpty(LocalGovVal)&&
                 !TextUtils.isEmpty(TownVillageVal)&&
@@ -121,7 +149,33 @@ public class HouseHold extends AppCompatActivity {
                 !TextUtils.isEmpty(ageBeforeVal)&&
                 !TextUtils.isEmpty(ageAfterVal)&&
                 !TextUtils.isEmpty(genderInformantVal)&&
-                !TextUtils.isEmpty(ageInformantVal)){
+                !TextUtils.isEmpty(ageInformantVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeAdultMaleBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeAdultFemaleBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeChildrenMaleBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeChildrenFemaleBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeAdultMaleAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeAdultFemaleAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeChildrenMaleAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeChildrenFemaleAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeAdoptedNumberVal)&&
+                !TextUtils.isEmpty(HouseHoldSizeAdoptedNamesVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionElderlyBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionDisabledBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionPregnantBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionLactatingBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionInfantBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionChildrenBeforeVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionElderlyAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionDisabledAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionPregnantAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionLactatingAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionInfantAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberConditionChildrenAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberAdultMaleLostAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberAdultFemaleLostAfterVal)&&
+                !TextUtils.isEmpty(HouseHoldMemberChildrenLostAfterVal)&&
+                !TextUtils.isEmpty(AdoptedTextVal)){
             final DatabaseReference newPost = mDatabase.push();
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -138,8 +192,30 @@ public class HouseHold extends AppCompatActivity {
                     newPost.child("HouseHoldAgeBefore").setValue(ageBeforeVal);
                     newPost.child("HouseHoldAgeAfter").setValue(ageAfterVal);
                     newPost.child("InformantGender").setValue(genderInformantVal);
-                    newPost.child("InformantAge").setValue(ageInformantVal).
-                    addOnCompleteListener(new OnCompleteListener<Void>() {
+                    newPost.child("InformantAge").setValue(ageInformantVal);
+                    newPost.child("HouseHoldSizeAdultMaleNameAge").setValue(HouseHoldSizeAdultMaleBeforeVal);
+                    newPost.child("HouseHoldSizeAdultFemaleNameAge").setValue(HouseHoldSizeAdultFemaleBeforeVal);
+                    newPost.child("HouseHoldSizeChildrenMaleNameAge").setValue(HouseHoldSizeChildrenMaleBeforeVal);
+                    newPost.child("HouseHoldSizeChildrenFemaleNameAge").setValue(HouseHoldSizeChildrenFemaleBeforeVal);
+                    newPost.child("HouseHoldSizeAdopted").setValue(AdoptedTextVal);
+                    newPost.child("HouseHoldSizeAdoptedNumber").setValue(HouseHoldSizeAdoptedNumberVal);
+                    newPost.child("HouseHoldSizeAdoptedNamesGenderAge").setValue(HouseHoldSizeAdoptedNamesVal);
+                    newPost.child("HouseHoldConditionElderlyBefore").setValue(HouseHoldMemberConditionElderlyBeforeVal);
+                    newPost.child("HouseHoldConditionDisabledBefore").setValue(HouseHoldMemberConditionDisabledBeforeVal);
+                    newPost.child("HouseHoldConditionPregnantBefore").setValue(HouseHoldMemberConditionPregnantBeforeVal);
+                    newPost.child("HouseHoldConditionLactatingBefore").setValue(HouseHoldMemberConditionLactatingBeforeVal);
+                    newPost.child("HouseHoldConditionInfantsBefore").setValue(HouseHoldMemberConditionInfantBeforeVal);
+                    newPost.child("HouseHoldConditionChildrenBefore").setValue(HouseHoldMemberConditionChildrenBeforeVal);
+                    newPost.child("HouseHoldConditionElderlyAfter").setValue(HouseHoldMemberConditionElderlyAfterVal);
+                    newPost.child("HouseHoldConditionDisabledAfter").setValue(HouseHoldMemberConditionDisabledAfterVal);
+                    newPost.child("HouseHoldConditionPregnantAfter").setValue(HouseHoldMemberConditionPregnantAfterVal);
+                    newPost.child("HouseHoldConditionLactatingAfter").setValue(HouseHoldMemberConditionLactatingAfterVal);
+                    newPost.child("HouseHoldConditionInfantsAfter").setValue(HouseHoldMemberConditionInfantAfterVal);
+                    newPost.child("HouseHoldConditionChildrenAfter").setValue(HouseHoldMemberConditionChildrenAfterVal);
+                    newPost.child("HouseHoldLostAdultsMale").setValue(HouseHoldMemberAdultMaleLostAfterVal);
+                    newPost.child("HouseHoldLostAdultsFemale").setValue(HouseHoldMemberAdultFemaleLostAfterVal);
+                    newPost.child("HouseHoldLostChildren").setValue(HouseHoldMemberChildrenLostAfterVal)
+                    .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
@@ -181,6 +257,11 @@ public class HouseHold extends AppCompatActivity {
         genderInformant.setText("Female");
     }
 
-    public void ChangeAdopted(View view) {
+    public void YesAdopted(View view) {
+        AdoptedText.setText("Yes");
+    }
+
+    public void NoAdopted(View view) {
+        AdoptedText.setText("No");
     }
 }
