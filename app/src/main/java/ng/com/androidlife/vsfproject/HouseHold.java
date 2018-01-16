@@ -25,11 +25,13 @@ public class HouseHold extends AppCompatActivity {
     TextInputEditText State, LocalGov, TownVillage, Longitude, Latitude, Status, Population, HouseHoldSizeAdultMaleBefore, HouseHoldSizeAdultFemaleBefore,
             HouseHoldSizeChildrenMaleBefore, HouseHoldSizeChildrenFemaleBefore, HouseHoldSizeAdultMaleAfter, HouseHoldSizeAdultFemaleAfter,
             HouseHoldSizeChildrenMaleAfter, HouseHoldSizeChildrenFemaleAfter, HouseHoldSizeAdoptedNumber, HouseHoldSizeAdoptedNames, HouseHoldMemberConditionElderlyBefore,
-            HouseHoldMemberConditionDisabledBefore, HouseHoldMemberConditionPregnantBefore, HouseHoldMemberConditionLactingBefore,
+            HouseHoldMemberConditionDisabledBefore, HouseHoldMemberConditionPregnantBefore, HouseHoldMemberConditionLactatingBefore,
             HouseHoldMemberConditionInfantBefore, HouseHoldMemberConditionChildrenBefore, HouseHoldMemberConditionElderlyAfter,
-            HouseHoldMemberConditionDisabledAfter, HouseHoldMemberConditionPregnantAfter, HouseHoldMemberConditionLactingAfter,
+            HouseHoldMemberConditionDisabledAfter, HouseHoldMemberConditionPregnantAfter, HouseHoldMemberConditionLactatingAfter,
             HouseHoldMemberConditionInfantAfter, HouseHoldMemberConditionChildrenAfter, HouseHoldMemberAdultMaleLostAfter, HouseHoldMemberAdultFemaleLostAfter,
-            HouseHoldMemberChildrenLostAfter;
+            HouseHoldMemberChildrenLostAfter, MemberQualificationBefore, MemberQualificationAfter, MemberOccupationBefore, MemberOccupationAfter, MemberOtherOccupationBefore,
+            MemberOtherOccupationAfter, BoreHole, CementWell, EarthDam, River, Pond, TreatmentPlant, OtherWater, NationalGrid, REBElectricity, PrivatePlant, Solar,
+            OrganizationBenefit, OrganizationBenefitYes, OrganizationBenefitSpecify, RespondentIncomeBefore, RespondentIncomeAfter, Livelihood, LivelihoodDisplaced;
     Button pushBtn;
     TextView genderBefore, genderAfter, genderInformant, AdoptedText;
     EditText ageBefore, ageAfter, ageInformant;
@@ -44,6 +46,8 @@ public class HouseHold extends AppCompatActivity {
         FirebaseDatabase.getInstance().setPersistenceEnabled(true);
         mDatabase = FirebaseDatabase.getInstance().getReference().child("HouseHoldData");
         mDatabase.keepSynced(true);
+
+        //General
 
         State = findViewById(R.id.State);
         LocalGov = findViewById(R.id.LocalGov);
@@ -60,6 +64,8 @@ public class HouseHold extends AppCompatActivity {
         genderInformant = findViewById(R.id.InformantGenderText);
         ageInformant = findViewById(R.id.InformantAge);
 
+        //Household Stuffs
+
         HouseHoldSizeAdultMaleBefore = findViewById(R.id.HouseHoldSizeAdultMaleBefore);
         HouseHoldSizeAdultFemaleBefore = findViewById(R.id.HouseHoldSizeAdultFemaleBefore);
         HouseHoldSizeChildrenMaleBefore = findViewById(R.id.HouseHoldSizeChildrenMmaleBefore);
@@ -74,18 +80,43 @@ public class HouseHold extends AppCompatActivity {
         HouseHoldMemberConditionElderlyBefore = findViewById(R.id.HouseHoldMemberConditionElderlyBefore);
         HouseHoldMemberConditionDisabledBefore = findViewById(R.id.HouseHoldMemberConditionDisabledBefore);
         HouseHoldMemberConditionPregnantBefore = findViewById(R.id.HouseHoldMemberConditionPregnantBefore);
-        HouseHoldMemberConditionLactingBefore = findViewById(R.id.HouseHoldMemberConditionLactatingBefore);
+        HouseHoldMemberConditionLactatingBefore = findViewById(R.id.HouseHoldMemberConditionLactatingBefore);
         HouseHoldMemberConditionInfantBefore = findViewById(R.id.HouseHoldMemberConditionInfantBefore);
         HouseHoldMemberConditionChildrenBefore = findViewById(R.id.HouseHoldMemberConditionChildrenBefore);
         HouseHoldMemberConditionElderlyAfter = findViewById(R.id.HouseHoldMemberConditionElderlyAfter);
         HouseHoldMemberConditionDisabledAfter = findViewById(R.id.HouseHoldMemberConditionDisabledAfter);
         HouseHoldMemberConditionPregnantAfter = findViewById(R.id.HouseHoldMemberConditionPregnantAfter);
-        HouseHoldMemberConditionLactingAfter = findViewById(R.id.HouseHoldMemberConditionLactatingAfter);
+        HouseHoldMemberConditionLactatingAfter = findViewById(R.id.HouseHoldMemberConditionLactatingAfter);
         HouseHoldMemberConditionInfantAfter = findViewById(R.id.HouseHoldMemberConditionInfantAfter);
         HouseHoldMemberConditionChildrenAfter = findViewById(R.id.HouseHoldMemberConditionChildrenAfter);
         HouseHoldMemberAdultMaleLostAfter = findViewById(R.id.HouseHoldMemberAdultMaleLostAfter);
         HouseHoldMemberAdultFemaleLostAfter = findViewById(R.id.HouseHoldMemberAdultFemaleLostAfter);
         HouseHoldMemberChildrenLostAfter = findViewById(R.id.HouseHoldMemberChildrenLostAfter);
+
+        //SociaEconomic Stuffs
+
+        MemberQualificationBefore = findViewById(R.id.HouseHoldMemberQualificationBefore);
+        MemberQualificationAfter = findViewById(R.id.HouseHoldMemberQualificationAfter);
+        MemberOccupationBefore = findViewById(R.id.HouseHoldMemberOccupationBefore);
+        MemberOccupationAfter = findViewById(R.id.HouseHoldMemberOccupationAfter);
+        MemberOtherOccupationBefore = findViewById(R.id.HouseHoldMemberOtherOccupationBefore);
+        MemberOtherOccupationAfter = findViewById(R.id.HouseHoldMemberOtherOccupationAfter);
+        RespondentIncomeBefore = findViewById(R.id.RespondentIncomeBefore);
+        RespondentIncomeAfter = findViewById(R.id.RespondentIncomeAfter);
+        BoreHole = findViewById(R.id.BoreHole);
+        CementWell = findViewById(R.id.CementWell);
+        EarthDam = findViewById(R.id.EarthDam);
+        River = findViewById(R.id.River);
+        Pond = findViewById(R.id.Pond);
+        TreatmentPlant = findViewById(R.id.TreatmentPlant);
+        OtherWater = findViewById(R.id.OtherWater);
+        NationalGrid = findViewById(R.id.NationalGrid);
+        REBElectricity = findViewById(R.id.REBElectricity);
+        PrivatePlant = findViewById(R.id.PrivatePlant);
+        Solar = findViewById(R.id.Solar);
+        OrganizationBenefit = findViewById(R.id.OrganizationBenefit);
+        OrganizationBenefitYes = findViewById(R.id.OrganizationBenefitYes);
+        OrganizationBenefitSpecify = findViewById(R.id.OrganizationBenefitSpecify);
 
         pushBtn = findViewById(R.id.pushBtn);
     }
@@ -95,6 +126,30 @@ public class HouseHold extends AppCompatActivity {
     }
 
     private void Submit() {
+
+        final String Val1 = MemberQualificationBefore.getText().toString().trim();
+        final String Val2 = MemberQualificationAfter.getText().toString().trim();
+        final String Val3 = MemberOccupationBefore.getText().toString().trim();
+        final String Val4 = MemberOccupationAfter.getText().toString().trim();
+        final String Val5 = MemberOtherOccupationBefore.getText().toString().trim();
+        final String Val6 = MemberOtherOccupationAfter.getText().toString().trim();
+        final String Val7 = BoreHole.getText().toString().trim();
+        final String Val8 = CementWell.getText().toString().trim();
+        final String Val9 = EarthDam.getText().toString().trim();
+        final String Val10 = River.getText().toString().trim();
+        final String Val11 = Pond.getText().toString().trim();
+        final String Val12 = TreatmentPlant.getText().toString().trim();
+        final String Val13 = OtherWater.getText().toString().trim();
+        final String Val14 = NationalGrid.getText().toString().trim();
+        final String Val15 = REBElectricity.getText().toString().trim();
+        final String Val16 = PrivatePlant.getText().toString().trim();
+        final String Val17 = Solar.getText().toString().trim();
+        final String Val18 = OrganizationBenefit.getText().toString().trim();
+        final String Val19 = OrganizationBenefitYes.getText().toString().trim();
+        final String Val20 = OrganizationBenefitSpecify.getText().toString().trim();
+        final String Val21 = RespondentIncomeBefore.getText().toString().trim();
+        final String Val22 = RespondentIncomeAfter.getText().toString().trim();
+
         final String StateVal = State.getText().toString().trim();
         final String LocalGovVal = LocalGov.getText().toString().trim();
         final String TownVillageVal = TownVillage.getText().toString().trim();
@@ -124,13 +179,13 @@ public class HouseHold extends AppCompatActivity {
         final String HouseHoldMemberConditionElderlyBeforeVal = HouseHoldMemberConditionElderlyBefore.getText().toString().trim();
         final String HouseHoldMemberConditionDisabledBeforeVal = HouseHoldMemberConditionDisabledBefore.getText().toString().trim();
         final String HouseHoldMemberConditionPregnantBeforeVal = HouseHoldMemberConditionPregnantBefore.getText().toString().trim();
-        final String HouseHoldMemberConditionLactatingBeforeVal = HouseHoldMemberConditionLactingBefore.getText().toString().trim();
+        final String HouseHoldMemberConditionLactatingBeforeVal = HouseHoldMemberConditionLactatingBefore.getText().toString().trim();
         final String HouseHoldMemberConditionInfantBeforeVal = HouseHoldMemberConditionInfantBefore.getText().toString().trim();
         final String HouseHoldMemberConditionChildrenBeforeVal = HouseHoldMemberConditionChildrenBefore.getText().toString().trim();
         final String HouseHoldMemberConditionElderlyAfterVal = HouseHoldMemberConditionElderlyAfter.getText().toString().trim();
         final String HouseHoldMemberConditionDisabledAfterVal = HouseHoldMemberConditionDisabledAfter.getText().toString().trim();
         final String HouseHoldMemberConditionPregnantAfterVal = HouseHoldMemberConditionPregnantAfter.getText().toString().trim();
-        final String HouseHoldMemberConditionLactatingAfterVal = HouseHoldMemberConditionLactingAfter.getText().toString().trim();
+        final String HouseHoldMemberConditionLactatingAfterVal = HouseHoldMemberConditionLactatingAfter.getText().toString().trim();
         final String HouseHoldMemberConditionInfantAfterVal = HouseHoldMemberConditionInfantAfter.getText().toString().trim();
         final String HouseHoldMemberConditionChildrenAfterVal = HouseHoldMemberConditionChildrenAfter.getText().toString().trim();
         final String HouseHoldMemberAdultMaleLostAfterVal = HouseHoldMemberAdultMaleLostAfter.getText().toString().trim();
@@ -175,7 +230,29 @@ public class HouseHold extends AppCompatActivity {
                 !TextUtils.isEmpty(HouseHoldMemberAdultMaleLostAfterVal)&&
                 !TextUtils.isEmpty(HouseHoldMemberAdultFemaleLostAfterVal)&&
                 !TextUtils.isEmpty(HouseHoldMemberChildrenLostAfterVal)&&
-                !TextUtils.isEmpty(AdoptedTextVal)){
+                !TextUtils.isEmpty(AdoptedTextVal)&&
+                !TextUtils.isEmpty(Val1)&&
+                !TextUtils.isEmpty(Val2)&&
+                !TextUtils.isEmpty(Val3)&&
+                !TextUtils.isEmpty(Val4)&&
+                !TextUtils.isEmpty(Val5)&&
+                !TextUtils.isEmpty(Val6)&&
+                !TextUtils.isEmpty(Val7)&&
+                !TextUtils.isEmpty(Val8)&&
+                !TextUtils.isEmpty(Val9)&&
+                !TextUtils.isEmpty(Val10)&&
+                !TextUtils.isEmpty(Val11)&&
+                !TextUtils.isEmpty(Val12)&&
+                !TextUtils.isEmpty(Val13)&&
+                !TextUtils.isEmpty(Val14)&&
+                !TextUtils.isEmpty(Val15)&&
+                !TextUtils.isEmpty(Val16)&&
+                !TextUtils.isEmpty(Val17)&&
+                !TextUtils.isEmpty(Val18)&&
+                !TextUtils.isEmpty(Val19)&&
+                !TextUtils.isEmpty(Val20)&&
+                !TextUtils.isEmpty(Val21)&&
+                !TextUtils.isEmpty(Val22)){
             final DatabaseReference newPost = mDatabase.push();
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -214,7 +291,29 @@ public class HouseHold extends AppCompatActivity {
                     newPost.child("HouseHoldConditionChildrenAfter").setValue(HouseHoldMemberConditionChildrenAfterVal);
                     newPost.child("HouseHoldLostAdultsMale").setValue(HouseHoldMemberAdultMaleLostAfterVal);
                     newPost.child("HouseHoldLostAdultsFemale").setValue(HouseHoldMemberAdultFemaleLostAfterVal);
-                    newPost.child("HouseHoldLostChildren").setValue(HouseHoldMemberChildrenLostAfterVal)
+                    newPost.child("HouseHoldLostChildren").setValue(HouseHoldMemberChildrenLostAfterVal);
+                    newPost.child("QualificationBeforeInsurgency").setValue(Val1);
+                    newPost.child("QualificationAfterInsurgency").setValue(Val2);
+                    newPost.child("PrimaryOccupationOfTheRespondentBefore").setValue(Val3);
+                    newPost.child("PrimaryOccupationOfTheRespondentAfter").setValue(Val4);
+                    newPost.child("OtherOccupationOfTheRespondentBefore").setValue(Val5);
+                    newPost.child("OtherOccupationOfTheRespondentAfter").setValue(Val6);
+                    newPost.child("AnnualIncomeOfRespondentBefore").setValue(Val21);
+                    newPost.child("AnnualIncomeOfRespondentAfter").setValue(Val22);
+                    newPost.child("BoreHole").setValue(Val7);
+                    newPost.child("CementWell").setValue(Val8);
+                    newPost.child("EarthDam").setValue(Val9);
+                    newPost.child("RiverOrStream").setValue(Val10);
+                    newPost.child("Pond").setValue(Val11);
+                    newPost.child("TreatmentPlant").setValue(Val12);
+                    newPost.child("OtherWaterSource").setValue(Val13);
+                    newPost.child("NationalGrid").setValue(Val14);
+                    newPost.child("REBElectricity").setValue(Val15);
+                    newPost.child("PrivatePlant").setValue(Val16);
+                    newPost.child("SolarElectricity").setValue(Val17);
+                    newPost.child("HouseholdBenefitFromOrganization").setValue(Val18);
+                    newPost.child("WhichOrganizationAssistedYourHousehold").setValue(Val19);
+                    newPost.child("WhatDidYouBenefitFromTheOrganization").setValue(Val20)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {

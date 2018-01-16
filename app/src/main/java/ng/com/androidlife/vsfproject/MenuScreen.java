@@ -26,7 +26,9 @@ public class MenuScreen extends AppCompatActivity {
     }
 
     public void Logout(View view) {
-        Intent Logout = new Intent(this, MainActivity.class);
-        startActivity(Logout);
+        Intent a = new Intent(Intent.ACTION_MAIN);
+        a.addCategory(Intent.CATEGORY_HOME);
+        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(a);
     }
 }
