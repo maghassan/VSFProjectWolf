@@ -2012,6 +2012,885 @@
                     android:hint="Traditional Midwives"
                     android:id="@+id/TraditionalMidwives"/>
             </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="WATER SUPPLY"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Water Source (Borehole, Well, EarthDam, Pond, River (Specify)"
+                    android:id="@+id/SourceWater"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="WaterCondition"
+                    android:id="@+id/Condition"/>
+            </android.support.design.widget.TextInputLayout>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="ELECTRICITY"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="National Grid, Solar, REB, Private Plant (Specify)"
+                    android:id="@+id/ElectricitySource"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Condition"
+                    android:id="@+id/ElectricityCondition"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="TRANSPORTATION INFRASTRUCTURE"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Federal Roads, State Roads, Laterite Roads, Foot Path Bridges/Colvert, Motor Parks (Specify)"
+                    android:id="@+id/Roads"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Condition"
+                    android:id="@+id/RoadsCondition"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="RailWay, Any RailwayLine, RailwayStation, (Specify)"
+                    android:id="@+id/Railway"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Condition"
+                    android:id="@+id/RailwayConditions"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Flow Schedule (Daily, Alternate days, Weekly, Sporadic. Choose one)"
+                    android:id="@+id/RailwayFlowSchedule"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Airport or Airfiel (Specify)"
+                    android:id="@+id/Airport"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Condition"
+                    android:id="@+id/AirportConditions"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sea/Water (Specify)"
+                    android:id="@+id/SeaTransport"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Condition"
+                    android:id="@+id/SeaConditions"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="COMMUNICATION INFRASTRUCTURE"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="MTN(Condition) Airtel(Condition) Glo(Condition) 9Mobile(Condition) Other(Specify)"
+                    android:id="@+id/Communication"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="MEDIA INFRASTRUCTURE"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="International Radio Service"
+                    android:id="@+id/InternationalRadio"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Federal Radio Services"
+                    android:id="@+id/FederalRadio"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="State Radio Service"
+                    android:id="@+id/StateRadio"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Private Radio Services"
+                    android:id="@+id/PrivateRadio"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Satelite Television"
+                    android:id="@+id/SateliteTelevision"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NTA Service"
+                    android:id="@+id/NTAService"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="State Television Station"
+                    android:id="@+id/StateTelevisionStation"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Private Television Services"
+                    android:id="@+id/PrivateTelevisionService"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Social Media"
+                    android:id="@+id/SocialMedia"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Print Media (Newspapers and Magazine)"
+                    android:id="@+id/PrintMedia"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="FIRE SERVICE"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Fire Facilities (Fire Engines and Accessories. Others(e.g. Hydrants)"
+                    android:id="@+id/FireService"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="SECURITY AND PROTECTION"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Army Formation or Command"
+                    android:id="@+id/ArmyFormationAndCommand"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Army Barracks"
+                    android:id="@+id/ArmyBarracks"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="PoliceS tation"
+                    android:id="@+id/PoliceStation"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Police Barracks"
+                    android:id="@+id/PoliceBarracks"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Dept. of State Services"
+                    android:id="@+id/DeptStateServices"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Nigerian Security And Civil Defence Corps"
+                    android:id="@+id/CivilDefence"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Immigration Service Office"
+                    android:id="@+id/ImmigrationService"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Customs Service Office"
+                    android:id="@+id/CustomService"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Prison Service"
+                    android:id="@+id/PrisonService"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="CJTF/Vilante"
+                    android:id="@+id/Vigelante"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Others (Specify)"
+                    android:id="@+id/OtherSecurity"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="JUDICIAL SERVICES"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Federal High Court"
+                    android:id="@+id/FederalHighCourt"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Sharia Court of Appeal"
+                    android:id="@+id/ShariaCourtOfAppeal"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Industrial Court"
+                    android:id="@+id/IndustrialCourt"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="State High Court"
+                    android:id="@+id/StateHighCourt"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Magistrate Court"
+                    android:id="@+id/MagistrateCourt"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Customary Court"
+                    android:id="@+id/CustomaryCourt"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Others (Specify)"
+                    android:id="@+id/OtherCourt"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="FINANCIAL INSTITUTIONS"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Banks"
+                    android:id="@+id/Banks"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Condition"
+                    android:id="@+id/BanksCondition"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Insurance Companies"
+                    android:id="@+id/InsuranceCompanies"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="FACTORIES/INDUSTRIES/COTTAGE e.t.c"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Factory (Condition)"
+                    android:lines="7"
+                    android:id="@+id/Factories"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="MARKET FACILITIES"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Daily Market"
+                    android:id="@+id/DailyMarket"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Weekly Market"
+                    android:id="@+id/WeeklyMarket"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Livestock Market"
+                    android:id="@+id/LivestockMarket"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Super Markets"
+                    android:id="@+id/SuperMarkets"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Other Market (Specify)"
+                    android:id="@+id/OtherMarket"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="HOTELS AND TOURIST ATTRACTIONS"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Hotels (Condition)"
+                    android:lines="7"
+                    android:id="@+id/Hotels"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Tourist Attraction (Condition)"
+                    android:lines="7"
+                    android:id="@+id/Tourist"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="RELIGIOUS WORSHIP CENTRES"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Mosques (Condition)"
+                    android:id="@+id/Mosques"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Church (Condition)"
+                    android:id="@+id/Church"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Shrine (Condition)"
+                    android:id="@+id/Shrine"/>
+            </android.support.design.widget.TextInputLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:text="NGOs, CBOs, AND DEVELOPMENT PARTNERS OPERATING IN THE COMMUNITY"
+                android:layout_margin="5dp"
+                android:background="@drawable/out_line"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nVery Active \nFairly Active \nNot Active \nNo NGOs or CBOs"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"/>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="NGO or CBO (Condition)"
+                    android:lines="7"
+                    android:id="@+id/NGOsCBOs"/>
+            </android.support.design.widget.TextInputLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
