@@ -5,12 +5,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ng.com.androidlife.vsfproject.HouseHold">
+    tools:context="ng.com.androidlife.vsfproject.KeyInformants">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
+
         <android.support.v7.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,6 +28,7 @@
                     android:textAlignment="center"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
                     android:background="@drawable/out_line"/>
 
                 <android.support.design.widget.TextInputLayout
@@ -136,10 +138,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="HOUSEHOLD DATA"
+                    android:text="GENERAL INFORMATION OF COMMUNITY"
                     android:textAlignment="center"
                     android:textSize="16sp"
                     android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
                     android:background="@drawable/out_line"/>
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -158,29 +161,29 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Gender of Household Head:"/>
+                            android:text="Gender of COMMUNITY Head:"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/houseHoldGenderBefore"
+                            android:id="@+id/COMMUNITYGenderBefore"
                             android:text="Gender"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Male"
-                            android:id="@+id/houseHoldMaleRadioBefore"
+                            android:id="@+id/COMMUNITYMaleRadioBefore"
                             android:onClick="SetMaleBefore"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Female"
-                            android:id="@+id/houseHoldFemaleRadioBefore"
+                            android:id="@+id/COMMUNITYFemaleRadioBefore"
                             android:onClick="SetFemaleBefore"/>
                         <EditText
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Age"
-                            android:id="@+id/ageHouseHoldBefore"/>
+                            android:id="@+id/ageCOMMUNITYBefore"/>
                     </RadioGroup>
                     <RadioGroup
                         android:layout_width="wrap_content"
@@ -195,29 +198,29 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Gender of Household Head:"/>
+                            android:text="Gender of COMMUNITY Head:"/>
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:id="@+id/houseHoldGenderAfter"
+                            android:id="@+id/COMMUNITYGenderAfter"
                             android:text="Gender"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Male"
-                            android:id="@+id/houseHoldMaleRadioAfter"
+                            android:id="@+id/COMMUNITYMaleRadioAfter"
                             android:onClick="SetMaleAfter"/>
                         <RadioButton
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Female"
-                            android:id="@+id/houseHoldFemaleRadioAfter"
+                            android:id="@+id/COMMUNITYFemaleRadioAfter"
                             android:onClick="SetFemaleAfter"/>
                         <EditText
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:hint="Age"
-                            android:id="@+id/ageHouseHoldAfter"/>
+                            android:id="@+id/ageCOMMUNITYAfter"/>
                     </RadioGroup>
                 </LinearLayout>
 
@@ -257,7 +260,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="HouseHold Size:"
+                    android:text="Population Of Community:"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
                 <TextView
@@ -275,7 +278,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Male Adult (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeAdultMaleBefore"/>
+                        android:id="@+id/COMMUNITYSizeAdultMaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -286,7 +289,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Female Adult (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeAdultFemaleBefore"/>
+                        android:id="@+id/COMMUNITYSizeAdultFemaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -297,7 +300,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Male Children (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeChildrenMmaleBefore"/>
+                        android:id="@+id/COMMUNITYSizeChildrenMmaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -308,7 +311,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Female Children (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeChildrenFemaleBefore"/>
+                        android:id="@+id/COMMUNITYSizeChildrenFemaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
                     android:layout_width="wrap_content"
@@ -325,7 +328,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Male Adult (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeAdultMaleAfter"/>
+                        android:id="@+id/COMMUNITYSizeAdultMaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -336,7 +339,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Female Adult (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeAdultFemaleAfter"/>
+                        android:id="@+id/COMMUNITYSizeAdultFemaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -347,7 +350,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Male Children (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeChildrenMmaleAfter"/>
+                        android:id="@+id/COMMUNITYSizeChildrenMmaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -358,64 +361,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:hint="Name of Female Children (Age of Adult)"
-                        android:id="@+id/HouseHoldSizeChildrenFemaleAfter"/>
+                        android:id="@+id/COMMUNITYSizeChildrenFemaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
-                <RadioGroup
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:layout_margin="5dp">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Are there Children Adopted in the Family as a result of Insurgency?"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:id="@+id/AdoptedText"
-                        android:text="Adopted"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Yes"
-                        android:onClick="YesAdopted"/>
-                    <RadioButton
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="No"
-                        android:onClick="NoAdopted"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:textStyle="bold"
-                        android:text="If Yes, then enter their details. If it's No just put N/A in the spaces"/>
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp">
-
-                        <android.support.design.widget.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Number of Adopted Children"
-                            android:id="@+id/HouseHoldSizeAdoptedNumber"/>
-                    </android.support.design.widget.TextInputLayout>
-                    <android.support.design.widget.TextInputLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp">
-
-                        <android.support.design.widget.TextInputEditText
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:hint="Names, Gender, Age of Adopted Children, e.g. Aminu(Male, 12) \n Separate with Comma."
-                            android:id="@+id/HouseHoldSizeAdoptedNames"/>
-                    </android.support.design.widget.TextInputLayout>
-                </RadioGroup>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="State Number of any members of the HouseHold in any of the following conditions (if not then fill with N/A):"
+                    android:text="Is/Was any members of the Community in any of the following conditions (if not then fill with N/A):"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
                 <LinearLayout
@@ -442,7 +393,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Elderly"
-                                android:id="@+id/HouseHoldMemberConditionElderlyBefore"/>
+                                android:id="@+id/COMMUNITYMemberConditionElderlyBefore"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -453,7 +404,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Disabled"
-                                android:id="@+id/HouseHoldMemberConditionDisabledBefore"/>
+                                android:id="@+id/COMMUNITYMemberConditionDisabledBefore"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -464,7 +415,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Pregnant"
-                                android:id="@+id/HouseHoldMemberConditionPregnantBefore"/>
+                                android:id="@+id/COMMUNITYMemberConditionPregnantBefore"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -475,7 +426,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Lactating"
-                                android:id="@+id/HouseHoldMemberConditionLactatingBefore"/>
+                                android:id="@+id/COMMUNITYMemberConditionLactatingBefore"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -486,7 +437,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Infant (Under 12 Months)"
-                                android:id="@+id/HouseHoldMemberConditionInfantBefore"/>
+                                android:id="@+id/COMMUNITYMemberConditionInfantBefore"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -497,7 +448,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Children (Under 5 Years)"
-                                android:id="@+id/HouseHoldMemberConditionChildrenBefore"/>
+                                android:id="@+id/COMMUNITYMemberConditionChildrenBefore"/>
                         </android.support.design.widget.TextInputLayout>
                     </LinearLayout>
                     <LinearLayout
@@ -519,7 +470,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Elderly"
-                                android:id="@+id/HouseHoldMemberConditionElderlyAfter"/>
+                                android:id="@+id/COMMUNITYMemberConditionElderlyAfter"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -530,7 +481,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Disabled"
-                                android:id="@+id/HouseHoldMemberConditionDisabledAfter"/>
+                                android:id="@+id/COMMUNITYMemberConditionDisabledAfter"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -541,7 +492,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Pregnant"
-                                android:id="@+id/HouseHoldMemberConditionPregnantAfter"/>
+                                android:id="@+id/COMMUNITYMemberConditionPregnantAfter"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -552,7 +503,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Lactating"
-                                android:id="@+id/HouseHoldMemberConditionLactatingAfter"/>
+                                android:id="@+id/COMMUNITYMemberConditionLactatingAfter"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -563,7 +514,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Infant (Under 12 Months)"
-                                android:id="@+id/HouseHoldMemberConditionInfantAfter"/>
+                                android:id="@+id/COMMUNITYMemberConditionInfantAfter"/>
                         </android.support.design.widget.TextInputLayout>
                         <android.support.design.widget.TextInputLayout
                             android:layout_width="match_parent"
@@ -574,7 +525,7 @@
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:hint="Children (Under 5 Years)"
-                                android:id="@+id/HouseHoldMemberConditionChildrenAfter"/>
+                                android:id="@+id/COMMUNITYMemberConditionChildrenAfter"/>
                         </android.support.design.widget.TextInputLayout>
                     </LinearLayout>
                 </LinearLayout>
@@ -586,9 +537,56 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"
+                        android:text="When was your community attacked by the insurgent?"/>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Death"
+                            android:id="@+id/AttackedDeath"/>
+                    </android.support.design.widget.TextInputLayout>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Missing/Unaccounted"
+                            android:id="@+id/AttackedMissing"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textStyle="bold"
+                        android:text="How many time did insurgents attacked your community?"/>
+                    <android.support.design.widget.TextInputLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp">
+
+                        <android.support.design.widget.TextInputEditText
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Number Of Attacks"
+                            android:id="@+id/AttacksNumber"/>
+                    </android.support.design.widget.TextInputLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_margin="5dp"
-                        android:text="Have you lost any member of the Family due to Insurgent? (if yes indicate the number lost, if no type N/A)"/>
+                        android:text="Have you lost any member of the Community due to Insurgent Attacks? (if yes indicate the number lost, if no type N/A)"/>
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -598,7 +596,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Adult Male"
-                            android:id="@+id/HouseHoldMemberAdultMaleLostAfter"/>
+                            android:id="@+id/COMMUNITYMemberAdultMaleLostAfter"/>
                     </android.support.design.widget.TextInputLayout>
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -609,7 +607,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Adult Female"
-                            android:id="@+id/HouseHoldMemberAdultFemaleLostAfter"/>
+                            android:id="@+id/COMMUNITYMemberAdultFemaleLostAfter"/>
                     </android.support.design.widget.TextInputLayout>
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
@@ -620,297 +618,13 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:hint="Children"
-                            android:id="@+id/HouseHoldMemberChildrenLostAfter"/>
+                            android:id="@+id/COMMUNITYMemberChildrenLostAfter"/>
                     </android.support.design.widget.TextInputLayout>
                 </LinearLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
-        <android.support.v7.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="5dp">
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="vertical">
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:text="SOCIO-ECONOMIC CHARACTERISTICS OF RETURNEE"
-                    android:textAlignment="center"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:background="@drawable/out_line"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Education Qualification Of Members Of HouseHold"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Name And Qualification Before Insurgency"
-                        android:id="@+id/HouseHoldMemberQualificationBefore"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Name And Qualification After Insurgency"
-                        android:id="@+id/HouseHoldMemberQualificationAfter"/>
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="Primary Occupation Of The Respondent"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Occupation Before Insurgency If Farming Specify (Crops, No of bags)"
-                    android:id="@+id/HouseHoldMemberOccupationBefore" />
-            </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Occupation After Insurgency If Farming Specify (Crops, No of bags)"
-                        android:id="@+id/HouseHoldMemberOccupationAfter"/>
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="Other Occupation Of The Respondent"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Occupation Before Insurgency If Farming Specify (Crops, No of bags)"
-                        android:id="@+id/HouseHoldMemberOtherOccupationBefore" />
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Occupation After Insurgency If Farming Specify (Crops, No of bags)"
-                        android:id="@+id/HouseHoldMemberOtherOccupationAfter"/>
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="Annual Income of Respondents Before Insurgent"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/colorAccent"
-                    android:text="Less than N100,000 \nN101,000 to N200,000 \nN201,000 to N500,000 \nN501,000 to N1,000,000"/>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Use the keyword above to enter amount"
-                        android:id="@+id/RespondentIncomeBefore" />
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="Annual Income of Respondents After Insurgent"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/colorAccent"
-                    android:text="Less than N100,000 \nN101,000 to N200,000 \nN201,000 to N500,000 \nN501,000 to N1,000,000"/>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Use the keyword above to enter amount"
-                        android:id="@+id/RespondentIncomeAfter" />
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="WATER"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="USE THE KEY WORDS BELOW TO FILL IN"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Available (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \nAgency"
-                    android:textStyle="bold|italic"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Water Source (BoreHole, Well, EarthDam, Pond, River (Specify)"
-                        android:id="@+id/WaterSource"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Condition"
-                        android:id="@+id/WaterCondition"/>
-                </android.support.design.widget.TextInputLayout>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Electricity"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="USE THE KEY WORDS BELOW TO FILL IN"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Available (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \nAgency"
-                    android:textStyle="bold|italic"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Power Source (National Grid, Solar, REB, Private Plant)"
-                        android:id="@+id/ElectricitySource"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Electricity Condition"
-                        android:id="@+id/ConditionElectricity"/>
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OTHER"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="Have your household benefit from any organizations?"
-                        android:id="@+id/OrganizationBenefit"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="If Yes, type the name of Organization"
-                        android:id="@+id/OrganizationBenefitYes"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:hint="What did you benefit from the organization?"
-                        android:id="@+id/OrganizationBenefitSpecify"/>
-                </android.support.design.widget.TextInputLayout>
-            </LinearLayout>
-        </android.support.v7.widget.CardView>
-
-        <android.support.v7.widget.CardView
+    <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp">
@@ -922,134 +636,18 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
-                android:text="LIVELIHOOD ACTIVITIES"
+                android:text="SOCIO-ECONOMIC CHARACTERISTICS OF RETURNEES"
                 android:textAlignment="center"
                 android:textSize="16sp"
                 android:textStyle="bold"
-                android:background="@drawable/out_line"/>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Have your Livelihood been disrupted by the Insurgency? (If yes, Specify)"
-                    android:id="@+id/Livelihood"/>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Have you been displaced from your community before? \n(If yes, write the major cause)"
-                    android:id="@+id/LivelihoodBeforeDisplaced"/>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Where did you go after being displace?"
-                    android:id="@+id/LivelihoodAfterDisplaced"/>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="For how long have you been displaced?"
-                    android:id="@+id/LivelihoodHowLong"/>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="How many times have you left and come back to your community?"
-                    android:id="@+id/LivelihoodTimes"/>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="What time did you go and comeback? (Month and Year)"
-                    android:id="@+id/LivelihoodYear"/>
-            </android.support.design.widget.TextInputLayout>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Have you lost some belongings due to attack by Insurgent? (If yes, Item, Cost)"
-                    android:id="@+id/LivelihoodItemLost"/>
-            </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textStyle="bold"
-                android:layout_margin="5dp"
-                android:text="Is there any member of your household who relocated as a result of Boko Haram insurgency?"/>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="If yes, How many. if No, why? and how did they manage?"
-                    android:id="@+id/LivelihoodHowMany"/>
-            </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:textStyle="bold"
-                android:text="How has been the livelihood condition of those members of your household who didn't relocate? Use the Keyword Below:"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:textColor="@color/colorAccent"
-                android:layout_margin="5dp"
-                android:text="Poor \nGood \nVery Good"
-                android:textStyle="italic"/>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Livelihood of household members who didn't relocated"
-                    android:id="@+id/LivelihoodMemberNotRelocated"/>
-            </android.support.design.widget.TextInputLayout>
+                android:background="@drawable/out_line"/>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Has any person in your household that relocated as a result of Boko Haram insurgency returned to the community?"
+                android:text="Education Qualification Of Members Of HouseHold"
                 android:textStyle="bold"
+                android:textSize="16sp"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -1059,14 +657,26 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="If yes, how many persons?. If no, Why?"
-                    android:id="@+id/LivelihoodMemberReturned"/>
+                    android:hint="Name And Qualification Before Insurgency"
+                    android:id="@+id/KeyMemberQualificationBefore"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Name And Qualification After Insurgency"
+                    android:id="@+id/KeyMemberQualificationAfter"/>
             </android.support.design.widget.TextInputLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="How has been the livelihood condition of members of the family who are returnees to the community?"
+                android:textSize="16sp"
                 android:textStyle="bold"
+                android:text="Primary Occupation Of The Respondent"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -1076,14 +686,26 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Returnees Condition"
-                    android:id="@+id/LivelihoodReturneesCondition"/>
+                    android:hint="Occupation Before Insurgency If Farming Specify (Crops, No of bags)"
+                    android:id="@+id/KeyMemberOccupationBefore" />
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Occupation After Insurgency If Farming Specify (Crops, No of bags)"
+                    android:id="@+id/KeyMemberOccupationAfter"/>
             </android.support.design.widget.TextInputLayout>
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Have the returnees started adjusting or reactivation of their livelihood?"
+                android:textSize="16sp"
                 android:textStyle="bold"
+                android:text="Other Occupation Of The Respondent"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -1093,14 +715,34 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="If No, what is hindering them?"
-                    android:id="@+id/LivelihoodReturneesAdjusting"/>
+                    android:hint="Occupation Before Insurgency If Farming Specify (Crops, No of bags)"
+                    android:id="@+id/KeyMemberOtherOccupationBefore" />
             </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Occupation After Insurgency If Farming Specify (Crops, No of bags)"
+                    android:id="@+id/KeyMemberOtherOccupationAfter"/>
+            </android.support.design.widget.TextInputLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Have the returnee members of the family come with new means of livelihood to the community?"
+                android:textSize="16sp"
                 android:textStyle="bold"
+                android:text="ADMINISTRATIVE STRUCTURES"
+                android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -1110,14 +752,78 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="If Yes, indicate the new means of livelihood introduced"
-                    android:id="@+id/LivelihoodReturneesAdjustingMeans"/>
+                    android:hint="LGA Secretariat"
+                    android:id="@+id/LGASecretariat"/>
             </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Emir's Palace"
+                    android:id="@+id/EmirPalace"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="District Head Palace"
+                    android:id="@+id/DHsPalace"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Village/Ward Head Palace"
+                    android:id="@+id/VillageHeadPalace"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Town Hall"
+                    android:id="@+id/TownHall"/>
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Palace Ground/Cultural Center"
+                    android:id="@+id/PlayGroundCenter"/>
+            </android.support.design.widget.TextInputLayout>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Is there any returnee member of the household who is unable to return to his/her livelyhood?"
+                android:textSize="16sp"
                 android:textStyle="bold"
+                android:text="EDUCATION INFRASTRACTURE"
+                android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Use the keywords below the blank spaces: \nAvailable (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \Agency Responsibility"
+                android:textStyle="italic"
+                android:textColor="@color/colorAccent"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
@@ -1127,15 +833,9 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="If Yes, What has been responsible for the returnee?"
-                    android:id="@+id/LivelihoodReturneesLivelyUnable"/>
+                    android:hint="Primary School"
+                    android:id="@+id/Primary"/>
             </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="What are the necessary things (Needs) required to get the returnees members of the household to overcome the challenges to get back to these livelihood?"
-                android:textStyle="bold"
-                android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1144,15 +844,9 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Prioritize the Needs"
-                    android:id="@+id/LivelihoodReturneesLivelyNeeds"/>
+                    android:hint="Secondary School"
+                    android:id="@+id/Secondary"/>
             </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="How best can member of the household be targeted for interventions?"
-                android:textStyle="bold"
-                android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1161,15 +855,9 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Prioritize the Needs"
-                    android:id="@+id/LivelihoodInterventions"/>
+                    android:hint="Technical College"
+                    android:id="@+id/Technical"/>
             </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Are there members of the family who have PSYCHOSOCIAL problems as the result of the Boko Haram insurgency?"
-                android:textStyle="bold"
-                android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1178,15 +866,9 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="If Yes, have they received any medical attention? If No why?"
-                    android:id="@+id/LivelihoodMedicalPsycho"/>
+                    android:hint="Commercial School"
+                    android:id="@+id/Commercial"/>
             </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="What other assistance are the returnee members of your household getting?"
-                android:textStyle="bold"
-                android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1195,15 +877,9 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Specify/Nature, if no, specify the the level of assistant needed"
-                    android:id="@+id/LivelihoodReturneeAssistance"/>
+                    android:hint="Tertiary"
+                    android:id="@+id/Tertiary"/>
             </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="How long do the organizations rendering assistance to the returnee members of the your household and other returnee in the community plan to offer the assistance to them?"
-                android:textStyle="bold"
-                android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1212,62 +888,11 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Organization Assistance"
-                    android:id="@+id/LivelihoodReturneesOrganizationAssistant"/>
-            </android.support.design.widget.TextInputLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="What do you thing can make your household sustainable?"
-                android:textStyle="bold"
-                android:layout_margin="5dp"/>
-            <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
-
-                <android.support.design.widget.TextInputEditText
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:hint="Household Sustainable"
-                    android:id="@+id/LivelihoodHouseholdSustainable"/>
+                    android:hint="Other (Specify)"
+                    android:id="@+id/OtherSchool"/>
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/pushBtn"
-                android:text="Submit"
-                android:layout_margin="10dp"
-                android:layout_alignParentRight="true"
-                android:onClick="Submit"
-                android:background="@color/colorPrimary"/>
-            <Button
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/Reset"
-                android:text="New Data"
-                android:layout_margin="10dp"
-                android:layout_alignParentLeft="true"
-                android:onClick="SubmitAgain"
-                android:background="@color/colorPrimary"/>
-
-            <Button
-                android:id="@+id/BackToMenu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_below="@id/Reset"
-                android:onClick="BackToMenu"
-                android:layout_margin="10dp"
-                android:text="Back To Menu"
-                android:background="@color/colorPrimary"
-                android:padding="5dp"/>
-        </RelativeLayout>
 
     </LinearLayout>
 

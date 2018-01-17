@@ -6,6 +6,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -30,20 +31,36 @@ public class HouseHold extends AppCompatActivity {
             HouseHoldMemberConditionDisabledAfter, HouseHoldMemberConditionPregnantAfter, HouseHoldMemberConditionLactatingAfter,
             HouseHoldMemberConditionInfantAfter, HouseHoldMemberConditionChildrenAfter, HouseHoldMemberAdultMaleLostAfter, HouseHoldMemberAdultFemaleLostAfter,
             HouseHoldMemberChildrenLostAfter, MemberQualificationBefore, MemberQualificationAfter, MemberOccupationBefore, MemberOccupationAfter, MemberOtherOccupationBefore,
-            MemberOtherOccupationAfter, BoreHole, CementWell, EarthDam, River, Pond, TreatmentPlant, OtherWater, NationalGrid, REBElectricity, PrivatePlant, Solar,
-            OrganizationBenefit, OrganizationBenefitYes, OrganizationBenefitSpecify, RespondentIncomeBefore, RespondentIncomeAfter, Livelihood, LivelihoodDisplaced;
+            MemberOtherOccupationAfter, WaterSource, ElectricitySource, WaterCondition, ElectricityCondition,
+            OrganizationBenefit, OrganizationBenefitYes, OrganizationBenefitSpecify, RespondentIncomeBefore, RespondentIncomeAfter, Livelihood, LivelihoodBeforeDisplaced,
+            LivelihoodAfterDisplaced, LivelihoodHowLong, LivelihoodTimes, LivelihoodYear, LivelihoodItemLost, LivelihoodHowMany, LivelihoodMemberNotRelocated,
+            LivelihoodMemberReturned, LivelihoodReturneesCondition, LivelihoodReturneesAdjusting, LivelihoodReturneesAdjustingMeans, LivelihoodReturneesLivelyUnable,
+            LivelihoodReturneesLivelyNeeds, LivelihoodInterventions, LivelihoodMedicalPsycho, LivelihoodReturneeAssistance, LivelihoodReturneesOrganizationAssistant, LivelihoodHouseholdSustainable;
     Button pushBtn;
     TextView genderBefore, genderAfter, genderInformant, AdoptedText;
     EditText ageBefore, ageAfter, ageInformant;
 
     private DatabaseReference mDatabase;
 
+    static boolean isInitialized = false;
+    private static String TAG = "HouseHoldActivity";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_hold);
 
-        FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+        try{
+            if (!isInitialized){
+                FirebaseDatabase.getInstance().setPersistenceEnabled(true);
+                isInitialized = true;
+            }else {
+                Log.d(TAG, "Already Initialized");
+            }
+        }catch (Exception e){
+            e.printStackTrace();
+        }
+
         mDatabase = FirebaseDatabase.getInstance().getReference().child("HouseHoldData");
         mDatabase.keepSynced(true);
 
@@ -103,20 +120,37 @@ public class HouseHold extends AppCompatActivity {
         MemberOtherOccupationAfter = findViewById(R.id.HouseHoldMemberOtherOccupationAfter);
         RespondentIncomeBefore = findViewById(R.id.RespondentIncomeBefore);
         RespondentIncomeAfter = findViewById(R.id.RespondentIncomeAfter);
-        BoreHole = findViewById(R.id.BoreHole);
-        CementWell = findViewById(R.id.CementWell);
-        EarthDam = findViewById(R.id.EarthDam);
-        River = findViewById(R.id.River);
-        Pond = findViewById(R.id.Pond);
-        TreatmentPlant = findViewById(R.id.TreatmentPlant);
-        OtherWater = findViewById(R.id.OtherWater);
-        NationalGrid = findViewById(R.id.NationalGrid);
-        REBElectricity = findViewById(R.id.REBElectricity);
-        PrivatePlant = findViewById(R.id.PrivatePlant);
-        Solar = findViewById(R.id.Solar);
+
+        ElectricitySource = findViewById(R.id.ElectricitySource);
+        ElectricityCondition = findViewById(R.id.ConditionElectricity);
+        WaterSource = findViewById(R.id.WaterSource);
+        WaterCondition = findViewById(R.id.WaterCondition);
+
         OrganizationBenefit = findViewById(R.id.OrganizationBenefit);
         OrganizationBenefitYes = findViewById(R.id.OrganizationBenefitYes);
         OrganizationBenefitSpecify = findViewById(R.id.OrganizationBenefitSpecify);
+
+        //Livelihood
+        Livelihood = findViewById(R.id.Livelihood);
+        LivelihoodBeforeDisplaced = findViewById(R.id.LivelihoodBeforeDisplaced);
+        LivelihoodAfterDisplaced = findViewById(R.id.LivelihoodAfterDisplaced);
+        LivelihoodHowLong = findViewById(R.id.LivelihoodHowLong);
+        LivelihoodTimes = findViewById(R.id.LivelihoodTimes);
+        LivelihoodYear = findViewById(R.id.LivelihoodYear);
+        LivelihoodItemLost = findViewById(R.id.LivelihoodItemLost);
+        LivelihoodHowMany = findViewById(R.id.LivelihoodHowMany);
+        LivelihoodMemberNotRelocated = findViewById(R.id.LivelihoodMemberNotRelocated);
+        LivelihoodMemberReturned = findViewById(R.id.LivelihoodMemberReturned);
+        LivelihoodReturneesCondition = findViewById(R.id.LivelihoodReturneesCondition);
+        LivelihoodReturneesAdjusting = findViewById(R.id.LivelihoodReturneesAdjusting);
+        LivelihoodReturneesAdjustingMeans = findViewById(R.id.LivelihoodReturneesAdjustingMeans);
+        LivelihoodReturneesLivelyUnable = findViewById(R.id.LivelihoodReturneesLivelyUnable);
+        LivelihoodReturneesLivelyNeeds = findViewById(R.id.LivelihoodReturneesLivelyNeeds);
+        LivelihoodInterventions = findViewById(R.id.LivelihoodInterventions);
+        LivelihoodMedicalPsycho = findViewById(R.id.LivelihoodMedicalPsycho);
+        LivelihoodReturneeAssistance = findViewById(R.id.LivelihoodReturneeAssistance);
+        LivelihoodReturneesOrganizationAssistant = findViewById(R.id.LivelihoodReturneesOrganizationAssistant);
+        LivelihoodHouseholdSustainable = findViewById(R.id.LivelihoodHouseholdSustainable);
 
         pushBtn = findViewById(R.id.pushBtn);
     }
@@ -127,23 +161,39 @@ public class HouseHold extends AppCompatActivity {
 
     private void Submit() {
 
+        final String Val23 = Livelihood.getText().toString().trim();
+        final String Val24 = LivelihoodBeforeDisplaced.getText().toString().trim();
+        final String Val25 = LivelihoodAfterDisplaced.getText().toString().trim();
+        final String Val26 = LivelihoodHowLong.getText().toString().trim();
+        final String Val27 = LivelihoodTimes.getText().toString().trim();
+        final String Val28 = LivelihoodYear.getText().toString().trim();
+        final String Val29 = LivelihoodItemLost.getText().toString().trim();
+        final String Val30 = LivelihoodHowMany.getText().toString().trim();
+        final String Val31 = LivelihoodMemberNotRelocated.getText().toString().trim();
+        final String Val32 = LivelihoodMemberReturned.getText().toString().trim();
+        final String Val33 = LivelihoodReturneesCondition.getText().toString().trim();
+        final String Val34 = LivelihoodReturneesAdjusting.getText().toString().trim();
+        final String Val35 = LivelihoodReturneesAdjustingMeans.getText().toString().trim();
+        final String Val36 = LivelihoodReturneesLivelyUnable.getText().toString().trim();
+        final String Val37 = LivelihoodReturneesLivelyNeeds.getText().toString().trim();
+        final String Val38 = LivelihoodInterventions.getText().toString().trim();
+        final String Val39 = LivelihoodMedicalPsycho.getText().toString().trim();
+        final String Val40 = LivelihoodReturneeAssistance.getText().toString().trim();
+        final String Val41 = LivelihoodReturneesOrganizationAssistant.getText().toString().trim();
+        final String Val42 = LivelihoodHouseholdSustainable.getText().toString().trim();
+
         final String Val1 = MemberQualificationBefore.getText().toString().trim();
         final String Val2 = MemberQualificationAfter.getText().toString().trim();
         final String Val3 = MemberOccupationBefore.getText().toString().trim();
         final String Val4 = MemberOccupationAfter.getText().toString().trim();
         final String Val5 = MemberOtherOccupationBefore.getText().toString().trim();
         final String Val6 = MemberOtherOccupationAfter.getText().toString().trim();
-        final String Val7 = BoreHole.getText().toString().trim();
-        final String Val8 = CementWell.getText().toString().trim();
-        final String Val9 = EarthDam.getText().toString().trim();
-        final String Val10 = River.getText().toString().trim();
-        final String Val11 = Pond.getText().toString().trim();
-        final String Val12 = TreatmentPlant.getText().toString().trim();
-        final String Val13 = OtherWater.getText().toString().trim();
-        final String Val14 = NationalGrid.getText().toString().trim();
-        final String Val15 = REBElectricity.getText().toString().trim();
-        final String Val16 = PrivatePlant.getText().toString().trim();
-        final String Val17 = Solar.getText().toString().trim();
+
+        final String Val7 = ElectricitySource.getText().toString().trim();
+        final String Val8 = ElectricityCondition.getText().toString().trim();
+        final String Val9 = WaterSource.getText().toString().trim();
+        final String Val10 = WaterCondition.getText().toString().trim();
+
         final String Val18 = OrganizationBenefit.getText().toString().trim();
         final String Val19 = OrganizationBenefitYes.getText().toString().trim();
         final String Val20 = OrganizationBenefitSpecify.getText().toString().trim();
@@ -241,18 +291,31 @@ public class HouseHold extends AppCompatActivity {
                 !TextUtils.isEmpty(Val8)&&
                 !TextUtils.isEmpty(Val9)&&
                 !TextUtils.isEmpty(Val10)&&
-                !TextUtils.isEmpty(Val11)&&
-                !TextUtils.isEmpty(Val12)&&
-                !TextUtils.isEmpty(Val13)&&
-                !TextUtils.isEmpty(Val14)&&
-                !TextUtils.isEmpty(Val15)&&
-                !TextUtils.isEmpty(Val16)&&
-                !TextUtils.isEmpty(Val17)&&
                 !TextUtils.isEmpty(Val18)&&
                 !TextUtils.isEmpty(Val19)&&
                 !TextUtils.isEmpty(Val20)&&
                 !TextUtils.isEmpty(Val21)&&
-                !TextUtils.isEmpty(Val22)){
+                !TextUtils.isEmpty(Val22)&&
+                !TextUtils.isEmpty(Val23)&&
+                !TextUtils.isEmpty(Val24)&&
+                !TextUtils.isEmpty(Val25)&&
+                !TextUtils.isEmpty(Val26)&&
+                !TextUtils.isEmpty(Val27)&&
+                !TextUtils.isEmpty(Val28)&&
+                !TextUtils.isEmpty(Val29)&&
+                !TextUtils.isEmpty(Val30)&&
+                !TextUtils.isEmpty(Val31)&&
+                !TextUtils.isEmpty(Val32)&&
+                !TextUtils.isEmpty(Val33)&&
+                !TextUtils.isEmpty(Val34)&&
+                !TextUtils.isEmpty(Val35)&&
+                !TextUtils.isEmpty(Val36)&&
+                !TextUtils.isEmpty(Val37)&&
+                !TextUtils.isEmpty(Val38)&&
+                !TextUtils.isEmpty(Val39)&&
+                !TextUtils.isEmpty(Val40)&&
+                !TextUtils.isEmpty(Val41)&&
+                !TextUtils.isEmpty(Val42)){
             final DatabaseReference newPost = mDatabase.push();
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
@@ -270,10 +333,17 @@ public class HouseHold extends AppCompatActivity {
                     newPost.child("HouseHoldAgeAfter").setValue(ageAfterVal);
                     newPost.child("InformantGender").setValue(genderInformantVal);
                     newPost.child("InformantAge").setValue(ageInformantVal);
-                    newPost.child("HouseHoldSizeAdultMaleNameAge").setValue(HouseHoldSizeAdultMaleBeforeVal);
-                    newPost.child("HouseHoldSizeAdultFemaleNameAge").setValue(HouseHoldSizeAdultFemaleBeforeVal);
-                    newPost.child("HouseHoldSizeChildrenMaleNameAge").setValue(HouseHoldSizeChildrenMaleBeforeVal);
-                    newPost.child("HouseHoldSizeChildrenFemaleNameAge").setValue(HouseHoldSizeChildrenFemaleBeforeVal);
+
+                    newPost.child("HouseHoldSizeAdultMaleNameAgeBefore").setValue(HouseHoldSizeAdultMaleBeforeVal);
+                    newPost.child("HouseHoldSizeAdultFemaleNameAgeBefore").setValue(HouseHoldSizeAdultFemaleBeforeVal);
+                    newPost.child("HouseHoldSizeChildrenMaleNameAgeBefore").setValue(HouseHoldSizeChildrenMaleBeforeVal);
+                    newPost.child("HouseHoldSizeChildrenFemaleNameAgeBefore").setValue(HouseHoldSizeChildrenFemaleBeforeVal);
+
+                    newPost.child("HouseHoldSizeAdultMaleNameAgeAfter").setValue(HouseHoldSizeAdultMaleAfterVal);
+                    newPost.child("HouseHoldSizeAdultFemaleNameAgeAfter").setValue(HouseHoldSizeAdultFemaleAfterVal);
+                    newPost.child("HouseHoldSizeChildrenMaleNameAgeAfter").setValue(HouseHoldSizeChildrenMaleAfterVal);
+                    newPost.child("HouseHoldSizeChildrenFemaleNameAgeAfter").setValue(HouseHoldSizeChildrenFemaleAfterVal);
+
                     newPost.child("HouseHoldSizeAdopted").setValue(AdoptedTextVal);
                     newPost.child("HouseHoldSizeAdoptedNumber").setValue(HouseHoldSizeAdoptedNumberVal);
                     newPost.child("HouseHoldSizeAdoptedNamesGenderAge").setValue(HouseHoldSizeAdoptedNamesVal);
@@ -300,20 +370,33 @@ public class HouseHold extends AppCompatActivity {
                     newPost.child("OtherOccupationOfTheRespondentAfter").setValue(Val6);
                     newPost.child("AnnualIncomeOfRespondentBefore").setValue(Val21);
                     newPost.child("AnnualIncomeOfRespondentAfter").setValue(Val22);
-                    newPost.child("BoreHole").setValue(Val7);
-                    newPost.child("CementWell").setValue(Val8);
-                    newPost.child("EarthDam").setValue(Val9);
-                    newPost.child("RiverOrStream").setValue(Val10);
-                    newPost.child("Pond").setValue(Val11);
-                    newPost.child("TreatmentPlant").setValue(Val12);
-                    newPost.child("OtherWaterSource").setValue(Val13);
-                    newPost.child("NationalGrid").setValue(Val14);
-                    newPost.child("REBElectricity").setValue(Val15);
-                    newPost.child("PrivatePlant").setValue(Val16);
-                    newPost.child("SolarElectricity").setValue(Val17);
+                    newPost.child("ElectricitySource").setValue(Val7);
+                    newPost.child("ElectricityCondition").setValue(Val8);
+                    newPost.child("WaterSource").setValue(Val9);
+                    newPost.child("WaterCondition").setValue(Val10);
                     newPost.child("HouseholdBenefitFromOrganization").setValue(Val18);
                     newPost.child("WhichOrganizationAssistedYourHousehold").setValue(Val19);
-                    newPost.child("WhatDidYouBenefitFromTheOrganization").setValue(Val20)
+                    newPost.child("WhatDidYouBenefitFromTheOrganization").setValue(Val20);
+                    newPost.child("Livelihood").setValue(Val23);
+                    newPost.child("LivelihoodBeforeDisplaced").setValue(Val24);
+                    newPost.child("LivelihoodAfterDisplaced").setValue(Val25);
+                    newPost.child("LivelihoodHowLong").setValue(Val26);
+                    newPost.child("LivelihoodTimes").setValue(Val27);
+                    newPost.child("LivelihoodYear").setValue(Val28);
+                    newPost.child("LivelihoodItemLost").setValue(Val29);
+                    newPost.child("LivelihoodHowMany").setValue(Val30);
+                    newPost.child("LivelihoodMemberNotRelocated").setValue(Val31);
+                    newPost.child("LivelihoodMemberReturned").setValue(Val32);
+                    newPost.child("LivelihoodReturneesCondition").setValue(Val33);
+                    newPost.child("LivelihoodReturneesAdjusting").setValue(Val34);
+                    newPost.child("LivelihoodReturneesAdjustingMeans").setValue(Val35);
+                    newPost.child("LivelihoodReturneesLivelyUnable").setValue(Val36);
+                    newPost.child("LivelihoodReturneesLivelyNeeds").setValue(Val37);
+                    newPost.child("LivelihoodInterventions").setValue(Val38);
+                    newPost.child("LivelihoodMedicalPsycho").setValue(Val39);
+                    newPost.child("LivelihoodReturneeAssistance").setValue(Val40);
+                    newPost.child("LivelihoodReturneesOrganizationAssistant").setValue(Val41);
+                    newPost.child("LivelihoodHouseholdSustainable").setValue(Val42)
                     .addOnCompleteListener(new OnCompleteListener<Void>() {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
@@ -362,5 +445,15 @@ public class HouseHold extends AppCompatActivity {
 
     public void NoAdopted(View view) {
         AdoptedText.setText("No");
+    }
+
+    public void SubmitAgain(View view) {
+        Intent NewData = new Intent(this, HouseHold.class);
+        startActivity(NewData);
+    }
+
+    public void BackToMenu(View view) {
+        Intent BackToMenu = new Intent(this, MenuScreen.class);
+        startActivity(BackToMenu);
     }
 }
