@@ -21,7 +21,8 @@
         </activity>
         <activity android:name=".MenuScreen" />
         <activity android:name=".HouseHold" />
-        <activity android:name=".KeyInformants"></activity>
+        <activity android:name=".KeyInformants" />
+        <activity android:name=".FocusGroup"></activity>
     </application>
 
 </manifest>

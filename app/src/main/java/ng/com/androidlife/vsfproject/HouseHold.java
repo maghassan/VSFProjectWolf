@@ -157,6 +157,86 @@ public class HouseHold extends AppCompatActivity {
 
     public void Submit(View view) {
         Submit();
+
+        State.setText("");
+        TownVillage.setText("");
+        Longitude.setText("");
+        Latitude.setText("");
+        Status.setText("");
+        Population.setText("");
+
+        genderBefore.setText("");
+        genderAfter.setText("");
+        ageBefore.setText("");
+        ageAfter.setText("");
+        genderInformant.setText("");
+        ageInformant.setText("");
+
+        HouseHoldSizeAdultMaleBefore.setText("");
+        HouseHoldSizeAdultFemaleBefore.setText("");
+        HouseHoldSizeChildrenMaleBefore.setText("");
+        HouseHoldSizeChildrenFemaleBefore.setText("");
+        HouseHoldSizeAdultMaleAfter.setText("");
+        HouseHoldSizeAdultFemaleAfter.setText("");
+        HouseHoldSizeChildrenMaleAfter.setText("");
+        HouseHoldSizeChildrenFemaleAfter.setText("");
+        AdoptedText = findViewById(R.id.AdoptedText);
+        HouseHoldSizeAdoptedNumber.setText("");
+        HouseHoldSizeAdoptedNames.setText("");
+        HouseHoldMemberConditionElderlyBefore.setText("");
+        HouseHoldMemberConditionDisabledBefore.setText("");
+        HouseHoldMemberConditionPregnantBefore.setText("");
+        HouseHoldMemberConditionLactatingBefore.setText("");
+        HouseHoldMemberConditionInfantBefore.setText("");
+        HouseHoldMemberConditionChildrenBefore.setText("");
+        HouseHoldMemberConditionElderlyAfter.setText("");
+        HouseHoldMemberConditionDisabledAfter.setText("");
+        HouseHoldMemberConditionPregnantAfter.setText("");
+        HouseHoldMemberConditionLactatingAfter.setText("");
+        HouseHoldMemberConditionInfantAfter.setText("");
+        HouseHoldMemberConditionChildrenAfter.setText("");
+        HouseHoldMemberAdultMaleLostAfter.setText("");
+        HouseHoldMemberAdultFemaleLostAfter.setText("");
+        HouseHoldMemberChildrenLostAfter.setText("");
+
+        MemberQualificationBefore.setText("");
+        MemberQualificationAfter.setText("");
+        MemberOccupationBefore.setText("");
+        MemberOccupationAfter.setText("");
+        MemberOtherOccupationBefore.setText("");
+        MemberOtherOccupationAfter.setText("");
+        RespondentIncomeBefore.setText("");
+        RespondentIncomeAfter.setText("");
+
+        ElectricitySource.setText("");
+        ElectricityCondition.setText("");
+        WaterSource.setText("");
+        WaterCondition.setText("");
+
+        OrganizationBenefit.setText("");
+        OrganizationBenefitYes.setText("");
+        OrganizationBenefitSpecify.setText("");
+
+        Livelihood.setText("");
+        LivelihoodBeforeDisplaced.setText("");
+        LivelihoodAfterDisplaced.setText("");
+        LivelihoodHowLong.setText("");
+        LivelihoodTimes.setText("");
+        LivelihoodYear.setText("");
+        LivelihoodItemLost.setText("");
+        LivelihoodHowMany.setText("");
+        LivelihoodMemberNotRelocated.setText("");
+        LivelihoodMemberReturned.setText("");
+        LivelihoodReturneesCondition.setText("");
+        LivelihoodReturneesAdjusting.setText("");
+        LivelihoodReturneesAdjustingMeans.setText("");
+        LivelihoodReturneesLivelyUnable.setText("");
+        LivelihoodReturneesLivelyNeeds.setText("");
+        LivelihoodInterventions.setText("");
+        LivelihoodMedicalPsycho.setText("");
+        LivelihoodReturneeAssistance.setText("");
+        LivelihoodReturneesOrganizationAssistant.setText("");
+        LivelihoodHouseholdSustainable.setText("");
     }
 
     private void Submit() {
@@ -401,7 +481,9 @@ public class HouseHold extends AppCompatActivity {
                         @Override
                         public void onComplete(@NonNull Task<Void> task) {
                             if (task.isSuccessful()){
-                                Toast.makeText(HouseHold.this,"Data Stored, Connect to Internet to Push to CloudDatabase", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(HouseHold.this,"Your Data Is Stored To CloudDatabase", Toast.LENGTH_SHORT).show();
+                            }else {
+                                Toast.makeText(HouseHold.this,"Data Stored, Connect to Internet to Push to CloudDatabase", Toast.LENGTH_SHORT);
                             }
                         }
                     });

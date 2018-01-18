@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="ng.com.androidlife.vsfproject.FocusGroup">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="FOCUS GROUP DISCUSSIOn QUESTIONS"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/out_line"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How many times was the community attacked by insurgents? Find out the number of attacks, attackers and times of attacks, etc."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup1"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Nature of destruction caused during attacks i.e. killings, burning, lootings etc."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup2"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Information on number of lives lost, properties destroyed, etc."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup3"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Are there orphans and women headed households in the community as a result of the attacks by the insurgents? Probe on the magnitude of these components."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup4"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Destruction of public infrastructure such as secretariat and government offices, palaces, police stations and military installations, markets, schools, health facilities, water sources, power sources, communication installations, roads and bridges, mosques and churches, etc."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup5"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Major sources of livelihoods disrupted e.g. business, farming, herding, transportation, social and religious activities etc."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup6"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have members of the community relocated to other places? i.e find out who (youths, elderly, women, children) relocated, the communities relocated to, nature and process of relocation etc."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup7"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How has life been for those who have relocated from the community to new places or kept in IDP camps?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup8"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What were the challenges faced by those that have relocated to new locations?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup9"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Any psychosocial health problems experienced due to the relocation to new communities?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup10"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Has any organization (Governmental or non-governmental) or individuals rendered any form of assistance to those relocated to new communities?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup11"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are the major needs of those who have relocated to new communities?  Prioritize the needs"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup12"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Were there members who have never relocated from the community? Why have they not relocated."
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup13"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How has life been for those who have not relocated from the community or kept in captivity by the insurgents?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup14"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What were the challenges faced by those that have not relocated from the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup15"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Any psychosocial health problems experienced due to not relocating from the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup16"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Has any organization (Governmental or non-governmental) or individuals rendered any assistance to those that have not relocated to new communities?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup17"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are the major needs of those who have not relocated from their communities?  Prioritize the needs"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup18"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Have any of those that have relocated returned to the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup19"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="How has their means of livelihoods been since their return back to the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup20"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What were the challenges faced by those that have returned back to the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup21"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Any psychosocial health problems experienced by the returnees to the due to not relocating from the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup22"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Has any organization (Governmental or non-governmental) or individuals rendered any assistance to those that have returned to the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup23"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are the major needs of those who have returned to the community?  Prioritize the needs"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup24"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="What are the major forms of assistance/intervention needed by  the community that would guarantee sustainability of the community?"
+                    android:textStyle="bold"
+                    android:textSize="16sp"
+                    android:layout_margin="5dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Indicate Here"
+                        android:id="@+id/FocusGroup25"/>
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+    </LinearLayout>
+
+</ScrollView>

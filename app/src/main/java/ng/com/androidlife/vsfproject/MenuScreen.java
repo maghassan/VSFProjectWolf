@@ -34,4 +34,9 @@ public class MenuScreen extends AppCompatActivity {
         Intent KeyInformants = new Intent(this, KeyInformants.class);
         startActivity(KeyInformants);
     }
+
+    public void FocusGroup(View view) {
+        Intent FocusGroup = new Intent(this, FocusGroup.class);
+        startActivity(FocusGroup);
+    }
 }

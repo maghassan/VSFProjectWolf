@@ -1,5 +1,6 @@
 package ng.com.androidlife.vsfproject;
 
+import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;

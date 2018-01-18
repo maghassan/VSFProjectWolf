@@ -624,7 +624,7 @@
             </LinearLayout>
         </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.CardView
+        <android.support.v7.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="5dp">
@@ -2893,6 +2893,494 @@
             </android.support.design.widget.TextInputLayout>
         </LinearLayout>
     </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="LIVELYHOOD ACTIVITIES"
+                    android:textAlignment="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorAccent"
+                    android:background="@drawable/out_line"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Have there been any destruction of livelihood in the Community?"
+                    android:background="@drawable/out_line"
+                    android:padding="10dp"
+                    android:textStyle="bold"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="If yes, what's the major cause. If no, what was the reason?"
+                        android:id="@+id/Livelihood1"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:padding="10dp"
+                    android:background="@drawable/out_line"
+                    android:text="How many times did the insurgent attack your Community?"
+                    android:textStyle="bold"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Month and Year"
+                        android:id="@+id/Livelihood2"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="What was the major impact of the insurgent in your community?"
+                        android:id="@+id/Livelihood3"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Where did the people go after being displaced?"
+                        android:id="@+id/Livelihood4"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="How has the community been under Boko Haram insurgency?"
+                        android:id="@+id/Livelihood5"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="When did the people return to the community(Month and Year)"
+                        android:id="@+id/Livelihood6"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Have some members of of the community lost some of their belongings in their household due to the insurgency?"
+                    android:textStyle="bold"
+                    android:background="@drawable/out_line"
+                    android:padding="10dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="If Yes, Specify (Item lost and Estimated Cost) If No write NIL"
+                        android:id="@+id/Livelihood7"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What is the general Socia-Economic Condition in the community?"
+                    android:textStyle="bold"
+                    android:background="@drawable/out_line"
+                    android:padding="10dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Before Boko Haram Insurgency"
+                        android:id="@+id/Livelihood8"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="After Boko Haram Insurgency"
+                        android:id="@+id/Livelihood9"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Have people in the community relocated as a result of the Boko Haram Insurgency?"
+                    android:textStyle="bold"
+                    android:background="@drawable/out_line"
+                    android:padding="10dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="If Yes, estimate how many people. If No write NIL"
+                        android:id="@+id/Livelihood11"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Was there any people/family in your community that did not relocated as a result of the Boko Haram Insurgency?"
+                    android:textStyle="bold"
+                    android:background="@drawable/out_line"
+                    android:padding="10dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="If Yes, estimate how many people. If No write NIL"
+                        android:id="@+id/Livelihood12"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="How has been the livelihood condition of those who remained in the community during the Boko Haram Insurgency?"
+                    android:textStyle="bold"
+                    android:background="@drawable/out_line"
+                    android:padding="10dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Poor, Good or Very Good (NIL if not Applicable)"
+                        android:id="@+id/Livelihood13"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Has aby person that relocated as a result of the Boko Haram insurgency returned to the community?"
+                    android:textStyle="bold"
+                    android:background="@drawable/out_line"
+                    android:padding="10dp"/>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="If Yes, estimate how people returned. If No write NILL"
+                        android:id="@+id/Livelihood14"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="How has been their livelihood Poor, Good or Very Good (NIL if not Applicable)"
+                        android:id="@+id/Livelihood15"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Have the returnee started adjusting or reactivation of thier livelihood?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Write Yes or No"
+                        android:id="@+id/Livelihood16"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Have the returnees come with new means of livelihood to the community?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="If Yes, Indicate the new means. If No write NILL"
+                        android:id="@+id/Livelihood17"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What has been responsible for the inability of the returnees/community to get back to the livelihood that not been picked up again?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Inability Responsibility"
+                        android:id="@+id/Livelihood18"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What are the necessary things (Need) required to get the community to overcome the challenges to get back to these livelihood?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="5"
+                        android:hint="Prioritize/Itemize Needs"
+                        android:id="@+id/Livelihood19"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What are the major challeges and threats to effective rebuilding of the community?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Major Threats"
+                        android:id="@+id/Livelihood20"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What are the major cultural barriers to the reconstruction process in your community?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Cultural Barriers"
+                        android:id="@+id/Livelihood21"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Is there any recontruction work in your community?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="If Yes, Indicate the new means. If No write NILL"
+                        android:id="@+id/Livelihood22"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What type of agency and stage of reconstruction projects had been carried out?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:hint="Indicate here"
+                        android:id="@+id/Livelihood23"/>
+                </android.support.design.widget.TextInputLayout>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What other assistance is the returnee community getting?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:lines="2"
+                    android:hint="Specify type/Nature"
+                    android:id="@+id/Livelihood24"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Are these assistance adequate to guarantee basic standard of living"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:hint="Indicate here"
+                        android:id="@+id/Livelihood25"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="How long does the organizations rendering assistance to the returnee community plan to offer the assistance to community?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:hint="Indicate here"
+                        android:id="@+id/Livelihood26"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What specific intervention may be relevant to your community?"
+                    android:textStyle="bold" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:hint="Indicate here"
+                        android:id="@+id/Livelihood27"/>
+                </android.support.design.widget.TextInputLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What do you think can make your community sustainable?"
+                    android:textStyle="bold" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="What do you think can make your community sustainable?"
+                    android:textStyle="italic" />
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:hint="Safe"
+                        android:id="@+id/Livelihood28"/>
+                </android.support.design.widget.TextInputLayout>
+                <android.support.design.widget.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp">
+
+                    <android.support.design.widget.TextInputEditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:lines="2"
+                        android:hint="Socio Economically Thriving"
+                        android:id="@+id/Livelihood29"/>
+                </android.support.design.widget.TextInputLayout>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
