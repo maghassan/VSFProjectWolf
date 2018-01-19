@@ -1401,7 +1401,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Non Staff Other"
+                    android:hint="Sporting Facilities Other"
                     android:id="@+id/SportingOther"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -1554,7 +1554,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Non Staff Other"
+                    android:hint="Other"
                     android:id="@+id/OwnerShipOther"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -3392,7 +3392,7 @@
                 android:text="Submit"
                 android:layout_margin="10dp"
                 android:layout_alignParentRight="true"
-                android:onClick="Submit"
+                android:onClick="FocusSubmit"
                 android:background="@color/colorPrimary"/>
 
             <Button
