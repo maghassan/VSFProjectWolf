@@ -39,4 +39,9 @@ public class MenuScreen extends AppCompatActivity {
         Intent FocusGroup = new Intent(this, FocusGroup.class);
         startActivity(FocusGroup);
     }
+
+    public void OpenHelp(View view) {
+        Intent OpenHelp = new Intent(this, Help.class);
+        startActivity(OpenHelp);
+    }
 }

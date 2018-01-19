@@ -481,6 +481,31 @@
                 </android.support.design.widget.TextInputLayout>
             </LinearLayout>
         </android.support.v7.widget.CardView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/pushBtn"
+                android:text="Submit"
+                android:layout_margin="10dp"
+                android:layout_alignParentRight="true"
+                android:onClick="GroupSubmit"
+                android:background="@color/colorPrimary"/>
+
+            <Button
+                android:id="@+id/BackToMenu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:onClick="BackToMenu"
+                android:layout_margin="10dp"
+                android:text="Back To Menu"
+                android:background="@color/colorPrimary"
+                android:padding="5dp"/>
+        </RelativeLayout>
     </LinearLayout>
 
 </ScrollView>
