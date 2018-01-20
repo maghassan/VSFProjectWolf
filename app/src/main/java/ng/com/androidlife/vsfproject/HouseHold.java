@@ -1,5 +1,6 @@
 package ng.com.androidlife.vsfproject;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
@@ -8,8 +9,11 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,23 +25,27 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class HouseHold extends AppCompatActivity {
+public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    TextInputEditText State, LocalGov, TownVillage, Longitude, Latitude, Status, Population, HouseHoldSizeAdultMaleBefore, HouseHoldSizeAdultFemaleBefore,
+    TextInputEditText TownVillage, Longitude, Latitude, Status, Population, HouseHoldSizeAdultMaleBefore, HouseHoldSizeAdultFemaleBefore,
             HouseHoldSizeChildrenMaleBefore, HouseHoldSizeChildrenFemaleBefore, HouseHoldSizeAdultMaleAfter, HouseHoldSizeAdultFemaleAfter,
             HouseHoldSizeChildrenMaleAfter, HouseHoldSizeChildrenFemaleAfter, HouseHoldSizeAdoptedNumber, HouseHoldSizeAdoptedNames, HouseHoldMemberConditionElderlyBefore,
             HouseHoldMemberConditionDisabledBefore, HouseHoldMemberConditionPregnantBefore, HouseHoldMemberConditionLactatingBefore,
             HouseHoldMemberConditionInfantBefore, HouseHoldMemberConditionChildrenBefore, HouseHoldMemberConditionElderlyAfter,
             HouseHoldMemberConditionDisabledAfter, HouseHoldMemberConditionPregnantAfter, HouseHoldMemberConditionLactatingAfter,
             HouseHoldMemberConditionInfantAfter, HouseHoldMemberConditionChildrenAfter, HouseHoldMemberAdultMaleLostAfter, HouseHoldMemberAdultFemaleLostAfter,
-            HouseHoldMemberChildrenLostAfter, MemberQualificationBefore, MemberQualificationAfter, MemberOccupationBefore, MemberOccupationAfter, MemberOtherOccupationBefore,
-            MemberOtherOccupationAfter, WaterSource, ElectricitySource, WaterCondition, ElectricityCondition,
-            OrganizationBenefit, OrganizationBenefitYes, OrganizationBenefitSpecify, RespondentIncomeBefore, RespondentIncomeAfter, Livelihood, LivelihoodBeforeDisplaced,
+            HouseHoldMemberChildrenLostAfter, MemberQualificationBefore, MemberQualificationAfter, MemberOtherOccupationBefore, MemberOtherOccupationAfter,
+            OrganizationBenefit, OrganizationBenefitYes, OrganizationBenefitSpecify, Livelihood, LivelihoodBeforeDisplaced,
             LivelihoodAfterDisplaced, LivelihoodHowLong, LivelihoodTimes, LivelihoodYear, LivelihoodItemLost, LivelihoodHowMany, LivelihoodMemberNotRelocated,
             LivelihoodMemberReturned, LivelihoodReturneesCondition, LivelihoodReturneesAdjusting, LivelihoodReturneesAdjustingMeans, LivelihoodReturneesLivelyUnable,
             LivelihoodReturneesLivelyNeeds, LivelihoodInterventions, LivelihoodMedicalPsycho, LivelihoodReturneeAssistance, LivelihoodReturneesOrganizationAssistant, LivelihoodHouseholdSustainable;
     Button pushBtn;
-    TextView genderBefore, genderAfter, genderInformant, AdoptedText;
+
+    TextView genderBefore, genderAfter, genderInformant, AdoptedText, State, LocalGov, MemberOccupationBefore, MemberOccupationAfter,
+            RespondentIncomeBefore, RespondentIncomeAfter, WaterSourcesText, ElectricitySource, WaterConditionsText, ElectricityCondition;
+
+    TextView waterSourceText, waterConditionText;
+
     EditText ageBefore, ageAfter, ageInformant;
 
     private DatabaseReference mDatabase;
@@ -45,6 +53,7 @@ public class HouseHold extends AppCompatActivity {
     static boolean isInitialized = false;
     private static String TAG = "HouseHoldActivity";
 
+    @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -63,6 +72,67 @@ public class HouseHold extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("HouseHoldData");
         mDatabase.keepSynced(true);
+
+        //Spinner
+        Spinner state = findViewById(R.id.stateSpinner);
+        ArrayAdapter<CharSequence> adapterState = ArrayAdapter.createFromResource(this, R.array.states, android.R.layout.simple_spinner_item);
+        adapterState.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        state.setAdapter(adapterState);
+        state.setOnItemSelectedListener(this);
+
+        Spinner localGov = findViewById(R.id.localGovSpinner);
+        ArrayAdapter<CharSequence> adapterLocal = ArrayAdapter.createFromResource(this, R.array.local_governments, android.R.layout.simple_spinner_item);
+        adapterLocal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        localGov.setAdapter(adapterLocal);
+        localGov.setOnItemSelectedListener(this);
+
+        Spinner occupationBefore = findViewById(R.id.OccupationBeforeSpinner);
+        ArrayAdapter<CharSequence> adapterOccupationBefore = ArrayAdapter.createFromResource(this, R.array.occupation, android.R.layout.simple_spinner_item);
+        adapterOccupationBefore.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        occupationBefore.setAdapter(adapterOccupationBefore);
+        occupationBefore.setOnItemSelectedListener(this);
+
+        Spinner occupationAfter = findViewById(R.id.OccupationAfterSpinner);
+        ArrayAdapter<CharSequence> adapteroccupationAfter = ArrayAdapter.createFromResource(this, R.array.occupation, android.R.layout.simple_spinner_item);
+        adapteroccupationAfter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        occupationAfter.setAdapter(adapteroccupationAfter);
+        occupationAfter.setOnItemSelectedListener(this);
+
+        Spinner IncomeBefore = findViewById(R.id.RespondentIncomeBeforeSpinner);
+        ArrayAdapter<CharSequence> adapterIncomeBefore = ArrayAdapter.createFromResource(this, R.array.income, android.R.layout.simple_spinner_item);
+        adapterIncomeBefore.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        IncomeBefore.setAdapter(adapterIncomeBefore);
+        IncomeBefore.setOnItemSelectedListener(this);
+
+        Spinner IncomeAfter = findViewById(R.id.RespondentIncomeAfterSpinner);
+        ArrayAdapter<CharSequence> adapterIncomeAfter = ArrayAdapter.createFromResource(this, R.array.income, android.R.layout.simple_spinner_item);
+        adapterIncomeAfter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        IncomeAfter.setAdapter(adapterIncomeAfter);
+        IncomeAfter.setOnItemSelectedListener(this);
+
+        Spinner WaterSource = findViewById(R.id.WaterSourceSpinner);
+        ArrayAdapter<CharSequence> waterSource = ArrayAdapter.createFromResource(this, R.array.water_source, android.R.layout.simple_spinner_item);
+        waterSource.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        WaterSource.setAdapter(waterSource);
+        WaterSource.setOnItemSelectedListener(this);
+
+        Spinner SourceElectricity = findViewById(R.id.ElectricitySourceSpinner);
+        ArrayAdapter<CharSequence> adapterElectricity = ArrayAdapter.createFromResource(this, R.array.electricity, android.R.layout.simple_spinner_item);
+        adapterElectricity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        SourceElectricity.setAdapter(adapterElectricity);
+        SourceElectricity.setOnItemSelectedListener(this);
+
+        Spinner WaterCondition = findViewById(R.id.WaterConditionSpinner);
+        ArrayAdapter<CharSequence> waterCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        waterCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        WaterCondition.setAdapter(waterCondition);
+        WaterCondition.setOnItemSelectedListener(this);
+
+        Spinner ConditionElectricity = findViewById(R.id.ConditionElectricitySpinner);
+        ArrayAdapter<CharSequence> conditionElectricity = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        conditionElectricity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ConditionElectricity.setAdapter(conditionElectricity);
+        ConditionElectricity.setOnItemSelectedListener(this);
 
         //General
 
@@ -121,10 +191,11 @@ public class HouseHold extends AppCompatActivity {
         RespondentIncomeBefore = findViewById(R.id.RespondentIncomeBefore);
         RespondentIncomeAfter = findViewById(R.id.RespondentIncomeAfter);
 
+        waterSourceText = findViewById(R.id.waterSourceText);
+        waterConditionText = findViewById(R.id.waterConditionText);
         ElectricitySource = findViewById(R.id.ElectricitySource);
         ElectricityCondition = findViewById(R.id.ConditionElectricity);
-        WaterSource = findViewById(R.id.WaterSource);
-        WaterCondition = findViewById(R.id.WaterCondition);
+
 
         OrganizationBenefit = findViewById(R.id.OrganizationBenefit);
         OrganizationBenefitYes = findViewById(R.id.OrganizationBenefitYes);
@@ -159,6 +230,7 @@ public class HouseHold extends AppCompatActivity {
         Submit();
 
         State.setText("");
+        LocalGov.setText("");
         TownVillage.setText("");
         Longitude.setText("");
         Latitude.setText("");
@@ -210,8 +282,8 @@ public class HouseHold extends AppCompatActivity {
 
         ElectricitySource.setText("");
         ElectricityCondition.setText("");
-        WaterSource.setText("");
-        WaterCondition.setText("");
+        waterSourceText.setText("");
+        waterConditionText.setText("");
 
         OrganizationBenefit.setText("");
         OrganizationBenefitYes.setText("");
@@ -271,8 +343,8 @@ public class HouseHold extends AppCompatActivity {
 
         final String Val7 = ElectricitySource.getText().toString().trim();
         final String Val8 = ElectricityCondition.getText().toString().trim();
-        final String Val9 = WaterSource.getText().toString().trim();
-        final String Val10 = WaterCondition.getText().toString().trim();
+        final String Val9 = WaterSourcesText.getText().toString().trim();
+        final String Val10 = WaterConditionsText.getText().toString().trim();
 
         final String Val18 = OrganizationBenefit.getText().toString().trim();
         final String Val19 = OrganizationBenefitYes.getText().toString().trim();
@@ -483,7 +555,7 @@ public class HouseHold extends AppCompatActivity {
                             if (task.isSuccessful()){
                                 Toast.makeText(HouseHold.this,"Your Data Is Stored To CloudDatabase", Toast.LENGTH_SHORT).show();
                             }else {
-                                Toast.makeText(HouseHold.this,"Data Stored, Connect to Internet to Push to CloudDatabase", Toast.LENGTH_SHORT);
+                                Toast.makeText(HouseHold.this,"Data Stored, Connect to Internet to Push to CloudDatabase", Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -537,5 +609,55 @@ public class HouseHold extends AppCompatActivity {
     public void BackToMenu(View view) {
         Intent BackToMenu = new Intent(this, MenuScreen.class);
         startActivity(BackToMenu);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
+
+        Spinner spinner = (Spinner) parent;
+
+        if (spinner.getId() == R.id.stateSpinner){
+            String state = parent.getItemAtPosition(position).toString();
+            State.setText(state);
+        }else if (spinner.getId() == R.id.localGovSpinner){
+            String localGov = parent.getItemAtPosition(position).toString();
+            LocalGov.setText(localGov);
+        }else if (spinner.getId() == R.id.OccupationBeforeSpinner){
+            String memberOccupationBefore = parent.getItemAtPosition(position).toString();
+            MemberOccupationBefore.setText(memberOccupationBefore);
+        }else if (spinner.getId() == R.id.OccupationAfterSpinner){
+            String memberOccupationAfter = parent.getItemAtPosition(position).toString();
+            MemberOccupationAfter.setText(memberOccupationAfter);
+        }else if (spinner.getId() == R.id.RespondentIncomeBeforeSpinner){
+            String memberIncomeBeforer = parent.getItemAtPosition(position).toString();
+            RespondentIncomeBefore.setText(memberIncomeBeforer);
+        }else if (spinner.getId() == R.id.RespondentIncomeAfterSpinner){
+            String memberIncomeAfter = parent.getItemAtPosition(position).toString();
+            RespondentIncomeAfter.setText(memberIncomeAfter);
+        }else if (spinner.getId() == R.id.WaterSourceSpinner){
+            String WaterSource = parent.getItemAtPosition(position).toString();
+            waterSourceText.setText(WaterSource);
+        }else if (spinner.getId() == R.id.WaterConditionSpinner){
+            String WaterCondition = parent.getItemAtPosition(position).toString();
+            waterConditionText.setText(WaterCondition);
+        }else if (spinner.getId() == R.id.ElectricitySourceSpinner){
+            String electricitySource = parent.getItemAtPosition(position).toString();
+            ElectricitySource.setText(electricitySource);
+        }else if (spinner.getId() == R.id.ConditionElectricitySpinner){
+            String electricityCondition = parent.getItemAtPosition(position).toString();
+            ElectricityCondition.setText(electricityCondition);
+        }
+
+
+        /**String state = parent.getItemAtPosition(position).toString();
+        State.setText(state);
+
+        String localGov = parent.getItemAtPosition(position).toString();
+        LocalGov.setText(localGov);**/
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

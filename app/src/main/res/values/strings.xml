@@ -1,3 +1,107 @@
 <resources>
-    <string name="app_name">VSF Project</string>
+    <string name="app_name">VSF E-Survey</string>
+
+    <string-array name="states">
+        <item>Select State</item>
+        <item>Adamawa</item>
+        <item>Borno</item>
+        <item>Yobe</item>
+    </string-array>
+
+    <string-array name="local_governments">
+        <item>Select LGA</item>
+        <item>ABADAM</item>
+        <item>ASKIRAUBA</item>
+        <item>BAMA</item>
+        <item>BIU</item>
+        <item>CHIBOK</item>
+        <item>DAMBOA</item>
+
+        <item>DIKWA</item>
+        <item>GUBIO</item>
+        <item>GUZAMALA</item>
+        <item>GWOZA</item>
+        <item>HAWUL</item>
+        <item>JERE</item>
+
+        <item>ABADAM</item>
+        <item>ASKIRAUBA</item>
+        <item>BAMA</item>
+        <item>BIU</item>
+        <item>CHIBOK</item>
+        <item>DAMBOA</item>
+
+        <item>ABADAM</item>
+        <item>ASKIRAUBA</item>
+        <item>BAMA</item>
+        <item>BIU</item>
+        <item>CHIBOK</item>
+        <item>DAMBOA</item>
+
+        <item>ABADAM</item>
+        <item>ASKIRAUBA</item>
+        <item>BAMA</item>
+        <item>BIU</item>
+        <item>CHIBOK</item>
+        <item>DAMBOA</item>
+    </string-array>
+
+    <string-array name="occupation">
+        <item>Select Occupation</item>
+        <item>Farming</item>
+        <item>Fishing</item>
+        <item>Rearing</item>
+        <item>Trading</item>
+        <item>Civil servant</item>
+        <item>Transportation</item>
+        <item>Others</item>
+    </string-array>
+
+    <string-array name="income">
+        <item>Select Income</item>
+        <item>Less than N100,000</item>
+        <item>N101,000 to N200,000</item>
+        <item>N201,000 to N500,000</item>
+        <item>N501,000 to N1,000,000</item>
+        <item>Less than N1,000,000</item>
+    </string-array>
+
+    <string-array name="condition">
+        <item>Available(In Good Condition)</item>
+        <item>Available(Partly Damage)</item>
+        <item>Available(Completely Damaged)</item>
+        <item>Not Available</item>
+        <item>Functional</item>
+        <item>Not Functional</item>
+        <item>Renovated</item>
+        <item>Ongoing Renovation</item>
+        <item>Abandoned</item>
+        <item>Agency</item>
+    </string-array>
+
+    <string-array name="electricity">
+        <item>Select Source</item>
+        <item>National Grid</item>
+        <item>REB</item>
+        <item>Private Plant</item>
+        <item>Solar</item>
+    </string-array>
+
+    <string-array name="water_source">
+        <item>Select Source</item>
+        <item>Bore Hole</item>
+        <item>Cement Well</item>
+        <item>Seasonal Well</item>
+        <item>Earth Dam</item>
+        <item>River or Stream</item>
+        <item>Pond</item>
+        <item>Treatment Plant</item>
+        <item>Select Source</item>
+    </string-array>
+
+    <string-array name="sustainable">
+        <item>Now</item>
+        <item>Immediate</item>
+        <item>In the long term</item>
+    </string-array>
 </resources>

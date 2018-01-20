@@ -165,31 +165,31 @@ public class FocusGroup extends AppCompatActivity {
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    newPost.child("HowManyTimesWasTheCommunityAttackedByInsurgents").setValue(Val1);
-                    newPost.child("NatureOfDestructionCausedDuringAttacksIEKillingsBurningLootingsEtc").setValue(Val2);
-                    newPost.child("InformationOnNumberOfLivesLostPropertiesDestroyedEtc").setValue(Val3);
-                    newPost.child("AreThereOrphansAndWomenHeadedHouseholdsInTheCommunityAsAResultOfTheAttacksByTheInsurgents").setValue(Val4);
-                    newPost.child("DestructionOfPublicInfrastructureSuchAsSecretariatAndGovernmentOffices").setValue(Val5);
-                    newPost.child("MajorSourcesOfLivelihoodsDisrupted").setValue(Val6);
-                    newPost.child("HaveMembersOfTheCommunityRelocatedToOtherPlaces").setValue(Val7);
-                    newPost.child("HowHasLifeBeenForThoseWhoHaveRelocatedFromTheCommunityToNewPlaces").setValue(Val8);
-                    newPost.child("WhatWereTheChallengesFacedByThoseThatHaveRelocatedToNewLocations").setValue(Val9);
-                    newPost.child("AnyPsychosocialHealthProblemsExperiencedDueToTheRelocationToNewCommunities").setValue(Val10);
-                    newPost.child("HasAnyOrganizationGovernmentalOrNon-governmentalOrIndividualsRenderedAnyFormOfAssistanceToThoseRelocatedToNewCommunities").setValue(Val11);
-                    newPost.child("WhatAreTheMajorNeedsOfThoseWhoHaveRelocatedToNewCommunities").setValue(Val12);
-                    newPost.child("WereThereMembersWhoHaveNeverRelocatedFromTheCommunity").setValue(Val13);
-                    newPost.child("HowHasLifeBeenForThoseWhoHaveNotRelocatedFromTheCommunityOrKeptInCaptivityByTheInsurgents").setValue(Val14);
-                    newPost.child("WhatWereTheChallengesFacedByThoseThatHaveNotRelocatedFromTheCommunity").setValue(Val15);
-                    newPost.child("AnyPsychosocialHealthProblemsExperiencedDueToNotRelocatingFromTheCommunity").setValue(Val16);
-                    newPost.child("HasAnyOrganizationGovernmentalOrNon-governmentalOrIndividualsRenderedAnyAssistanceToThoseThatHaveNotRelocatedToNewCommunities").setValue(Val17);
-                    newPost.child("WhatAreTheMajorNeedsOfThoseWhoHaveNotRelocatedFromTheirCommunities").setValue(Val18);
-                    newPost.child("HaveAnyOfThoseThatHaveRelocatedReturnedToTheCommunity").setValue(Val19);
-                    newPost.child("HowHasTheirMeansOfLivelihoodsBeenSinceTheirReturnBackToTheCommunity").setValue(Val20);
-                    newPost.child("WhatWereTheChallengesFacedByThoseThatHaveReturnedBackToTheCommunity").setValue(Val21);
-                    newPost.child("AnyPsychosocialHealthProblemsExperiencedByTheReturneesToTheDueToNotRelocatingFromTheCommunity").setValue(Val22);
-                    newPost.child("HasAnyOrganizationGovernmentalOrNon-governmentalOrIndividualsRenderedAnyAssistanceToThoseThatHaveReturnedToTheCommunity").setValue(Val23);
-                    newPost.child("WhatAreTheMajorNeedsOfThoseWhoHaveReturnedToTheCommunity").setValue(Val24);
-                    newPost.child("WhatAreTheMajorFormsOfAssistanceInterventionNeededByTheCommunityThatWouldGuaranteeSustainabilityOfTheCommunity").setValue(Val25)
+                    newPost.child("1").setValue(Val1);
+                    newPost.child("2").setValue(Val2);
+                    newPost.child("3").setValue(Val3);
+                    newPost.child("4").setValue(Val4);
+                    newPost.child("5").setValue(Val5);
+                    newPost.child("6").setValue(Val6);
+                    newPost.child("7").setValue(Val7);
+                    newPost.child("8").setValue(Val8);
+                    newPost.child("9").setValue(Val9);
+                    newPost.child("10").setValue(Val10);
+                    newPost.child("11").setValue(Val11);
+                    newPost.child("12").setValue(Val12);
+                    newPost.child("13").setValue(Val13);
+                    newPost.child("14").setValue(Val14);
+                    newPost.child("15").setValue(Val15);
+                    newPost.child("16").setValue(Val16);
+                    newPost.child("17").setValue(Val17);
+                    newPost.child("18").setValue(Val18);
+                    newPost.child("19").setValue(Val19);
+                    newPost.child("20").setValue(Val20);
+                    newPost.child("21").setValue(Val21);
+                    newPost.child("22").setValue(Val22);
+                    newPost.child("23").setValue(Val23);
+                    newPost.child("24").setValue(Val24);
+                    newPost.child("25").setValue(Val25)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

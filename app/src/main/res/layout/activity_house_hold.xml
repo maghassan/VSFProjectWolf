@@ -29,28 +29,54 @@
                     android:textStyle="bold"
                     android:background="@drawable/out_line"/>
 
-                <android.support.design.widget.TextInputLayout
+                <LinearLayout
+                    android:orientation="horizontal"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="State"
+                        android:layout_margin="10dp"
+                        android:textStyle="bold"
+                        android:text="State"
+                        android:textColor="@color/colorAccent"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="State"
+                        android:layout_margin="10dp"
                         android:id="@+id/State"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Local Government"
+                        android:layout_margin="10dp"
+                        android:id="@+id/stateSpinner">
+                    </Spinner>
+                </LinearLayout>
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/colorAccent"
+                        android:text="Local Government"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Local Government"
+                        android:layout_margin="10dp"
                         android:id="@+id/LocalGov"/>
-                </android.support.design.widget.TextInputLayout>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:id="@+id/localGovSpinner">
+                    </Spinner>
+                </LinearLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -673,6 +699,8 @@
                         android:hint="Name And Qualification After Insurgency"
                         android:id="@+id/HouseHoldMemberQualificationAfter"/>
                 </android.support.design.widget.TextInputLayout>
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -680,28 +708,57 @@
                     android:textStyle="bold"
                     android:text="Primary Occupation Of The Respondent"
                     android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp">
 
-                <android.support.design.widget.TextInputEditText
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Occupation Before Insurgency If Farming Specify (Crops, No of bags)"
-                    android:id="@+id/HouseHoldMemberOccupationBefore" />
-            </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Before"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Primary Occupation Before"
+                        android:layout_margin="10dp"
+                        android:id="@+id/HouseHoldMemberOccupationBefore"/>
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Occupation After Insurgency If Farming Specify (Crops, No of bags)"
-                        android:id="@+id/HouseHoldMemberOccupationAfter"/>
-                </android.support.design.widget.TextInputLayout>
+                        android:layout_margin="10dp"
+                        android:id="@+id/OccupationBeforeSpinner">
+                    </Spinner>
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="After"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Primary Occupation After"
+                        android:layout_margin="10dp"
+                        android:id="@+id/HouseHoldMemberOccupationAfter" />
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:id="@+id/OccupationAfterSpinner">
+                    </Spinner>
+                </LinearLayout>
+
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -717,7 +774,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Occupation Before Insurgency If Farming Specify (Crops, No of bags)"
+                        android:hint="Other Occupation Before Insurgency If Farming Specify (Crops, No of bags)"
                         android:id="@+id/HouseHoldMemberOtherOccupationBefore" />
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -728,7 +785,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Occupation After Insurgency If Farming Specify (Crops, No of bags)"
+                        android:hint="Other Occupation After Insurgency If Farming Specify (Crops, No of bags)"
                         android:id="@+id/HouseHoldMemberOtherOccupationAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
@@ -738,49 +795,56 @@
                     android:textStyle="bold"
                     android:text="Annual Income of Respondents Before Insurgent"
                     android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/colorAccent"
-                    android:text="Less than N100,000 \nN101,000 to N200,000 \nN201,000 to N500,000 \nN501,000 to N1,000,000"/>
-                <android.support.design.widget.TextInputLayout
+
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Before"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Income"
+                        android:layout_margin="10dp"
+                        android:id="@+id/RespondentIncomeBefore"/>
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Use the keyword above to enter amount"
-                        android:id="@+id/RespondentIncomeBefore" />
-                </android.support.design.widget.TextInputLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:text="Annual Income of Respondents After Insurgent"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:textStyle="italic"
-                    android:textColor="@color/colorAccent"
-                    android:text="Less than N100,000 \nN101,000 to N200,000 \nN201,000 to N500,000 \nN501,000 to N1,000,000"/>
-                <android.support.design.widget.TextInputLayout
+                        android:layout_margin="10dp"
+                        android:id="@+id/RespondentIncomeBeforeSpinner">
+                    </Spinner>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
-                        android:layout_width="match_parent"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:hint="Use the keyword above to enter amount"
+                        android:layout_margin="10dp"
+                        android:text="After"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Income"
+                        android:layout_margin="10dp"
                         android:id="@+id/RespondentIncomeAfter" />
-                </android.support.design.widget.TextInputLayout>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:id="@+id/RespondentIncomeAfterSpinner">
+                    </Spinner>
+                </LinearLayout>
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -788,42 +852,55 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="USE THE KEY WORDS BELOW TO FILL IN"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Available (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \nAgency"
-                    android:textStyle="bold|italic"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Source"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Source"
+                        android:layout_margin="10dp"
+                        android:id="@+id/waterSourceText"/>
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Water Source (BoreHole, Well, EarthDam, Pond, River (Specify)"
-                        android:id="@+id/WaterSource"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
+                        android:layout_margin="10dp"
+                        android:id="@+id/WaterSourceSpinner">
+                    </Spinner>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Condition"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Condition"
+                        android:layout_margin="10dp"
+                        android:id="@+id/waterConditionText" />
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Condition"
-                        android:id="@+id/WaterCondition"/>
-                </android.support.design.widget.TextInputLayout>
+                        android:layout_margin="10dp"
+                        android:id="@+id/WaterConditionSpinner">
+                    </Spinner>
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="wrap_content"
@@ -832,42 +909,57 @@
                     android:textSize="16sp"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="USE THE KEY WORDS BELOW TO FILL IN"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"
-                    android:layout_margin="5dp"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textColor="@color/colorAccent"
-                    android:text="Available (In Good Condition) \nAvailable (Partly Damaged) \nAvailable (Completely Damaged) \nNot Available \nFunctional \nNot Functional \nRenovated \nOngoing Renovation \nAbandoned \nAgency"
-                    android:textStyle="bold|italic"
-                    android:layout_margin="5dp"/>
-                <android.support.design.widget.TextInputLayout
+
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Source"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Source"
+                        android:layout_margin="10dp"
+                        android:id="@+id/ElectricitySource" />
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Power Source (National Grid, Solar, REB, Private Plant)"
-                        android:id="@+id/ElectricitySource"/>
-                </android.support.design.widget.TextInputLayout>
-                <android.support.design.widget.TextInputLayout
+                        android:layout_margin="10dp"
+                        android:id="@+id/ElectricitySourceSpinner">
+                    </Spinner>
+                </LinearLayout>
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp">
-
-                    <android.support.design.widget.TextInputEditText
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="Condition"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Condition"
+                        android:layout_margin="10dp"
+                        android:id="@+id/ConditionElectricity" />
+                    <Spinner
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Electricity Condition"
-                        android:id="@+id/ConditionElectricity"/>
-                </android.support.design.widget.TextInputLayout>
+                        android:layout_margin="10dp"
+                        android:id="@+id/ConditionElectricitySpinner">
+                    </Spinner>
+                </LinearLayout>
+
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
