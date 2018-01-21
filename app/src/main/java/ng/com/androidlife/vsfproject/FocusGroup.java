@@ -165,31 +165,31 @@ public class FocusGroup extends AppCompatActivity {
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
-                    newPost.child("1").setValue(Val1);
-                    newPost.child("2").setValue(Val2);
-                    newPost.child("3").setValue(Val3);
-                    newPost.child("4").setValue(Val4);
-                    newPost.child("5").setValue(Val5);
-                    newPost.child("6").setValue(Val6);
-                    newPost.child("7").setValue(Val7);
-                    newPost.child("8").setValue(Val8);
-                    newPost.child("9").setValue(Val9);
-                    newPost.child("10").setValue(Val10);
-                    newPost.child("11").setValue(Val11);
-                    newPost.child("12").setValue(Val12);
-                    newPost.child("13").setValue(Val13);
-                    newPost.child("14").setValue(Val14);
-                    newPost.child("15").setValue(Val15);
-                    newPost.child("16").setValue(Val16);
-                    newPost.child("17").setValue(Val17);
-                    newPost.child("18").setValue(Val18);
-                    newPost.child("19").setValue(Val19);
-                    newPost.child("20").setValue(Val20);
-                    newPost.child("21").setValue(Val21);
-                    newPost.child("22").setValue(Val22);
-                    newPost.child("23").setValue(Val23);
-                    newPost.child("24").setValue(Val24);
-                    newPost.child("25").setValue(Val25)
+                    newPost.child("Q1").setValue(Val1);
+                    newPost.child("Q2").setValue(Val2);
+                    newPost.child("Q3").setValue(Val3);
+                    newPost.child("Q4").setValue(Val4);
+                    newPost.child("Q5").setValue(Val5);
+                    newPost.child("Q6").setValue(Val6);
+                    newPost.child("Q7").setValue(Val7);
+                    newPost.child("Q8").setValue(Val8);
+                    newPost.child("Q9").setValue(Val9);
+                    newPost.child("Q10").setValue(Val10);
+                    newPost.child("Q11").setValue(Val11);
+                    newPost.child("Q12").setValue(Val12);
+                    newPost.child("Q13").setValue(Val13);
+                    newPost.child("Q14").setValue(Val14);
+                    newPost.child("Q15").setValue(Val15);
+                    newPost.child("Q16").setValue(Val16);
+                    newPost.child("Q17").setValue(Val17);
+                    newPost.child("Q18").setValue(Val18);
+                    newPost.child("Q19").setValue(Val19);
+                    newPost.child("Q20").setValue(Val20);
+                    newPost.child("Q21").setValue(Val21);
+                    newPost.child("Q22").setValue(Val22);
+                    newPost.child("Q23").setValue(Val23);
+                    newPost.child("Q24").setValue(Val24);
+                    newPost.child("Q25").setValue(Val25)
                             .addOnCompleteListener(new OnCompleteListener<Void>() {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {

@@ -42,7 +42,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
     Button pushBtn;
 
     TextView genderBefore, genderAfter, genderInformant, AdoptedText, State, LocalGov, MemberOccupationBefore, MemberOccupationAfter,
-            RespondentIncomeBefore, RespondentIncomeAfter, WaterSourcesText, ElectricitySource, WaterConditionsText, ElectricityCondition;
+            RespondentIncomeBefore, RespondentIncomeAfter, ElectricitySource, ElectricityCondition;
 
     TextView waterSourceText, waterConditionText;
 
@@ -228,87 +228,6 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
 
     public void Submit(View view) {
         Submit();
-
-        State.setText("");
-        LocalGov.setText("");
-        TownVillage.setText("");
-        Longitude.setText("");
-        Latitude.setText("");
-        Status.setText("");
-        Population.setText("");
-
-        genderBefore.setText("");
-        genderAfter.setText("");
-        ageBefore.setText("");
-        ageAfter.setText("");
-        genderInformant.setText("");
-        ageInformant.setText("");
-
-        HouseHoldSizeAdultMaleBefore.setText("");
-        HouseHoldSizeAdultFemaleBefore.setText("");
-        HouseHoldSizeChildrenMaleBefore.setText("");
-        HouseHoldSizeChildrenFemaleBefore.setText("");
-        HouseHoldSizeAdultMaleAfter.setText("");
-        HouseHoldSizeAdultFemaleAfter.setText("");
-        HouseHoldSizeChildrenMaleAfter.setText("");
-        HouseHoldSizeChildrenFemaleAfter.setText("");
-        AdoptedText = findViewById(R.id.AdoptedText);
-        HouseHoldSizeAdoptedNumber.setText("");
-        HouseHoldSizeAdoptedNames.setText("");
-        HouseHoldMemberConditionElderlyBefore.setText("");
-        HouseHoldMemberConditionDisabledBefore.setText("");
-        HouseHoldMemberConditionPregnantBefore.setText("");
-        HouseHoldMemberConditionLactatingBefore.setText("");
-        HouseHoldMemberConditionInfantBefore.setText("");
-        HouseHoldMemberConditionChildrenBefore.setText("");
-        HouseHoldMemberConditionElderlyAfter.setText("");
-        HouseHoldMemberConditionDisabledAfter.setText("");
-        HouseHoldMemberConditionPregnantAfter.setText("");
-        HouseHoldMemberConditionLactatingAfter.setText("");
-        HouseHoldMemberConditionInfantAfter.setText("");
-        HouseHoldMemberConditionChildrenAfter.setText("");
-        HouseHoldMemberAdultMaleLostAfter.setText("");
-        HouseHoldMemberAdultFemaleLostAfter.setText("");
-        HouseHoldMemberChildrenLostAfter.setText("");
-
-        MemberQualificationBefore.setText("");
-        MemberQualificationAfter.setText("");
-        MemberOccupationBefore.setText("");
-        MemberOccupationAfter.setText("");
-        MemberOtherOccupationBefore.setText("");
-        MemberOtherOccupationAfter.setText("");
-        RespondentIncomeBefore.setText("");
-        RespondentIncomeAfter.setText("");
-
-        ElectricitySource.setText("");
-        ElectricityCondition.setText("");
-        waterSourceText.setText("");
-        waterConditionText.setText("");
-
-        OrganizationBenefit.setText("");
-        OrganizationBenefitYes.setText("");
-        OrganizationBenefitSpecify.setText("");
-
-        Livelihood.setText("");
-        LivelihoodBeforeDisplaced.setText("");
-        LivelihoodAfterDisplaced.setText("");
-        LivelihoodHowLong.setText("");
-        LivelihoodTimes.setText("");
-        LivelihoodYear.setText("");
-        LivelihoodItemLost.setText("");
-        LivelihoodHowMany.setText("");
-        LivelihoodMemberNotRelocated.setText("");
-        LivelihoodMemberReturned.setText("");
-        LivelihoodReturneesCondition.setText("");
-        LivelihoodReturneesAdjusting.setText("");
-        LivelihoodReturneesAdjustingMeans.setText("");
-        LivelihoodReturneesLivelyUnable.setText("");
-        LivelihoodReturneesLivelyNeeds.setText("");
-        LivelihoodInterventions.setText("");
-        LivelihoodMedicalPsycho.setText("");
-        LivelihoodReturneeAssistance.setText("");
-        LivelihoodReturneesOrganizationAssistant.setText("");
-        LivelihoodHouseholdSustainable.setText("");
     }
 
     private void Submit() {
@@ -343,8 +262,8 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
 
         final String Val7 = ElectricitySource.getText().toString().trim();
         final String Val8 = ElectricityCondition.getText().toString().trim();
-        final String Val9 = WaterSourcesText.getText().toString().trim();
-        final String Val10 = WaterConditionsText.getText().toString().trim();
+        final String Val9 = waterSourceText.getText().toString().trim();
+        final String Val10 = waterConditionText.getText().toString().trim();
 
         final String Val18 = OrganizationBenefit.getText().toString().trim();
         final String Val19 = OrganizationBenefitYes.getText().toString().trim();
@@ -468,6 +387,88 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
                 !TextUtils.isEmpty(Val40)&&
                 !TextUtils.isEmpty(Val41)&&
                 !TextUtils.isEmpty(Val42)){
+
+            State.setText("");
+            LocalGov.setText("");
+            TownVillage.setText("");
+            Longitude.setText("");
+            Latitude.setText("");
+            Status.setText("");
+            Population.setText("");
+
+            genderBefore.setText("");
+            genderAfter.setText("");
+            ageBefore.setText("");
+            ageAfter.setText("");
+            genderInformant.setText("");
+            ageInformant.setText("");
+
+            HouseHoldSizeAdultMaleBefore.setText("");
+            HouseHoldSizeAdultFemaleBefore.setText("");
+            HouseHoldSizeChildrenMaleBefore.setText("");
+            HouseHoldSizeChildrenFemaleBefore.setText("");
+            HouseHoldSizeAdultMaleAfter.setText("");
+            HouseHoldSizeAdultFemaleAfter.setText("");
+            HouseHoldSizeChildrenMaleAfter.setText("");
+            HouseHoldSizeChildrenFemaleAfter.setText("");
+            AdoptedText.setText("");
+            HouseHoldSizeAdoptedNumber.setText("");
+            HouseHoldSizeAdoptedNames.setText("");
+            HouseHoldMemberConditionElderlyBefore.setText("");
+            HouseHoldMemberConditionDisabledBefore.setText("");
+            HouseHoldMemberConditionPregnantBefore.setText("");
+            HouseHoldMemberConditionLactatingBefore.setText("");
+            HouseHoldMemberConditionInfantBefore.setText("");
+            HouseHoldMemberConditionChildrenBefore.setText("");
+            HouseHoldMemberConditionElderlyAfter.setText("");
+            HouseHoldMemberConditionDisabledAfter.setText("");
+            HouseHoldMemberConditionPregnantAfter.setText("");
+            HouseHoldMemberConditionLactatingAfter.setText("");
+            HouseHoldMemberConditionInfantAfter.setText("");
+            HouseHoldMemberConditionChildrenAfter.setText("");
+            HouseHoldMemberAdultMaleLostAfter.setText("");
+            HouseHoldMemberAdultFemaleLostAfter.setText("");
+            HouseHoldMemberChildrenLostAfter.setText("");
+
+            MemberQualificationBefore.setText("");
+            MemberQualificationAfter.setText("");
+            MemberOccupationBefore.setText("");
+            MemberOccupationAfter.setText("");
+            MemberOtherOccupationBefore.setText("");
+            MemberOtherOccupationAfter.setText("");
+            RespondentIncomeBefore.setText("");
+            RespondentIncomeAfter.setText("");
+
+            ElectricitySource.setText("");
+            ElectricityCondition.setText("");
+            waterSourceText.setText("");
+            waterConditionText.setText("");
+
+            OrganizationBenefit.setText("");
+            OrganizationBenefitYes.setText("");
+            OrganizationBenefitSpecify.setText("");
+
+            Livelihood.setText("");
+            LivelihoodBeforeDisplaced.setText("");
+            LivelihoodAfterDisplaced.setText("");
+            LivelihoodHowLong.setText("");
+            LivelihoodTimes.setText("");
+            LivelihoodYear.setText("");
+            LivelihoodItemLost.setText("");
+            LivelihoodHowMany.setText("");
+            LivelihoodMemberNotRelocated.setText("");
+            LivelihoodMemberReturned.setText("");
+            LivelihoodReturneesCondition.setText("");
+            LivelihoodReturneesAdjusting.setText("");
+            LivelihoodReturneesAdjustingMeans.setText("");
+            LivelihoodReturneesLivelyUnable.setText("");
+            LivelihoodReturneesLivelyNeeds.setText("");
+            LivelihoodInterventions.setText("");
+            LivelihoodMedicalPsycho.setText("");
+            LivelihoodReturneeAssistance.setText("");
+            LivelihoodReturneesOrganizationAssistant.setText("");
+            LivelihoodHouseholdSustainable.setText("");
+
             final DatabaseReference newPost = mDatabase.push();
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
