@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.Spinner;
@@ -22,19 +23,29 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class KeyInformants extends AppCompatActivity {
+public class KeyInformants extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextInputEditText State, LocalGov, TownVillage, Longitude, Latitude, Status, Population, COMMUNITYSizeAdultMaleBefore, COMMUNITYSizeAdultFemaleBefore,
+    TextInputEditText  TownVillage, Longitude, Latitude, Status, Population, COMMUNITYSizeAdultMaleBefore, COMMUNITYSizeAdultFemaleBefore,
             COMMUNITYSizeChildrenMaleBefore, COMMUNITYSizeChildrenFemaleBefore, COMMUNITYSizeAdultMaleAfter, COMMUNITYSizeAdultFemaleAfter, COMMUNITYSizeChildrenMaleAfter,
             COMMUNITYSizeChildrenFemaleAfter, COMMUNITYMemberConditionElderlyBefore, COMMUNITYMemberConditionDisabledBefore, COMMUNITYMemberConditionPregnantBefore,
             COMMUNITYMemberConditionLactatingBefore, COMMUNITYMemberConditionInfantBefore, COMMUNITYMemberConditionChildrenBefore, COMMUNITYMemberConditionElderlyAfter,
             COMMUNITYMemberConditionDisabledAfter, COMMUNITYMemberConditionPregnantAfter, COMMUNITYMemberConditionLactatingAfter, COMMUNITYMemberConditionInfantAfter,
             COMMUNITYMemberConditionChildrenAfter, AttackedDeath, AttackedMissing, AttacksNumber, COMMUNITYMemberAdultMaleLostAfter, COMMUNITYMemberAdultFemaleLostAfter,
-            COMMUNITYMemberChildrenLostAfter, KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, KeyMemberOtherOccupationBefore,
-            KeyMemberOtherOccupationAfter, LGASecretariat, EmirPalace, DHsPalace, VillageHeadPalace, TownHall, PlayGroundCenter, Primary, Secondary, Technical,
-            Commercial, Tertiary, OtherSchool, PrimaryClassRoom, SecondaryClassRoom, TechnicalClassRoom, CommercialClassRoom, TertiaryClassRoom, IslamiyaClassRoom,
-            OtherSchoolClassRoom, PrimaryWorkshop, SecondaryWorkshop, TechnicalWorkshop, CommercialWorkshop, TertiaryWorkshop, IslamiyaWorkshop, OtherSchoolWorkshop,
-            ToiletFacilities, StaffHousing, Fencing, StaffPrimary, StaffSecondary, StaffTechnical, StaffCommercial, StaffTertiary, StaffIslamiya, StaffOther,
+            COMMUNITYMemberChildrenLostAfter, OtherSchool,
+            OtherSchoolClassRoom,
+            Vigelante, OtherSecurity,
+            OtherCourt, OtherBank, InsuranceCompanies, Factories, OtherMarket, Hotels, Tourist, Mosques,
+            Church, Shrine, NGOsCBOs;
+
+    EditText ageCOMMUNITYBefore, ageCOMMUNITYAfter, CommunityInformantAge;
+
+    TextView genderBefore, genderAfter, genderInformant, LGASecretariat, State, LocalGov, EmirPalace, KeyMemberOtherOccupationAfter, DHsPalace, VillageHeadPalace,
+            TownHall, PlayGroundCenter, Primary, Secondary, Technical, Commercial, Tertiary, PrimaryClassRoom, SecondaryClassRoom, TechnicalClassRoom,
+            CommercialClassRoom, TertiaryClassRoom, IslamiyaClassRoom, Banks, BanksCondition,
+            PrimaryWorkshop, SecondaryWorkshop, TechnicalWorkshop, CommercialWorkshop, TertiaryWorkshop, IslamiyaWorkshop, OtherSchoolWorkshop,
+            OtherFire, DailyMarket, WeeklyMarket, LivestockMarket, SuperMarkets, FireService, PrintMedia, SocialMedia, PrivateTelevisionService,
+            ArmyFormationAndCommand, ArmyBarracks, PoliceStation, PoliceBarracks, DeptStateServices, CivilDefence, ImmigrationService, CustomService,
+            StaffPrimary, StaffSecondary, StaffTechnical, StaffCommercial, StaffTertiary, StaffIslamiya, StaffOther,
             NonStaffPrimary, NonStaffSecondary, NonStaffTechnical, NonStaffCommercial, NonStaffTertiary, NonStaffIslamiya, NonStaffOther, SportingPrimary, SportingSecondary,
             SportingTechnical, SportingCommercial, SportingTertiary, SportingIslamiya, SportingOther, OtherStaffHousing, StudentHostel, OtherToiletFacilities,
             PerimeterFence, OwnerShipPrimary, OwnerShipSecondary, OwnerShipTechnical, OwnerShipCommercial, OwnerShipTertiary, OwnerShipIslamiya, OwnerShipOther,
@@ -44,14 +55,8 @@ public class KeyInformants extends AppCompatActivity {
             Nutritionist, PublicHealthOfficers, CommunityHealthOfficers, CommunityHealth, ExtensionOfficers, EnvironmentalHealthOfficers, PsychSocial, TraditionalMidwives,
             SourceWater, Condition, ElectricitySource, ElectricityCondition, Roads, RoadsCondition, Railway, RailwayConditions, RailwayFlowSchedule, Airport, AirportConditions,
             SeaTransport, SeaConditions, Communication, InternationalRadio, FederalRadio, StateRadio, PrivateRadio, SateliteTelevision, NTAService, StateTelevisionStation,
-            PrivateTelevisionService, SocialMedia, PrintMedia, FireService, ArmyFormationAndCommand, ArmyBarracks, PoliceStation, PoliceBarracks, DeptStateServices, CivilDefence,
-            ImmigrationService, CustomService, PrisonService, Vigelante, OtherSecurity, FederalHighCourt, ShariaCourtOfAppeal, IndustrialCourt, StateHighCourt, MagistrateCourt, CustomaryCourt,
-            OtherCourt, Banks, BanksCondition, InsuranceCompanies, Factories, DailyMarket, WeeklyMarket, LivestockMarket, SuperMarkets, OtherMarket, Hotels, Tourist, Mosques,
-            Church, Shrine, NGOsCBOs;
-
-    EditText ageCOMMUNITYBefore, ageCOMMUNITYAfter, CommunityInformantAge;
-
-    TextView genderBefore, genderAfter, genderInformant;
+            PrisonService, FederalHighCourt, ShariaCourtOfAppeal, IndustrialCourt, StateHighCourt, MagistrateCourt, CustomaryCourt, Communication1, Communication2, Communication3, Communication4,
+            KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, KeyMemberOtherOccupationBefore;
 
     private DatabaseReference mDatabase;
 
@@ -84,6 +89,56 @@ public class KeyInformants extends AppCompatActivity {
         genderBefore = findViewById(R.id.COMMUNITYGenderBefore);
         genderAfter = findViewById(R.id.COMMUNITYGenderAfter);
         genderInformant = findViewById(R.id.InformantGenderText);
+
+
+        Spinner state = findViewById(R.id.StateSpinner);
+        ArrayAdapter<CharSequence> adapterState = ArrayAdapter.createFromResource(this, R.array.states, android.R.layout.simple_spinner_item);
+        adapterState.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        state.setAdapter(adapterState);
+        state.setOnItemSelectedListener(this);
+
+        Spinner localGov = findViewById(R.id.LocalGovSpinner);
+        ArrayAdapter<CharSequence> adapterLocal = ArrayAdapter.createFromResource(this, R.array.local_governments, android.R.layout.simple_spinner_item);
+        adapterLocal.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        localGov.setAdapter(adapterLocal);
+        localGov.setOnItemSelectedListener(this);
+
+        Spinner occupationBefore = findViewById(R.id.cOccupationBeforeSpinner);
+        ArrayAdapter<CharSequence> adapterOccupationBefore = ArrayAdapter.createFromResource(this, R.array.occupation, android.R.layout.simple_spinner_item);
+        adapterOccupationBefore.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        occupationBefore.setAdapter(adapterOccupationBefore);
+        occupationBefore.setOnItemSelectedListener(this);
+
+        Spinner occupationAfter = findViewById(R.id.cOccupationAfterSpinner);
+        ArrayAdapter<CharSequence> adapteroccupationAfter = ArrayAdapter.createFromResource(this, R.array.occupation, android.R.layout.simple_spinner_item);
+        adapteroccupationAfter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        occupationAfter.setAdapter(adapteroccupationAfter);
+        occupationAfter.setOnItemSelectedListener(this);
+
+        Spinner WaterSource = findViewById(R.id.cWaterSourceSpinner);
+        ArrayAdapter<CharSequence> waterSource = ArrayAdapter.createFromResource(this, R.array.water_source, android.R.layout.simple_spinner_item);
+        waterSource.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        WaterSource.setAdapter(waterSource);
+        WaterSource.setOnItemSelectedListener(this);
+
+        Spinner WaterSourceCondition = findViewById(R.id.cWaterConditionSpinner);
+        ArrayAdapter<CharSequence> waterSourceCondition = ArrayAdapter.createFromResource(this, R.array.water_source, android.R.layout.simple_spinner_item);
+        waterSourceCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        WaterSourceCondition.setAdapter(waterSourceCondition);
+        WaterSourceCondition.setOnItemSelectedListener(this);
+
+        Spinner SourceElectricity = findViewById(R.id.cElectricitySourceSpinner);
+        ArrayAdapter<CharSequence> adapterElectricity = ArrayAdapter.createFromResource(this, R.array.electricity, android.R.layout.simple_spinner_item);
+        adapterElectricity.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        SourceElectricity.setAdapter(adapterElectricity);
+        SourceElectricity.setOnItemSelectedListener(this);
+
+        Spinner SourceElectricityCondition = findViewById(R.id.cConditionElectricitySpinner);
+        ArrayAdapter<CharSequence> adapterElectricityCondition = ArrayAdapter.createFromResource(this, R.array.electricity, android.R.layout.simple_spinner_item);
+        adapterElectricityCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        SourceElectricityCondition.setAdapter(adapterElectricityCondition);
+        SourceElectricityCondition.setOnItemSelectedListener(this);
+
 
         //General
 
@@ -121,162 +176,151 @@ public class KeyInformants extends AppCompatActivity {
         COMMUNITYMemberAdultMaleLostAfter = findViewById(R.id.COMMUNITYMemberAdultMaleLostAfter);
         COMMUNITYMemberAdultFemaleLostAfter = findViewById(R.id.COMMUNITYMemberAdultFemaleLostAfter);
         COMMUNITYMemberChildrenLostAfter = findViewById(R.id.COMMUNITYMemberChildrenLostAfter);
-        KeyMemberQualificationBefore = findViewById(R.id.KeyMemberQualificationBefore);
-        KeyMemberQualificationAfter = findViewById(R.id.KeyMemberQualificationAfter);
-        KeyMemberOccupationBefore = findViewById(R.id.KeyMemberOccupationBefore);
-        KeyMemberOccupationAfter = findViewById(R.id.KeyMemberOccupationAfter);
-        KeyMemberOtherOccupationBefore = findViewById(R.id.KeyMemberOtherOccupationBefore);
-        KeyMemberOtherOccupationAfter = findViewById(R.id.KeyMemberOtherOccupationAfter);
-        LGASecretariat = findViewById(R.id.LGASecretariat);
-        EmirPalace = findViewById(R.id.EmirPalace);
-        DHsPalace = findViewById(R.id.DHsPalace);
-        VillageHeadPalace = findViewById(R.id.VillageHeadPalace);
-        TownHall = findViewById(R.id.TownHall);
-        PlayGroundCenter = findViewById(R.id.PlayGroundCenter);
-        Primary = findViewById(R.id.Primary);
-        Secondary = findViewById(R.id.Secondary);
-        Technical = findViewById(R.id.Technical);
-        Commercial =  findViewById(R.id.Commercial);
-        Tertiary = findViewById(R.id.Tertiary);
+        KeyMemberQualificationBefore = findViewById(R.id.cQualificationBefore);
+        KeyMemberQualificationAfter = findViewById(R.id.cQualificationAfter);
+        KeyMemberOccupationBefore = findViewById(R.id.cOccupationBefore);
+        KeyMemberOccupationAfter = findViewById(R.id.cOccupationAfter);
+        KeyMemberOtherOccupationBefore = findViewById(R.id.cOccupationOther);
+        LGASecretariat = findViewById(R.id.LGASecretariatText);
+        EmirPalace = findViewById(R.id.EmirTextText);
+        DHsPalace = findViewById(R.id.DHsPalaceText);
+        VillageHeadPalace = findViewById(R.id.VillageHeadPalacePalaceText);
+        TownHall = findViewById(R.id.TownHallText);
+        PlayGroundCenter = findViewById(R.id.PlayGroundCenterText);
+        Primary = findViewById(R.id.PrimaryText);
+        Secondary = findViewById(R.id.SecondaryText);
+        Technical = findViewById(R.id.TechnicalText);
+        Commercial =  findViewById(R.id.CommercialText);
+        Tertiary = findViewById(R.id.TertiaryText);
         OtherSchool = findViewById(R.id.OtherSchool);
-        PrimaryClassRoom = findViewById(R.id.PrimaryClassRoom);
-        SecondaryClassRoom = findViewById(R.id.SecondaryClassRoom);
-        TechnicalClassRoom = findViewById(R.id.TechnicalClassRoom);
-        CommercialClassRoom = findViewById(R.id.CommercialClassRoom);
-        TertiaryClassRoom = findViewById(R.id.TertiaryClassRoom);
-        IslamiyaClassRoom = findViewById(R.id.IslamiyaClassRoom);
+        PrimaryClassRoom = findViewById(R.id.ClassroomPrimaryText);
+        SecondaryClassRoom = findViewById(R.id.ClassroomSecondaryText);
+        TechnicalClassRoom = findViewById(R.id.ClassroomTechnicalText);
+        CommercialClassRoom = findViewById(R.id.ClassroomCommercialText);
+        TertiaryClassRoom = findViewById(R.id.ClassroomTertiaryText);
+        IslamiyaClassRoom = findViewById(R.id.ClassroomIslamiyaText);
         OtherSchoolClassRoom = findViewById(R.id.OtherSchoolClassRoom);
-        PrimaryWorkshop = findViewById(R.id.PrimaryWorkshop);
-        SecondaryWorkshop = findViewById(R.id.SecondaryWorkshop);
-        TechnicalWorkshop =  findViewById(R.id.TechnicalWorkshop);
-        CommercialWorkshop = findViewById(R.id.CommercialWorkshop);
-        TertiaryWorkshop = findViewById(R.id.TertiaryWorkshop);
-        IslamiyaWorkshop = findViewById(R.id.IslamiyaWorkshop);
+        PrimaryWorkshop = findViewById(R.id.LaboratoriesPrimaryText);
+        SecondaryWorkshop = findViewById(R.id.LaboratoriesSecondaryText);
+        TechnicalWorkshop =  findViewById(R.id.LaboratoriesTechnicalText);
+        CommercialWorkshop = findViewById(R.id.LaboratoriesCommercialText);
+        TertiaryWorkshop = findViewById(R.id.LaboratoriesTertiaryText);
+        IslamiyaWorkshop = findViewById(R.id.LaboratoriesIslamiyaText);
         OtherSchoolWorkshop = findViewById(R.id.OtherSchoolWorkshop);
-        ToiletFacilities = findViewById(R.id.ToiletFacilities);
-        StaffHousing = findViewById(R.id.StaffHousing);
-        Fencing = findViewById(R.id.Fencing);
-        StaffPrimary = findViewById(R.id.StaffPrimary);
-        StaffSecondary = findViewById(R.id.StaffSecondary);
-        StaffTechnical = findViewById(R.id.StaffTechnical);
-        StaffCommercial = findViewById(R.id.StaffCommercial);
-        StaffTertiary = findViewById(R.id.StaffTertiary);
-        StaffIslamiya = findViewById(R.id.StaffIslamiya);
+        StaffPrimary = findViewById(R.id.TeachersPrimaryText);
+        StaffSecondary = findViewById(R.id.TeachersSecondaryText);
+        StaffTechnical = findViewById(R.id.TeachersTechnicalText);
+        StaffCommercial = findViewById(R.id.TeachersCommercialText);
+        StaffTertiary = findViewById(R.id.TeachersTertiaryText);
+        StaffIslamiya = findViewById(R.id.TeachersIslamiyaText);
         StaffOther = findViewById(R.id.StaffOther);
-        NonStaffPrimary = findViewById(R.id.NonStaffPrimary);
-        NonStaffSecondary = findViewById(R.id.NonStaffSecondary);
-        NonStaffTechnical = findViewById(R.id.NonStaffTechnical);
-        NonStaffCommercial = findViewById(R.id.NonStaffCommercial);
-        NonStaffTertiary = findViewById(R.id.NonStaffTertiary);
-        NonStaffIslamiya = findViewById(R.id.NonStaffIslamiya);
+        NonStaffPrimary = findViewById(R.id.NonStaffPrimaryText);
+        NonStaffSecondary = findViewById(R.id.NonStaffSecondaryText);
+        NonStaffTechnical = findViewById(R.id.NonStaffTechnicalText);
+        NonStaffCommercial = findViewById(R.id.NonStaffCommercialText);
+        NonStaffTertiary = findViewById(R.id.NonStaffTertiaryText);
+        NonStaffIslamiya = findViewById(R.id.NonStaffIslamiyaText);
         NonStaffOther = findViewById(R.id.NonStaffOther);
-        SportingPrimary = findViewById(R.id.SportingPrimary);
-        SportingSecondary = findViewById(R.id.SportingSecondary);
-        SportingTechnical = findViewById(R.id.SportingTechnical);
-        SportingCommercial = findViewById(R.id.SportingCommercial);
-        SportingTertiary = findViewById(R.id.SportingTertiary);
-        SportingIslamiya = findViewById(R.id.SportingIslamiya);
+        SportingPrimary = findViewById(R.id.SportingText);
+        SportingSecondary = findViewById(R.id.SportingSecondaryText);
+        SportingTechnical = findViewById(R.id.SportingTechnicalText);
+        SportingCommercial = findViewById(R.id.SportingCommercialText);
+        SportingTertiary = findViewById(R.id.SportingTertiaryText);
+        SportingIslamiya = findViewById(R.id.SportingIslamiyaText);
         SportingOther = findViewById(R.id.SportingOther);
-        OtherStaffHousing = findViewById(R.id.OtherStaffHousing);
-        StudentHostel = findViewById(R.id.StudentHostel);
-        OtherToiletFacilities = findViewById(R.id.OtherToiletFacilities);
-        PerimeterFence = findViewById(R.id.PerimeterFence);
-        OwnerShipPrimary = findViewById(R.id.OwnerShipPrimary);
-        OwnerShipSecondary = findViewById(R.id.OwnerShipSecondary);
-        OwnerShipTechnical = findViewById(R.id.OwnerShipTechnical);
-        OwnerShipCommercial = findViewById(R.id.OwnerShipCommercial);
-        OwnerShipTertiary = findViewById(R.id.OwnerShipTertiary);
-        OwnerShipIslamiya = findViewById(R.id.OwnerShipIslamiya);
+        OtherStaffHousing = findViewById(R.id.StaffHousingText);
+        StudentHostel = findViewById(R.id.StudentsHostelText);
+        OtherToiletFacilities = findViewById(R.id.ToiletText);
+        PerimeterFence = findViewById(R.id.PerimeterText);
+        OwnerShipPrimary = findViewById(R.id.OwnershipPrimaryText);
+        OwnerShipSecondary = findViewById(R.id.OwnershipSecondaryText);
+        OwnerShipTechnical = findViewById(R.id.OwnershipTechnicalText);
+        OwnerShipCommercial = findViewById(R.id.OwnershipCommercialText);
+        OwnerShipTertiary = findViewById(R.id.OwnershipTertiaryText);
+        OwnerShipIslamiya = findViewById(R.id.OwnershipIslamiyaText);
         OwnerShipOther = findViewById(R.id.OwnerShipOther);
-        HealthPost = findViewById(R.id.HealthPost);
-        HealthCenter = findViewById(R.id.HealthCenter);
-        PrimaryHealthCenter = findViewById(R.id.PrimaryHealthCenter);
-        PrivateHospital = findViewById(R.id.PrivateHospital);
-        GeneralHospital = findViewById(R.id.GeneralHospital);
-        FMCSpecialistHospital = findViewById(R.id.FMCSpecialistHospital);
+        HealthPost = findViewById(R.id.HealthPostText);
+        HealthCenter = findViewById(R.id.HealthCenterText);
+        PrimaryHealthCenter = findViewById(R.id.PrimaryHealthCenterText);
+        PrivateHospital = findViewById(R.id.PrivateHospitalText);
+        GeneralHospital = findViewById(R.id.GeneralHospitalText);
+        FMCSpecialistHospital = findViewById(R.id.FMCHospitalText);
         OtherHospitals = findViewById(R.id.OtherHospitals);
-        OperationTheater = findViewById(R.id.OperationTheater);
-        Laboratories = findViewById(R.id.Laboratories);
-        Mortuary = findViewById(R.id.Mortuary);
-        Ambulances = findViewById(R.id.Ambulances);
-        Maternity = findViewById(R.id.Maternity);
-        NutritionalServices = findViewById(R.id.NutritionalServices);
-        Pharmaceuticals = findViewById(R.id.Pharmaceuticals);
-        StaffAccommodation = findViewById(R.id.StaffAccommodation);
-        ElectricitySupply = findViewById(R.id.ElectricitySupply);
-        ColdStore = findViewById(R.id.ColdStore);
-        Doctors = findViewById(R.id.Doctors);
-        Nurses = findViewById(R.id.Nurses);
-        Midwives = findViewById(R.id.Midwives);
-        NursesMidwives = findViewById(R.id.NursesMidwives);
-        Pharmacists = findViewById(R.id.Pharmacists);
-        Radiographers = findViewById(R.id.Radiographers);
-        PharmacyTechnicians = findViewById(R.id.PharmacyTechnicians);
-        MedicalLabScientist = findViewById(R.id.MedicalLabScientist);
-        PharmacyAssistant = findViewById(R.id.PharmacyAssistant);
-        LaboratoryTechnicians = findViewById(R.id.LaboratoryTechnicians);
-        LaboratoryAssistant = findViewById(R.id.LaboratoryAssistant);
-        HealthSocialWorkers = findViewById(R.id.HealthSocialWorkers);
-        Nutritionist = findViewById(R.id.Nutritionist);
-        PublicHealthOfficers = findViewById(R.id.PublicHealthOfficers);
-        CommunityHealthOfficers = findViewById(R.id.CommunityHealthOfficers);
-        CommunityHealth = findViewById(R.id.CommunityHealth);
-        ExtensionOfficers = findViewById(R.id.ExtensionOfficers);
-        EnvironmentalHealthOfficers = findViewById(R.id.EnvironmentalHealthOfficers);
-        PsychSocial = findViewById(R.id.PsychSocial);
-        TraditionalMidwives = findViewById(R.id.TraditionalMidwives);
-        SourceWater = findViewById(R.id.SourceWater);
-        Condition = findViewById(R.id.Condition);
-        ElectricitySource = findViewById(R.id.ElectricitySource);
-        ElectricityCondition = findViewById(R.id.ElectricityCondition);
-        Roads = findViewById(R.id.Roads);
-        RoadsCondition = findViewById(R.id.RoadsCondition);
-        Railway = findViewById(R.id.Railway);
-        RailwayConditions = findViewById(R.id.RailwayConditions);
-        RailwayFlowSchedule = findViewById(R.id.RailwayFlowSchedule);
-        Airport = findViewById(R.id.Airport);
-        AirportConditions = findViewById(R.id.AirportConditions);
-        SeaTransport = findViewById(R.id.SeaTransport);
-        SeaConditions = findViewById(R.id.SeaConditions);
-        Communication = findViewById(R.id.Communication);
-        InternationalRadio = findViewById(R.id.InternationalRadio);
-        FederalRadio = findViewById(R.id.FederalRadio);
-        StateRadio = findViewById(R.id.StateRadio);
-        PrivateRadio = findViewById(R.id.PrivateRadio);
-        SateliteTelevision = findViewById(R.id.SateliteTelevision);
-        NTAService = findViewById(R.id.NTAService);
-        StateTelevisionStation = findViewById(R.id.StateTelevisionStation);
-        PrivateTelevisionService = findViewById(R.id.PrivateTelevisionService);
-        SocialMedia = findViewById(R.id.SocialMedia);
-        PrintMedia = findViewById(R.id.PrintMedia);
-        FireService = findViewById(R.id.FireService);
-        ArmyFormationAndCommand = findViewById(R.id.ArmyFormationAndCommand);
-        ArmyBarracks = findViewById(R.id.ArmyBarracks);
-        PoliceStation = findViewById(R.id.PoliceStation);
-        PoliceBarracks = findViewById(R.id.PoliceBarracks);
-        DeptStateServices = findViewById(R.id.DeptStateServices);
-        CivilDefence = findViewById(R.id.CivilDefence);
-        ImmigrationService = findViewById(R.id.ImmigrationService);
-        CustomService = findViewById(R.id.CustomService);
-        PrisonService = findViewById(R.id.PrisonService);
-        Vigelante = findViewById(R.id.Vigelante);
-        OtherSecurity = findViewById(R.id.OtherSecurity);
-        FederalHighCourt = findViewById(R.id.FederalHighCourt);
-        ShariaCourtOfAppeal = findViewById(R.id.ShariaCourtOfAppeal);
-        IndustrialCourt = findViewById(R.id.IndustrialCourt);
-        StateHighCourt = findViewById(R.id.StateHighCourt);
-        MagistrateCourt = findViewById(R.id.MagistrateCourt);
-        CustomaryCourt = findViewById(R.id.CustomaryCourt);
-        OtherCourt = findViewById(R.id.OtherCourt);
-        Banks = findViewById(R.id.Banks);
-        BanksCondition = findViewById(R.id.BanksCondition);
+        OperationTheater = findViewById(R.id.OperationTheatersText);
+        Laboratories = findViewById(R.id.LaboratoriesText);
+        Mortuary = findViewById(R.id.MortuaryText);
+        Ambulances = findViewById(R.id.AmbulancesText);
+        Maternity = findViewById(R.id.ChildcareText);
+        NutritionalServices = findViewById(R.id.NutritionalServicesText);
+        Pharmaceuticals = findViewById(R.id.PharmaceuticalsText);
+        StaffAccommodation = findViewById(R.id.StaffAccommodationText);
+        ElectricitySupply = findViewById(R.id.ElectricityText);
+        ColdStore = findViewById(R.id.ColdStoreText);
+        Doctors = findViewById(R.id.DoctorsText);
+        Nurses = findViewById(R.id.NursesText);
+        Midwives = findViewById(R.id.MidwivesText);
+        NursesMidwives = findViewById(R.id.NursesMidwivesText);
+        Pharmacists = findViewById(R.id.PharmacistText);
+        Radiographers = findViewById(R.id.RadiographersText);
+        PharmacyTechnicians = findViewById(R.id.PharmacyTechniciansText);
+        MedicalLabScientist = findViewById(R.id.MedicalLabScientistText);
+        PharmacyAssistant = findViewById(R.id.PharmacyAssistantText);
+        LaboratoryAssistant = findViewById(R.id.LaboratoryAssistantText);
+        HealthSocialWorkers = findViewById(R.id.HealthSocialWorkersText);
+        Nutritionist = findViewById(R.id.NutritionistText);
+        PublicHealthOfficers = findViewById(R.id.PublicHealthOfficersText);
+        CommunityHealthOfficers = findViewById(R.id.CommunityHealthOfficersText);
+        ExtensionOfficers = findViewById(R.id.ExtensionOfficersText);
+        EnvironmentalHealthOfficers = findViewById(R.id.EnvromentalOfficersText);
+        PsychSocial = findViewById(R.id.PsychoSocialText);
+        TraditionalMidwives = findViewById(R.id.TradionalMidwivesText);
+        SourceWater = findViewById(R.id.cwaterConditionText);
+        ElectricitySource = findViewById(R.id.cElectricitySource);
+        Roads = findViewById(R.id.LateriteRoadText);
+        Railway = findViewById(R.id.RailwayText);
+        RailwayFlowSchedule = findViewById(R.id.RailwayFlowScheduleText);
+        Airport = findViewById(R.id.AirportText);
+        SeaTransport = findViewById(R.id.SeaPortText);
+        Communication1 = findViewById(R.id.AirtelText);
+        Communication2 = findViewById(R.id.MTNText);
+        Communication3 = findViewById(R.id.GloText);
+        Communication4 = findViewById(R.id.Mobile9Text);
+        InternationalRadio = findViewById(R.id.InternationalRadioText);
+        FederalRadio = findViewById(R.id.FederalRadioText);
+        StateRadio = findViewById(R.id.StateRadioText);
+        PrivateRadio = findViewById(R.id.PrivateRadioText);
+        SateliteTelevision = findViewById(R.id.SateliteText);
+        NTAService = findViewById(R.id.NTAServiceText);
+        StateTelevisionStation = findViewById(R.id.StateTelevisionText);
+        PrivateTelevisionService = findViewById(R.id.PrivateTelevisionText);
+        SocialMedia = findViewById(R.id.SocialMediaText);
+        PrintMedia = findViewById(R.id.NewspaperText);
+        FireService = findViewById(R.id.FireText);
+        OtherFire = findViewById(R.id.OtherFireText); //
+        ArmyFormationAndCommand = findViewById(R.id.ArmyText);
+        ArmyBarracks = findViewById(R.id.ArmyBarracksText);
+        PoliceStation = findViewById(R.id.PoliceText);
+        PoliceBarracks = findViewById(R.id.PoliceBarracksText);
+        DeptStateServices = findViewById(R.id.DeptText);
+        CivilDefence = findViewById(R.id.CivilText);
+        ImmigrationService = findViewById(R.id.ImmigrationText);
+        CustomService = findViewById(R.id.CustomsText);
+        PrisonService = findViewById(R.id.PrisonText);
+        FederalHighCourt = findViewById(R.id.FederalHighCourtText);
+        ShariaCourtOfAppeal = findViewById(R.id.ShariaCourtOfAppealText);
+        IndustrialCourt = findViewById(R.id.IndustrialCourtText);
+        StateHighCourt = findViewById(R.id.StateHighCourtText);
+        MagistrateCourt = findViewById(R.id.MagistrateCourtText);
+        CustomaryCourt = findViewById(R.id.CustomaryCourtText);
+        Banks = findViewById(R.id.cBankText);
+        BanksCondition = findViewById(R.id.cBankConditionText);
+        OtherBank = findViewById(R.id.OtherBank);
         InsuranceCompanies = findViewById(R.id.InsuranceCompanies);
         Factories = findViewById(R.id.Factories);
-        DailyMarket = findViewById(R.id.DailyMarket);
-        WeeklyMarket = findViewById(R.id.WeeklyMarket);
-        LivestockMarket = findViewById(R.id.LivestockMarket);
-        SuperMarkets = findViewById(R.id.SuperMarkets);
-        OtherMarket = findViewById(R.id.OtherMarket);
+        DailyMarket = findViewById(R.id.DailyMarketText);
+        WeeklyMarket = findViewById(R.id.WeeklyMarketText);
+        LivestockMarket = findViewById(R.id.LivestockMarketText);
+        SuperMarkets = findViewById(R.id.SuperMarketsText);
         Hotels = findViewById(R.id.Hotels);
         Tourist = findViewById(R.id.Tourist);
         Mosques = findViewById(R.id.Mosques);
@@ -353,9 +397,6 @@ public class KeyInformants extends AppCompatActivity {
         TertiaryWorkshop.setText("");
         IslamiyaWorkshop.setText("");
         OtherSchoolWorkshop.setText("");
-        ToiletFacilities.setText("");
-        StaffHousing.setText("");
-        Fencing.setText("");
         StaffPrimary.setText("");
         StaffSecondary.setText("");
         StaffTechnical.setText("");
@@ -553,9 +594,7 @@ public class KeyInformants extends AppCompatActivity {
         final String Val63 = TertiaryWorkshop.getText().toString().trim();
         final String Val64 = IslamiyaWorkshop.getText().toString().trim();
         final String Val65 = OtherSchoolWorkshop.getText().toString().trim();
-        final String Val66 = ToiletFacilities.getText().toString().trim();
-        final String Val67 = StaffHousing.getText().toString().trim();
-        final String Val68 = Fencing.getText().toString().trim();
+
         final String Val69 = StaffPrimary.getText().toString().trim();
         final String Val70 = StaffSecondary.getText().toString().trim();
         final String Val71 = StaffTechnical.getText().toString().trim();
@@ -670,6 +709,9 @@ public class KeyInformants extends AppCompatActivity {
         final String Val180 = OtherCourt.getText().toString().trim();
         final String Val181 = Banks.getText().toString().trim();
         final String Val182 = BanksCondition.getText().toString().trim();
+
+        final String Val000 = OtherBank.getText().toString().trim();
+
         final String Val183 = InsuranceCompanies.getText().toString().trim();
         final String Val184 = Factories.getText().toString().trim();
         final String Val185 = DailyMarket.getText().toString().trim();
@@ -757,9 +799,10 @@ public class KeyInformants extends AppCompatActivity {
                 !TextUtils.isEmpty(Val63)&&
                 !TextUtils.isEmpty(Val64)&&
                 !TextUtils.isEmpty(Val65)&&
-                !TextUtils.isEmpty(Val66)&&
-                !TextUtils.isEmpty(Val67)&&
-                !TextUtils.isEmpty(Val68)&&
+
+                !TextUtils.isEmpty(Val000)&&
+
+
                 !TextUtils.isEmpty(Val69)&&
                 !TextUtils.isEmpty(Val70)&&
                 !TextUtils.isEmpty(Val71)&&
@@ -961,9 +1004,8 @@ public class KeyInformants extends AppCompatActivity {
                     newPost.child("TertiaryWorkshop").setValue(Val63);
                     newPost.child("IslamiyaWorkshop").setValue(Val64);
                     newPost.child("OtherSchoolWorkshop").setValue(Val65);
-                    newPost.child("ToiletFacilities").setValue(Val66);
-                    newPost.child("StaffHousing").setValue(Val67);
-                    newPost.child("Fencing").setValue(Val68);
+
+
                     newPost.child("StaffPrimary").setValue(Val69);
                     newPost.child("StaffSecondary").setValue(Val70);
                     newPost.child("StaffTechnical").setValue(Val71);
@@ -1079,6 +1121,9 @@ public class KeyInformants extends AppCompatActivity {
                     newPost.child("CustomaryCourt").setValue(Val179);
                     newPost.child("OtherCourt").setValue(Val180);
                     newPost.child("Banks").setValue(Val181);
+
+                    newPost.child("OtherBanks").setValue(Val000);
+
                     newPost.child("BanksCondition").setValue(Val182);
                     newPost.child("InsuranceCompanies").setValue(Val183);
                     newPost.child("Factories").setValue(Val184);
@@ -1183,5 +1228,15 @@ public class KeyInformants extends AppCompatActivity {
     public void BackToMenu(View view) {
         Intent Back = new Intent(this, MenuScreen.class);
         startActivity(Back);
+    }
+
+    @Override
+    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+    }
+
+    @Override
+    public void onNothingSelected(AdapterView<?> adapterView) {
+
     }
 }

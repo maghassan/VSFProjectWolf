@@ -104,4 +104,44 @@
         <item>Immediate</item>
         <item>In the long term</item>
     </string-array>
+
+    <string-array name="banks">
+        <item>Select Bank</item>
+        <item>GT Bank</item>
+        <item>First Bank</item>
+        <item>Sky Bank</item>
+        <item>Union Bank</item>
+        <item>EcoBank</item>
+        <item>Zenith Bank</item>
+        <item>Access Bank</item>
+    </string-array>
+
+    <string-array name="education">
+        <item>Available (Adequate)</item>
+        <item>Available (Fairly Adequate)</item>
+        <item>Available (Inadequate)</item>
+        <item>Not Available</item>
+        <item>Training Received Since Insurgency</item>
+    </string-array>
+
+    <string-array name="school_type">
+        <item>Federal Government</item>
+        <item>State Government</item>
+        <item>Local Government</item>
+        <item>Faith Based</item>
+        <item>Private Individual</item>
+    </string-array>
+
+    <string-array name="ngo_type">
+        <item>Very Active</item>
+        <item>Fairly Active</item>
+        <item>Not Active</item>
+        <item>No NGOs or CBOs</item>
+    </string-array>
+
+    <string-array name="newspaper">
+        <item>Available Always</item>
+        <item>Available (Occasionally)</item>
+        <item>Not Available</item>
+    </string-array>
 </resources>
