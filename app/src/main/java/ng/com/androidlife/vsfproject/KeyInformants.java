@@ -43,7 +43,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             TownHall, PlayGroundCenter, Primary, Secondary, Technical, Commercial, Tertiary, PrimaryClassRoom, SecondaryClassRoom, TechnicalClassRoom,
             CommercialClassRoom, TertiaryClassRoom, IslamiyaClassRoom, Banks, BanksCondition,
             PrimaryWorkshop, SecondaryWorkshop, TechnicalWorkshop, CommercialWorkshop, TertiaryWorkshop, IslamiyaWorkshop, OtherSchoolWorkshop,
-            OtherFire, DailyMarket, WeeklyMarket, LivestockMarket, SuperMarkets, FireService, PrintMedia, SocialMedia, PrivateTelevisionService,
+            MotoParkText, DailyMarket, WeeklyMarket, LivestockMarket, SuperMarkets, FireService, PrintMedia, SocialMedia, PrivateTelevisionService,
             ArmyFormationAndCommand, ArmyBarracks, PoliceStation, PoliceBarracks, DeptStateServices, CivilDefence, ImmigrationService, CustomService,
             StaffPrimary, StaffSecondary, StaffTechnical, StaffCommercial, StaffTertiary, StaffIslamiya, StaffOther,
             NonStaffPrimary, NonStaffSecondary, NonStaffTechnical, NonStaffCommercial, NonStaffTertiary, NonStaffIslamiya, NonStaffOther, SportingPrimary, SportingSecondary,
@@ -665,6 +665,12 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         HealthStaffTertiaryyConditione.setOnItemSelectedListener(this);
 
         //Transportation
+        Spinner TransportationTertiaryCondition1 = findViewById(R.id.AirportSpinner);
+        ArrayAdapter<CharSequence> adapterzlTertiaryxxCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        adapterzlTertiaryxxCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        TransportationTertiaryCondition1.setAdapter(adapterzlTertiaryxxCondition);
+        TransportationTertiaryCondition1.setOnItemSelectedListener(this);
+
         Spinner TransportationTertiaryCondition2 = findViewById(R.id.RailwaySpinner);
         ArrayAdapter<CharSequence> adapterzlTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
         adapterzlTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
@@ -695,11 +701,13 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         TransportationTechnicalCondition.setAdapter(adapterzTechnicalCondition);
         TransportationTechnicalCondition.setOnItemSelectedListener(this);
 
+        /**
         Spinner TransportationCommercialCondition = findViewById(R.id.FoodpathSpinner);
         ArrayAdapter<CharSequence> adapterzCommercialCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
         adapterzCommercialCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         TransportationCommercialCondition.setAdapter(adapterzCommercialCondition);
         TransportationCommercialCondition.setOnItemSelectedListener(this);
+         **/
 
         Spinner TransportationTertiaryCondition = findViewById(R.id.BridgeSpinner);
         ArrayAdapter<CharSequence> adapterzyTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
@@ -822,8 +830,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         Spinner SecurityTertiaryCondition3 = findViewById(R.id.PoliceSpinner);
         ArrayAdapter<CharSequence> adapterkbTertiaryxCondition = ArrayAdapter.createFromResource(this, R.array.school_type, android.R.layout.simple_spinner_item);
-        adapterkbTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        SecurityTertiaryCondition3.setAdapter(adapterkbTertiaryCondition);
+        adapterkbTertiaryxCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        SecurityTertiaryCondition3.setAdapter(adapterkbTertiaryxCondition);
         SecurityTertiaryCondition3.setOnItemSelectedListener(this);
 
         Spinner SecurityPrimaryCondition = findViewById(R.id.PoliceBarracksSpinner);
@@ -954,6 +962,9 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         Latitude = findViewById(R.id.Latitude);
         Status = findViewById(R.id.Status);
         Population = findViewById(R.id.Population);
+
+        RoadsCondition = findViewById(R.id.TrunkText);
+        MotoParkText = findViewById(R.id.MotorParkText);
 
         COMMUNITYSizeAdultMaleBefore = findViewById(R.id.COMMUNITYSizeAdultMaleBefore);
         COMMUNITYSizeAdultFemaleBefore = findViewById(R.id.COMMUNITYSizeAdultFemaleBefore);
@@ -1086,8 +1097,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         RailwayFlowSchedule = findViewById(R.id.RailwayFlowScheduleText);
         Airport = findViewById(R.id.AirportText);
         SeaTransport = findViewById(R.id.SeaPortText);
-        Communication1 = findViewById(R.id.AirtelText);
-        Communication2 = findViewById(R.id.MTNText);
+        Communication2 = findViewById(R.id.AirtelText);
+        Communication1 = findViewById(R.id.MTNText);
         Communication3 = findViewById(R.id.GloText);
         Communication4 = findViewById(R.id.Mobile9Text);
         InternationalRadio = findViewById(R.id.InternationalRadioText);
@@ -1139,6 +1150,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
     }
 
     private void SubmitToDB() {
+
+        final String Val001 = MotoParkText.getText().toString().trim();
 
         final String Val1 = State.getText().toString().trim();
         final String Val2 = LocalGov.getText().toString().trim();
@@ -1346,6 +1359,9 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         if (!TextUtils.isEmpty(Val1)&&
                 !TextUtils.isEmpty(Val2)&&
+
+                !TextUtils.isEmpty(Val001)&&
+
                 !TextUtils.isEmpty(Val3)&&
                 !TextUtils.isEmpty(Val4)&&
                 !TextUtils.isEmpty(Val4)&&
@@ -1743,6 +1759,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
+                    newPost.child("MotoPark").setValue(Val001);
                     newPost.child("State").setValue(Val1);
                     newPost.child("LocalGovernment").setValue(Val2);
                     newPost.child("TownVillage").setValue(Val3);
@@ -2210,6 +2227,364 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         }else if (spinner.getId() == R.id.FMCHospitalSpinner){
             String FMC = parent.getItemAtPosition(position).toString();
             FMCSpecialistHospital.setText(FMC);
+        }else if (spinner.getId() == R.id.OperationTheatersSpinner){
+            String OPT = parent.getItemAtPosition(position).toString();
+            OperationTheater.setText(OPT);
+        }
+
+        else if (spinner.getId() == R.id.LaboratoriesSpinner){
+            String LAB = parent.getItemAtPosition(position).toString();
+            Laboratories.setText(LAB);
+        }
+
+        else if (spinner.getId() == R.id.MortuarySpinner){
+            String MOT = parent.getItemAtPosition(position).toString();
+            Mortuary.setText(MOT);
+        }
+
+        else if (spinner.getId() == R.id.AmbulancesSpinner){
+            String AMB = parent.getItemAtPosition(position).toString();
+            Ambulances.setText(AMB);
+        }
+
+        else if (spinner.getId() == R.id.ChildcareSpinner){
+            String CHD = parent.getItemAtPosition(position).toString();
+            Maternity.setText(CHD);
+        }
+
+        else if (spinner.getId() == R.id.NutritionalServicesSpinner){
+            String NTS = parent.getItemAtPosition(position).toString();
+            NutritionalServices.setText(NTS);
+        }
+
+        else if (spinner.getId() == R.id.PharmaceuticalsSpinner){
+            String PHN = parent.getItemAtPosition(position).toString();
+            Pharmaceuticals.setText(PHN);
+        }
+
+        else if (spinner.getId() == R.id.StaffHousingSpinner){
+            String STF = parent.getItemAtPosition(position).toString();
+            OtherStaffHousing.setText(STF);
+        }
+
+        else if (spinner.getId() == R.id.ElectricitySpinner){
+            String ELC = parent.getItemAtPosition(position).toString();
+            ElectricitySupply.setText(ELC);
+        }
+
+        else if (spinner.getId() == R.id.ColdStoreSpinner){
+            String CLD = parent.getItemAtPosition(position).toString();
+            ColdStore.setText(CLD);
+        }
+
+        else if (spinner.getId() == R.id.DoctorsSpinner){
+            String DOC = parent.getItemAtPosition(position).toString();
+            Doctors.setText(DOC);
+        }
+
+        else if (spinner.getId() == R.id.NursesMidwivesSpinner){
+            String NRS = parent.getItemAtPosition(position).toString();
+            Doctors.setText(NRS);
+        }
+
+        else if (spinner.getId() == R.id.MidwivesSpinner){
+            String MDW = parent.getItemAtPosition(position).toString();
+            Midwives.setText(MDW);
+        }
+
+        else if (spinner.getId() == R.id.NursesMidwivesSpinner){
+            String NAW = parent.getItemAtPosition(position).toString();
+            NursesMidwives.setText(NAW);
+        }
+
+        else if (spinner.getId() == R.id.PharmacistSpinner){
+            String PHM = parent.getItemAtPosition(position).toString();
+            Pharmacists.setText(PHM);
+        }
+
+        else if (spinner.getId() == R.id.RadiographersSpinner){
+            String RAD = parent.getItemAtPosition(position).toString();
+            Radiographers.setText(RAD);
+        }
+
+        else if (spinner.getId() == R.id.PharmacyTechniciansSpinner){
+            String PCT = parent.getItemAtPosition(position).toString();
+            PharmacyTechnicians.setText(PCT);
+        }
+
+        else if (spinner.getId() == R.id.MedicalLabScientistSpinner){
+            String MEDL = parent.getItemAtPosition(position).toString();
+            MedicalLabScientist.setText(MEDL);
+        }
+
+        else if (spinner.getId() == R.id.PharmacyAssistantSpinner){
+            String PHS = parent.getItemAtPosition(position).toString();
+            PharmacyAssistant.setText(PHS);
+        }
+
+        else if (spinner.getId() == R.id.LaboratoryAssistantSpinner){
+            String LAA = parent.getItemAtPosition(position).toString();
+            LaboratoryAssistant.setText(LAA);
+        }
+
+        else if (spinner.getId() == R.id.HealthSocialWorkersSpinner){
+            String HSW = parent.getItemAtPosition(position).toString();
+            HealthSocialWorkers.setText(HSW);
+        }
+
+        else if (spinner.getId() == R.id.NutritionistSpinner){
+            String NUT = parent.getItemAtPosition(position).toString();
+            Nutritionist.setText(NUT);
+        }
+
+        else if (spinner.getId() == R.id.PublicHealthOfficersSpinner){
+            String PHO = parent.getItemAtPosition(position).toString();
+            PublicHealthOfficers.setText(PHO);
+        }
+
+        else if (spinner.getId() == R.id.CommunityHealthOfficersSpinner){
+            String CHO = parent.getItemAtPosition(position).toString();
+            CommunityHealthOfficers.setText(CHO);
+        }
+
+        else if (spinner.getId() == R.id.ExtensionOfficersSpinner){
+            String EXT = parent.getItemAtPosition(position).toString();
+            ExtensionOfficers.setText(EXT);
+        }
+
+        else if (spinner.getId() == R.id.EnviromentalOfficersSpinner){
+            String EVR = parent.getItemAtPosition(position).toString();
+            EnvironmentalHealthOfficers.setText(EVR);
+        }
+
+        else if (spinner.getId() == R.id.PsychoSocialSpinner){
+            String PSY = parent.getItemAtPosition(position).toString();
+            PsychSocial.setText(PSY);
+        }
+
+        else if (spinner.getId() == R.id.TradionalMiddwivesSpinner){
+            String TRD = parent.getItemAtPosition(position).toString();
+            TraditionalMidwives.setText(TRD);
+        }
+
+        else if (spinner.getId() == R.id.WaterSourceSpinner){
+            String WTs = parent.getItemAtPosition(position).toString();
+            SourceWater.setText(WTs);
+        }
+
+        else if (spinner.getId() == R.id.WaterConditionSpinner){
+            String WTc = parent.getItemAtPosition(position).toString();
+            Condition.setText(WTc);
+        }
+
+        else if (spinner.getId() == R.id.RailwaySpinner){
+            String RLW = parent.getItemAtPosition(position).toString();
+            Railway.setText(RLW);
+        }
+
+        else if (spinner.getId() == R.id.RailwayFlowScheduleSpinner){
+            String RLT = parent.getItemAtPosition(position).toString();
+            RailwayFlowSchedule.setText(RLT);
+        }
+
+        else if (spinner.getId() == R.id.AirportSpinner){
+            String AIR = parent.getItemAtPosition(position).toString();
+            Airport.setText(AIR);
+        }
+
+        else if (spinner.getId() == R.id.SeaPortSpinner){
+            String SEA = parent.getItemAtPosition(position).toString();
+            SeaTransport.setText(SEA);
+        }
+
+        else if (spinner.getId() == R.id.TrunkSpinner){
+            String TRK = parent.getItemAtPosition(position).toString();
+            RoadsCondition.setText(TRK);
+        }
+
+        else if (spinner.getId() == R.id.BridgeSpinner){
+            String BRG = parent.getItemAtPosition(position).toString();
+            Roads.setText(BRG);
+        }
+
+        else if (spinner.getId() == R.id.MotorParkSpinner){
+            String OPT = parent.getItemAtPosition(position).toString();
+            MotoParkText.setText(OPT);
+        }
+
+        else if (spinner.getId() == R.id.MTNSpinner){
+            String MTN = parent.getItemAtPosition(position).toString();
+            Communication1.setText(MTN);
+        }
+
+        else if (spinner.getId() == R.id.AirtelSpinner){
+            String AIT = parent.getItemAtPosition(position).toString();
+            Communication2.setText(AIT);
+        }
+
+        else if (spinner.getId() == R.id.GloSpinner){
+            String GLO = parent.getItemAtPosition(position).toString();
+            Communication3.setText(GLO);
+        }
+
+        else if (spinner.getId() == R.id.Mobile9Spinner){
+            String MB = parent.getItemAtPosition(position).toString();
+            Communication4.setText(MB);
+        }
+
+        else if (spinner.getId() == R.id.InternationalRadioSpinner){
+            String INR = parent.getItemAtPosition(position).toString();
+            InternationalRadio.setText(INR);
+        }
+
+        else if (spinner.getId() == R.id.FederalRadioSpinner){
+            String FRN = parent.getItemAtPosition(position).toString();
+            FederalRadio.setText(FRN);
+        }
+
+        else if (spinner.getId() == R.id.StateRadioSpinner){
+            String SRC = parent.getItemAtPosition(position).toString();
+            StateRadio.setText(SRC);
+        }
+
+        else if (spinner.getId() == R.id.PrivateRadioSpinner){
+            String PRD = parent.getItemAtPosition(position).toString();
+            PrivateRadio.setText(PRD);
+        }
+
+        else if (spinner.getId() == R.id.SateliteSpinner){
+            String STL = parent.getItemAtPosition(position).toString();
+            SateliteTelevision.setText(STL);
+        }
+
+        else if (spinner.getId() == R.id.NTAServiceSpinner){
+            String NTA = parent.getItemAtPosition(position).toString();
+            NTAService.setText(NTA);
+        }
+
+        else if (spinner.getId() == R.id.StateTelevisionSpinner){
+            String STV = parent.getItemAtPosition(position).toString();
+            StateTelevisionStation.setText(STV);
+        }
+
+        else if (spinner.getId() == R.id.PrivateTelevisionSpinner){
+            String PTV = parent.getItemAtPosition(position).toString();
+            PrivateTelevisionService.setText(PTV);
+        }
+
+        else if (spinner.getId() == R.id.SocialMediaSpinner){
+            String SOC = parent.getItemAtPosition(position).toString();
+            SocialMedia.setText(SOC);
+        }
+
+        else if (spinner.getId() == R.id.NewspaperSpinner){
+            String OPT = parent.getItemAtPosition(position).toString();
+            PrintMedia.setText(OPT);
+        }
+
+        else if (spinner.getId() == R.id.FireSpinner){
+            String FSV = parent.getItemAtPosition(position).toString();
+            FireService.setText(FSV);
+        }
+
+        else if (spinner.getId() == R.id.ArmySpinner){
+            String ARM = parent.getItemAtPosition(position).toString();
+            ArmyFormationAndCommand.setText(ARM);
+        }
+
+        else if (spinner.getId() == R.id.ArmyBarracksSpinner){
+            String BRK = parent.getItemAtPosition(position).toString();
+            ArmyBarracks.setText(BRK);
+        }
+
+        else if (spinner.getId() == R.id.PoliceSpinner){
+            String PLO = parent.getItemAtPosition(position).toString();
+            PoliceStation.setText(PLO);
+        }
+
+        else if (spinner.getId() == R.id.PoliceBarracksSpinner){
+            String PBR = parent.getItemAtPosition(position).toString();
+            PoliceBarracks.setText(PBR);
+        }
+
+        else if (spinner.getId() == R.id.DeptSpinner){
+            String DPT = parent.getItemAtPosition(position).toString();
+            DeptStateServices.setText(DPT);
+        }
+
+        else if (spinner.getId() == R.id.CivilSpinner){
+            String CVL = parent.getItemAtPosition(position).toString();
+            CivilDefence.setText(CVL);
+        }
+
+        else if (spinner.getId() == R.id.ImmigrationSpinner){
+            String IMG = parent.getItemAtPosition(position).toString();
+            ImmigrationService.setText(IMG);
+        }
+
+        else if (spinner.getId() == R.id.CustomsSpinner){
+            String CST = parent.getItemAtPosition(position).toString();
+            CustomService.setText(CST);
+        }
+
+        else if (spinner.getId() == R.id.PrisonSpinner){
+            String PRS = parent.getItemAtPosition(position).toString();
+            PrisonService.setText(PRS);
+        }
+
+        else if (spinner.getId() == R.id.FederalHighCourtSpinner){
+            String FHC = parent.getItemAtPosition(position).toString();
+            FederalHighCourt.setText(FHC);
+        }
+
+        else if (spinner.getId() == R.id.StateHighCourtSpinner){
+            String SHC = parent.getItemAtPosition(position).toString();
+            StateHighCourt.setText(SHC);
+        }
+
+        else if (spinner.getId() == R.id.MagistrateCourtSpinner){
+            String MGS = parent.getItemAtPosition(position).toString();
+            MagistrateCourt.setText(MGS);
+        }
+
+        else if (spinner.getId() == R.id.CustomaryCourtSpinner){
+            String CTS = parent.getItemAtPosition(position).toString();
+            CustomaryCourt.setText(CTS);
+        }
+
+        else if (spinner.getId() == R.id.cBankSpinner){
+            String BNK = parent.getItemAtPosition(position).toString();
+            Banks.setText(BNK);
+        }
+
+        else if (spinner.getId() == R.id.cBankConditionSpinner){
+            String BNKc = parent.getItemAtPosition(position).toString();
+            BanksCondition.setText(BNKc);
+        }
+
+        else if (spinner.getId() == R.id.DailyMarketSpinner){
+            String MRKd = parent.getItemAtPosition(position).toString();
+            DailyMarket.setText(MRKd);
+        }
+
+        else if (spinner.getId() == R.id.WeeklyMarketSpinner){
+            String WKM = parent.getItemAtPosition(position).toString();
+            WeeklyMarket.setText(WKM);
+        }
+
+        else if (spinner.getId() == R.id.LivestockMarketSpinner){
+            String LVS = parent.getItemAtPosition(position).toString();
+            LivestockMarket.setText(LVS);
+        }
+
+        else if (spinner.getId() == R.id.MotorParkSpinner){
+            String OPT = parent.getItemAtPosition(position).toString();
+            MotoParkText.setText(OPT);
+        }
+
+        else if (spinner.getId() == R.id.SuperMarketsSpinner){
+            String SPM = parent.getItemAtPosition(position).toString();
+            SuperMarkets.setText(SPM);
         }
 
     }
