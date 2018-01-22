@@ -678,52 +678,28 @@
                 android:textColor="@color/colorAccent"
                 android:background="@drawable/out_line"/>
 
-            <LinearLayout
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Before"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Primary Occupation Before"
-                    android:layout_margin="10dp"
+                    android:hint="Name And Qualification Before Insurgency"
                     android:id="@+id/cQualificationBefore"/>
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/cQualificationBeforeSpinner">
-                </Spinner>
-            </LinearLayout>
-            <LinearLayout
+            </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="After"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Primary Occupation After"
-                    android:layout_margin="10dp"
-                    android:id="@+id/cQualificationAfter" />
-                <Spinner
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/cQualificationAfterSpinner">
-                </Spinner>
-            </LinearLayout>
+                    android:hint="Name And Qualification After Insurgency"
+                    android:id="@+id/cQualificationAfter"/>
+            </android.support.design.widget.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -779,7 +755,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Occupation After Insurgency If Farming Specify (Crops, No of bags)"
+                    android:hint="Other Occupation (Crops, No of bags)"
                     android:id="@+id/cOccupationOther"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -2019,7 +1995,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Technical"
+                    android:text="Toilet"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -3260,55 +3236,6 @@
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Source"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Source"
-                    android:layout_margin="10dp"
-                    android:id="@+id/MajorMeansOfTransportText"/>
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/MajorMeansOfTransportSpinner">
-                </Spinner>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Condition"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Condition"
-                    android:layout_margin="10dp"
-                    android:id="@+id/ConditionMajorMeansOfTransportText" />
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/ConditionMajorMeansOfTransportSpinner">
-                </Spinner>
-            </LinearLayout>
-
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -3992,30 +3919,6 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:id="@+id/FireSpinner">
-                </Spinner>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:text="Other Fire Service"
-                    android:textColor="@color/colorAccent"
-                    android:textStyle="bold"/>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Condition"
-                    android:layout_margin="10dp"
-                    android:id="@+id/OtherFireText"/>
-                <Spinner
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="10dp"
-                    android:id="@+id/OtherFireSpinner">
                 </Spinner>
             </LinearLayout>
 
