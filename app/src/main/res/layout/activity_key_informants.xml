@@ -98,16 +98,6 @@
                         android:layout_height="wrap_content"
                         android:hint="Town/Village"
                         android:id="@+id/TownVillage"/>
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Geographical Location:"
-                            android:textStyle="bold"
-                            android:layout_margin="5dp"/>
-                    </LinearLayout>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -374,7 +364,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Is/Was any members of the Community in any of the following conditions (if not then fill with N/A):"
+                    android:text="Is/Was any members of the Community in any of the following conditions (if not then fill with NA):"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
                 <LinearLayout
@@ -594,7 +584,7 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_margin="5dp"
-                        android:text="Have you lost any member of the Community due to Insurgent Attacks? (if yes indicate the number lost, if no type N/A)"/>
+                        android:text="Have you lost any member of the Community due to Insurgent Attacks? (if yes indicate the number lost, if no type NA)"/>
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -659,7 +649,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name And Qualification Before Insurgency"
+                    android:hint="Qualification Before Insurgency"
                     android:id="@+id/cQualificationBefore"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -670,7 +660,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Name And Qualification After Insurgency"
+                    android:hint="Qualification After Insurgency"
                     android:id="@+id/cQualificationAfter"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -682,7 +672,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Before"
+                    android:text="Primary Occupation Before"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -697,6 +687,19 @@
                     android:id="@+id/cOccupationBeforeSpinner">
                 </Spinner>
             </LinearLayout>
+
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Other Occupation (Crops, No of bags)"
+                    android:id="@+id/cOccupationOtherBefore"/>
+            </android.support.design.widget.TextInputLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -705,7 +708,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="After"
+                    android:text="Primary Occupation After"
                     android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
@@ -2192,7 +2195,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Types of Health Faculty"
+                android:text="Types of Health Facility"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
@@ -2205,7 +2208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Health Post"
+                    android:text="A. Health Post"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -2229,7 +2232,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Health Center"
+                    android:text="B. Health Center"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -2253,7 +2256,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Primary Health Center"
+                    android:text="C. Primary Health Center"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -2277,7 +2280,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Private Hospital"
+                    android:text="D. Private Hospital"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -2301,7 +2304,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="General Hospital"
+                    android:text="E. General Hospital"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -2325,7 +2328,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="FMC Hospital"
+                    android:text="F. FMC Hospital"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -2349,7 +2352,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Other (Specify)"
+                    android:hint="G. Other (Specify)"
                     android:id="@+id/OtherHospitals"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -2364,7 +2367,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Hospital Faculties"
+                android:text="Facilities"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:layout_margin="5dp"/>
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="If type of Facility above is d, e, or f)"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
@@ -2682,7 +2694,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Midewives"
+                    android:text="Midwives"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -3301,7 +3313,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Sea Port"
+                android:text="Water"
                 android:textSize="16sp"
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
@@ -3314,7 +3326,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="SeaPort"
+                    android:text="Water"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -3370,7 +3382,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Trunk"
+                    android:text="Trunk State Roads"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -3386,6 +3398,32 @@
                     android:id="@+id/TrunkSpinner">
                 </Spinner>
             </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Trunk Federal Road"
+                    android:textColor="@color/colorAccent"
+                    android:textStyle="bold"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Trunk"
+                    android:layout_margin="10dp"
+                    android:id="@+id/Trunk2Text"/>
+                <Spinner
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:id="@+id/Trunk2Spinner">
+                </Spinner>
+            </LinearLayout>
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -3920,7 +3958,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Army Formation"
+                    android:text="Army Command"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -4226,7 +4264,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="Indutrial Court"
+                    android:text="Industrial Court"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -4250,7 +4288,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="State Hight Court"
+                    android:text="State High Court"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -4314,6 +4352,17 @@
                     android:id="@+id/CustomaryCourtSpinner">
                 </Spinner>
             </LinearLayout>
+            <android.support.design.widget.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp">
+
+                <android.support.design.widget.TextInputEditText
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="Other Other"
+                    android:id="@+id/OtherCourt"/>
+            </android.support.design.widget.TextInputLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -4601,7 +4650,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Mosques (Condition)"
+                    android:hint="Mosques, No of Mosque (Condition)"
                     android:id="@+id/Mosques"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -4612,7 +4661,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Church (Condition)"
+                    android:hint="Church No of Church (Condition)"
                     android:id="@+id/Church"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -4623,7 +4672,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Shrine (Condition)"
+                    android:hint="Shrine No of Shrine (Condition)"
                     android:id="@+id/Shrine"/>
             </android.support.design.widget.TextInputLayout>
 
@@ -4715,6 +4764,7 @@
                         android:hint="How many times?"
                         android:id="@+id/Livelihood2"/>
                 </android.support.design.widget.TextInputLayout>
+                <!--
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -4726,6 +4776,34 @@
                         android:hint="What was the major impact of the insurgent in your community?"
                         android:id="@+id/Livelihood3"/>
                 </android.support.design.widget.TextInputLayout>
+                -->
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:text="What was the major impact of the insurgent in your community?"
+                        android:textColor="@color/colorAccent"
+                        android:textStyle="bold"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Impact"
+                        android:layout_margin="10dp"
+                        android:id="@+id/Livelihood3Text"/>
+                    <Spinner
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:id="@+id/Livelihood3Spinner">
+                    </Spinner>
+                </LinearLayout>
+
+
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -4745,7 +4823,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="How has the community been under Boko Haram insurgency?"
+                        android:hint="For How long has the community been under Boko Haram insurgency? (Month)"
                         android:id="@+id/Livelihood5"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -4756,7 +4834,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="When did the people return to the community(Month and Year)"
+                        android:hint="When did the people return to the community(Month, Year)"
                         android:id="@+id/Livelihood6"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
@@ -4782,10 +4860,19 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="What is the general Socia-Economic Condition in the community?"
+                    android:text="What is the general Socio-Economic Condition in the community?"
                     android:textStyle="bold"
                     android:background="@drawable/out_line"
                     android:padding="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Use this keywords \nVery Good \nGood \nPoor"
+                    android:textStyle="bold"
+                    android:padding="10dp"/>
+                
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -5057,7 +5144,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Are these assistance adequate to guarantee basic standard of living"
+                    android:text="Are these assistance adequate to guarantee basic standard of living? Answer with, Yes or No"
                     android:textStyle="bold" />
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -5075,7 +5162,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="How long does the organizations rendering assistance to the returnee community plan to offer the assistance to community?"
+                    android:text="How long does the organizations rendering assistance to the returnee community plan to offer the assistance to community? (Months)"
                     android:textStyle="bold" />
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"

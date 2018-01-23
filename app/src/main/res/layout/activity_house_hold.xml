@@ -380,7 +380,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
-                        android:text="If Yes, then enter their details. If it's No just put N/A in the spaces"/>
+                        android:text="If Yes, then enter their details. If it's No just put NA in the spaces"/>
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -400,14 +400,14 @@
                         <android.support.design.widget.TextInputEditText
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:hint="Names, Gender, Age of Adopted Children, e.g. Aminu(Male, 12) \n Separate with Comma."
+                            android:hint="Gender, Age of Adopted Children, e.g. Aminu(Male, 12) \n Separate with Comma."
                             android:id="@+id/HouseHoldSizeAdoptedNames"/>
                     </android.support.design.widget.TextInputLayout>
                 </RadioGroup>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="State Number of any members of the HouseHold in any of the following conditions (if not then fill with N/A):"
+                    android:text="State Number of any members of the HouseHold in any of the following conditions (if not then fill with NA):"
                     android:textStyle="bold"
                     android:layout_margin="5dp"/>
                 <LinearLayout
@@ -580,7 +580,7 @@
                         android:layout_height="wrap_content"
                         android:textStyle="bold"
                         android:layout_margin="5dp"
-                        android:text="Have you lost any member of the Family due to Insurgent? (if yes indicate the number lost, if no type N/A)"/>
+                        android:text="Have you lost any member of the Family due to the Insurgency? (if yes indicate the number lost, if no type NA)"/>
                     <android.support.design.widget.TextInputLayout
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -650,7 +650,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name And Qualification Before Insurgency"
+                        android:hint="Qualification Before Insurgency"
                         android:id="@+id/HouseHoldMemberQualificationBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -661,7 +661,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name And Qualification After Insurgency"
+                        android:hint="Qualification After Insurgency"
                         android:id="@+id/HouseHoldMemberQualificationAfter"/>
                 </android.support.design.widget.TextInputLayout>
 
@@ -924,14 +924,6 @@
                     </Spinner>
                 </LinearLayout>
 
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="OTHER"
-                    android:textStyle="bold"
-                    android:textSize="16sp"
-                    android:layout_margin="5dp"/>
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -940,7 +932,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Have your household benefit from any organizations?"
+                        android:hint="Have your household benefited from any organizations? (Yes or No)"
                         android:id="@+id/OrganizationBenefit"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -1015,7 +1007,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Where did you go after being displace?"
+                    android:hint="Where did you go after being displaced?"
                     android:id="@+id/LivelihoodAfterDisplaced"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -1026,7 +1018,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="For how long have you been displaced?"
+                    android:hint="For how long have you been displaced? (Months)"
                     android:id="@+id/LivelihoodHowLong"/>
             </android.support.design.widget.TextInputLayout>
             <android.support.design.widget.TextInputLayout
@@ -1059,7 +1051,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Have you lost some belongings due to attack by Insurgent? (If yes, Item, Cost)"
+                    android:hint="Have you lost some belongings due to attack by Insurgent? (If yes, Item, Estimated Cost)"
                     android:id="@+id/LivelihoodItemLost"/>
             </android.support.design.widget.TextInputLayout>
             <TextView
@@ -1126,6 +1118,13 @@
                 android:text="How has been the livelihood condition of members of the family who are returnees to the community?"
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/colorAccent"
+                android:layout_margin="5dp"
+                android:text="Poor \nGood \nVery Good"
+                android:textStyle="italic"/>
             <android.support.design.widget.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -1140,7 +1139,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Have the returnees started adjusting or reactivation of their livelihood?"
+                android:text="Have the returnees started adjusting or reactivation of their livelihood? (Yes or No)"
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
@@ -1157,7 +1156,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Have the returnee members of the family come with new means of livelihood to the community?"
+                android:text="Have the returnee members of the family come with new means of livelihood to the community? (Yes or No)"
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout
@@ -1174,7 +1173,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Is there any returnee member of the household who is unable to return to his/her livelyhood?"
+                android:text="Is there any returnee member of the household who is unable to return to his/her livelihood?"
                 android:textStyle="bold"
                 android:layout_margin="5dp"/>
             <android.support.design.widget.TextInputLayout

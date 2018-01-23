@@ -43,10 +43,9 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             OtherSchoolClassRoom,
             Vigelante, OtherSecurity,
             OtherCourt, OtherBank, InsuranceCompanies, Factories, OtherMarket, Hotels, Tourist, Mosques,
-            Church, Shrine, NGOsCBOs, KeyMemberOtherOccupationBefore,
+            Church, Shrine, NGOsCBOs, KeyMemberOtherOccupationBefore, cOccupationOtherBefore,
             Livelihood1,
             Livelihood2,
-            Livelihood3,
             Livelihood4,
             Livelihood5,
             Livelihood6,
@@ -90,10 +89,10 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             Mortuary, Ambulances, Maternity, NutritionalServices, Pharmaceuticals, StaffAccommodation, ElectricitySupply, ColdStore, Doctors, Nurses, Midwives, NursesMidwives,
             Pharmacists, Radiographers, PharmacyTechnicians, MedicalLabScientist, PharmacyAssistant, LaboratoryTechnicians, LaboratoryAssistant, HealthSocialWorkers,
             Nutritionist, PublicHealthOfficers, CommunityHealthOfficers, CommunityHealth, ExtensionOfficers, EnvironmentalHealthOfficers, PsychSocial, TraditionalMidwives,
-            SourceWater, Condition, ElectricitySource, ElectricityCondition, Roads, RoadsCondition, Railway, RailwayConditions, RailwayFlowSchedule, Airport, AirportConditions,
+            SourceWater, Condition, ElectricitySource, ElectricityCondition, Roads, Roads2, RoadsCondition, Railway, RailwayConditions, RailwayFlowSchedule, Airport, AirportConditions,
             SeaTransport, SeaConditions, Communication, InternationalRadio, FederalRadio, StateRadio, PrivateRadio, SateliteTelevision, NTAService, StateTelevisionStation,
             PrisonService, cjtf, FederalHighCourt, ShariaCourtOfAppeal, IndustrialCourt, StateHighCourt, MagistrateCourt, CustomaryCourt, Communication1, Communication2, Communication3, Communication4,
-            KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, Bridge, Laterite, FootpathText;
+            KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, Bridge, Laterite, FootpathText, Livelihood3;
 
     private DatabaseReference mDatabase;
 
@@ -727,7 +726,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         TransportationTertiaryCondition3.setOnItemSelectedListener(this);
 
         Spinner TransportationPrimaryCondition = findViewById(R.id.SeaPortSpinner);
-        ArrayAdapter<CharSequence> adapterzPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterzPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.water_transport, android.R.layout.simple_spinner_item);
         adapterzPrimaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         TransportationPrimaryCondition.setAdapter(adapterzPrimaryCondition);
         TransportationPrimaryCondition.setOnItemSelectedListener(this);
@@ -737,6 +736,12 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         adapterzSecondaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         TransportationSecondaryCondition.setAdapter(adapterzSecondaryCondition);
         TransportationSecondaryCondition.setOnItemSelectedListener(this);
+
+        Spinner TransportationSecondary2Condition = findViewById(R.id.Trunk2Spinner);
+        ArrayAdapter<CharSequence> adapterzSecondary2Condition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        adapterzSecondaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        TransportationSecondary2Condition.setAdapter(adapterzSecondary2Condition);
+        TransportationSecondary2Condition.setOnItemSelectedListener(this);
 
         Spinner TransportationTechnicalCondition = findViewById(R.id.LateriteRoadSpinner);
         ArrayAdapter<CharSequence> adapterzTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
@@ -831,13 +836,13 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         MediaCommsCommercialCondition.setOnItemSelectedListener(this);
 
         Spinner MediaCommsTertiaryCondition = findViewById(R.id.SocialMediaSpinner);
-        ArrayAdapter<CharSequence> adapterkcTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkcTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.social_media, android.R.layout.simple_spinner_item);
         adapterkcTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsTertiaryCondition.setAdapter(adapterkcTertiaryCondition);
         MediaCommsTertiaryCondition.setOnItemSelectedListener(this);
 
         Spinner MediaCommsIslamiyaCondition = findViewById(R.id.NewspaperSpinner);
-        ArrayAdapter<CharSequence> adapterkcIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkcIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.print_media, android.R.layout.simple_spinner_item);
         adapterkcIslamiyaCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsIslamiyaCondition.setAdapter(adapterkcIslamiyaCondition);
         MediaCommsIslamiyaCondition.setOnItemSelectedListener(this);
@@ -957,7 +962,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         //Bank
         Spinner BankIslamiyaCondition = findViewById(R.id.cBankSpinner);
-        ArrayAdapter<CharSequence> adapterkiIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkiIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.bank_name, android.R.layout.simple_spinner_item);
         adapterkiIslamiyaCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         BankIslamiyaCondition.setAdapter(adapterkiIslamiyaCondition);
         BankIslamiyaCondition.setOnItemSelectedListener(this);
@@ -967,6 +972,12 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         adapterkiTertiarykCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         BankTertiarykCondition.setAdapter(adapterkiTertiarykCondition);
         BankTertiarykCondition.setOnItemSelectedListener(this);
+
+        Spinner BankTertiarykConditionx = findViewById(R.id.Livelihood3Spinner);
+        ArrayAdapter<CharSequence> adapterkiTertiarykConditionx = ArrayAdapter.createFromResource(this, R.array.livelihood_condition, android.R.layout.simple_spinner_item);
+        adapterkiTertiarykConditionx.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        BankTertiarykConditionx.setAdapter(adapterkiTertiarykConditionx);
+        BankTertiarykConditionx.setOnItemSelectedListener(this);
 
         //Market
         Spinner MarketTechnicalCondition = findViewById(R.id.DailyMarketSpinner);
@@ -1008,6 +1019,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         MotoParkText = findViewById(R.id.MotorParkText);
         Bridge = findViewById(R.id.BridgeText);
         FootpathText = findViewById(R.id.FootpathText);
+
+        cOccupationOtherBefore = findViewById(R.id.cOccupationOtherBefore);
 
         COMMUNITYSizeAdultMaleBefore = findViewById(R.id.COMMUNITYSizeAdultMaleBefore);
         COMMUNITYSizeAdultFemaleBefore = findViewById(R.id.COMMUNITYSizeAdultFemaleBefore);
@@ -1136,6 +1149,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         SourceWater = findViewById(R.id.cwaterConditionText);
         ElectricitySource = findViewById(R.id.cElectricitySource);
         Roads = findViewById(R.id.TrunkText);
+        Roads2 = findViewById(R.id.Trunk2Text);
         Railway = findViewById(R.id.RailwayText);
         RailwayFlowSchedule = findViewById(R.id.RailwayFlowScheduleText);
         Airport = findViewById(R.id.AirportText);
@@ -1190,7 +1204,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         Livelihood1 = findViewById(R.id.Livelihood1);
         Livelihood2 = findViewById(R.id.Livelihood2);
-        Livelihood3 = findViewById(R.id.Livelihood3);
+        Livelihood3 = findViewById(R.id.Livelihood3Text);
         Livelihood4 = findViewById(R.id.Livelihood4);
         Livelihood5 = findViewById(R.id.Livelihood5);
         Livelihood6 = findViewById(R.id.Livelihood6);
@@ -1325,6 +1339,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val64 = IslamiyaWorkshop.getText().toString().trim();
         final String Val65 = OtherSchoolWorkshop.getText().toString().trim();
 
+        final String Val1000 = cOccupationOtherBefore.getText().toString().trim();
+
         final String Val69 = StaffPrimary.getText().toString().trim();
         final String Val70 = StaffSecondary.getText().toString().trim();
         final String Val71 = StaffTechnical.getText().toString().trim();
@@ -1399,6 +1415,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val140 = ElectricitySource.getText().toString().trim();
 
         final String Val142 = Roads.getText().toString().trim();
+        final String Val1421 = Roads2.getText().toString().trim();
         final String Val0002 = FootpathText.toString().trim();
         final String Val0143 = Bridge.getText().toString().trim();
         final String Val144 = Railway.getText().toString().trim();
@@ -1484,6 +1501,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 !TextUtils.isEmpty(Val0143)&&
                 !TextUtils.isEmpty(Val0001)&&
                 !TextUtils.isEmpty(Val0002)&&
+
+                !TextUtils.isEmpty(Val1000)&&
 
 
                 //Livelihood
@@ -1660,6 +1679,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 !TextUtils.isEmpty(Val140)&&
 
                 !TextUtils.isEmpty(Val142)&&
+                !TextUtils.isEmpty(Val1421)&&
 
                 !TextUtils.isEmpty(Val144)&&
 
@@ -1958,6 +1978,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                     newPost.child("Glo").setValue(Val005);
                     newPost.child("Etisalat").setValue(Val006);
 
+                    newPost.child("OtherOccupationBefore").setValue(Val1000);
+
                     newPost.child("State").setValue(Val1);
                     newPost.child("LocalGovernment").setValue(Val2);
                     newPost.child("TownVillage").setValue(Val3);
@@ -2098,7 +2120,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
                     newPost.child("ElectricitySource").setValue(Val140);
 
-                    newPost.child("Trunk").setValue(Val142);
+                    newPost.child("TrunkState").setValue(Val142);
+                    newPost.child("TrunkFederal").setValue(Val1421);
                     newPost.child("Railway").setValue(Val144);
                     newPost.child("RailwayFlowSchedule").setValue(Val146);
                     newPost.child("Airport").setValue(Val147);
@@ -2601,6 +2624,11 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             Roads.setText(TRK);
         }
 
+        else if (spinner.getId() == R.id.Trunk2Spinner){
+            String TRK = parent.getItemAtPosition(position).toString();
+            Roads2.setText(TRK);
+        }
+
         else if (spinner.getId() == R.id.BridgeSpinner){
             String BRG = parent.getItemAtPosition(position).toString();
             Bridge.setText(BRG);
@@ -2794,6 +2822,9 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         else if (spinner.getId() == R.id.SuperMarketsSpinner){
             String SPM = parent.getItemAtPosition(position).toString();
             SuperMarkets.setText(SPM);
+        }else if (spinner.getId() == R.id.Livelihood3Spinner){
+            String SPM = parent.getItemAtPosition(position).toString();
+            Livelihood3.setText(SPM);
         }
 
     }

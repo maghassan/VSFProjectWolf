@@ -86,7 +86,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Are there orphans and women headed households in the community as a result of the attacks by the insurgents? Probe on the magnitude of these components."
+                    android:text="Are there orphans and women heading households in the community as a result of the attacks by the insurgents? Probe on the magnitude of these components."
                     android:textStyle="bold"
                     android:textSize="16sp"
                     android:layout_margin="5dp"/>

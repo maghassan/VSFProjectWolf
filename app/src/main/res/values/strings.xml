@@ -39,6 +39,44 @@
 
     </string-array>
 
+    <string-array name="local_gov_adamawa">
+        <item>Madagali</item>
+        <item>Michika</item>
+        <item>Maiha</item>
+        <item>Mubi North</item>
+        <item>Mubi South</item>
+        <item>Hong</item>
+        <item>Gombi</item>
+    </string-array>
+
+    <string-array name="local_gov_yobe">
+        <item>Damaturu</item>
+        <item>Geidam</item>
+        <item>Gujba</item>
+        <item>Gulami</item>
+        <item>Yunusari</item>
+        <item>Yunusafari</item>
+        <item>Tarmuwa</item>
+    </string-array>
+
+    <string-array name="water_transport">
+        <item>Available</item>
+        <item>Available(RainingSeasonOnly)</item>
+        <item>NotAvailable</item>
+    </string-array>
+
+    <string-array name="social_media">
+        <item>Accessible</item>
+        <item>Not Accessible</item>
+    </string-array>
+
+    <string-array name="print_media">
+        <item>Available(Always)</item>
+        <item>Available(Occasional)</item>
+        <item>Not Available</item>
+    </string-array>
+
+
     <string-array name="occupation">
         <item>Select Occupation</item>
         <item>Farming</item>
@@ -56,7 +94,14 @@
         <item>N101,000 to N200,000</item>
         <item>N201,000 to N500,000</item>
         <item>N501,000 to N1,000,000</item>
-        <item>Less than N1,000,000</item>
+        <item>Above N1,000,000</item>
+    </string-array>
+
+    <string-array name="livelihood_condition">
+        <item>Security</item>
+        <item>Socio Economic</item>
+        <item>Infrastructure</item>
+        <item>Relationship Peace</item>
     </string-array>
 
     <string-array name="condition">
@@ -136,5 +181,12 @@
         <item>Available Always</item>
         <item>Available (Occasionally)</item>
         <item>Not Available</item>
+    </string-array>
+
+    <string-array name="bank_name">
+        <item>Commercial Bank</item>
+        <item>Micro Finance</item>
+        <item>Agricultural</item>
+        <item>Merchant</item>
     </string-array>
 </resources>
