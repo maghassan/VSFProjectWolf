@@ -1,9 +1,18 @@
 package ng.com.androidlife.vsfproject;
 
+import android.*;
 import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -27,7 +36,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSelectedListener{
 
-    TextInputEditText TownVillage, Longitude, Latitude, Status, Population, HouseHoldSizeAdultMaleBefore, HouseHoldSizeAdultFemaleBefore,
+    TextInputEditText TownVillage, Latitude, Status , Population, HouseHoldSizeAdultMaleBefore, HouseHoldSizeAdultFemaleBefore,
             HouseHoldSizeChildrenMaleBefore, HouseHoldSizeChildrenFemaleBefore, HouseHoldSizeAdultMaleAfter, HouseHoldSizeAdultFemaleAfter,
             HouseHoldSizeChildrenMaleAfter, HouseHoldSizeChildrenFemaleAfter, HouseHoldSizeAdoptedNumber, HouseHoldSizeAdoptedNames, HouseHoldMemberConditionElderlyBefore,
             HouseHoldMemberConditionDisabledBefore, HouseHoldMemberConditionPregnantBefore, HouseHoldMemberConditionLactatingBefore,
@@ -42,11 +51,15 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
     Button pushBtn;
 
     TextView genderBefore, genderAfter, genderInformant, AdoptedText, State, LocalGov, MemberOccupationBefore, MemberOccupationAfter,
-            RespondentIncomeBefore, RespondentIncomeAfter, ElectricitySource, ElectricityCondition;
+            RespondentIncomeBefore, RespondentIncomeAfter, ElectricitySource, ElectricityCondition, Longitude;
 
     TextView waterSourceText, waterConditionText;
 
     EditText ageBefore, ageAfter, ageInformant;
+
+    private static final int REQUEST_LOCATION = 1;
+    LocationManager locationManager;
+    String latitude, longitude;
 
     private DatabaseReference mDatabase;
 
@@ -72,6 +85,8 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("HouseHoldData");
         mDatabase.keepSynced(true);
+
+        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
         //Spinner
         Spinner state = findViewById(R.id.stateSpinner);
@@ -140,7 +155,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
         LocalGov = findViewById(R.id.LocalGov);
         TownVillage = findViewById(R.id.TownVillage);
         Longitude = findViewById(R.id.Longitude);
-        Latitude = findViewById(R.id.Latitude);
+
         Status = findViewById(R.id.Status);
         Population = findViewById(R.id.Population);
 
@@ -275,7 +290,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
         final String LocalGovVal = LocalGov.getText().toString().trim();
         final String TownVillageVal = TownVillage.getText().toString().trim();
         final String LongitudeVal = Longitude.getText().toString().trim();
-        final String LatitudeVal = Latitude.getText().toString().trim();
+
         final String StatusVal = Status.getText().toString().trim();
         final String PopulationVal = Population.getText().toString().trim();
 
@@ -317,7 +332,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
                 !TextUtils.isEmpty(LocalGovVal)&&
                 !TextUtils.isEmpty(TownVillageVal)&&
                 !TextUtils.isEmpty(LongitudeVal)&&
-                !TextUtils.isEmpty(LatitudeVal)&&
+
                 !TextUtils.isEmpty(StatusVal)&&
                 !TextUtils.isEmpty(PopulationVal)&&
                 !TextUtils.isEmpty(genderBeforeVal)&&
@@ -392,7 +407,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
             LocalGov.setText("");
             TownVillage.setText("");
             Longitude.setText("");
-            Latitude.setText("");
+
             Status.setText("");
             Population.setText("");
 
@@ -477,7 +492,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
                     newPost.child("LocalGovernment").setValue(LocalGovVal);
                     newPost.child("TownVillage").setValue(TownVillageVal);
                     newPost.child("Longitude").setValue(LongitudeVal);
-                    newPost.child("Latitude").setValue(LatitudeVal);
+
                     newPost.child("StatusOfTownVillage").setValue(StateVal);
                     newPost.child("EstimatedPopulation").setValue(PopulationVal);
                     newPost.child("HouseHoldGenderBefore").setValue(genderBeforeVal);
@@ -660,5 +675,50 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public void GetLocationDetails(View view) {
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            buildAlertMessageNoGPS();
+        }else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            getLocation();
+        }
+    }
+
+    private void getLocation() {
+        if (ActivityCompat.checkSelfPermission(HouseHold.this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (HouseHold.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(HouseHold.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        }else{
+            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if (location != null){
+                double latti = location.getLatitude();
+                double longi = location.getLongitude();
+                latitude = String.valueOf(latti);
+                longitude = String.valueOf(longi);
+
+                Longitude.setText("Your current location is"+ "\n" + "Latitude = " + latitude + "\n" + "Longitude = " + longitude);
+            }else {
+                Toast.makeText(this, "Unable to trace your location", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void buildAlertMessageNoGPS() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Please turn on your Location Access")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

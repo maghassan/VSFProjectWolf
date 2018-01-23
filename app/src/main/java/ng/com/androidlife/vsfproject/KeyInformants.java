@@ -1,8 +1,16 @@
 package ng.com.androidlife.vsfproject;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -25,7 +33,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class KeyInformants extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
 
-    TextInputEditText  TownVillage, Longitude, Latitude, Status, Population, COMMUNITYSizeAdultMaleBefore, COMMUNITYSizeAdultFemaleBefore,
+    TextInputEditText  TownVillage, Latitude, Status, Population, COMMUNITYSizeAdultMaleBefore, COMMUNITYSizeAdultFemaleBefore,
             COMMUNITYSizeChildrenMaleBefore, COMMUNITYSizeChildrenFemaleBefore, COMMUNITYSizeAdultMaleAfter, COMMUNITYSizeAdultFemaleAfter, COMMUNITYSizeChildrenMaleAfter,
             COMMUNITYSizeChildrenFemaleAfter, COMMUNITYMemberConditionElderlyBefore, COMMUNITYMemberConditionDisabledBefore, COMMUNITYMemberConditionPregnantBefore,
             COMMUNITYMemberConditionLactatingBefore, COMMUNITYMemberConditionInfantBefore, COMMUNITYMemberConditionChildrenBefore, COMMUNITYMemberConditionElderlyAfter,
@@ -35,11 +43,40 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             OtherSchoolClassRoom,
             Vigelante, OtherSecurity,
             OtherCourt, OtherBank, InsuranceCompanies, Factories, OtherMarket, Hotels, Tourist, Mosques,
-            Church, Shrine, NGOsCBOs;
+            Church, Shrine, NGOsCBOs, KeyMemberOtherOccupationBefore,
+            Livelihood1,
+            Livelihood2,
+            Livelihood3,
+            Livelihood4,
+            Livelihood5,
+            Livelihood6,
+            Livelihood7,
+            Livelihood8,
+            Livelihood9,
+            Livelihood10,
+            Livelihood11,
+            Livelihood12,
+            Livelihood13,
+            Livelihood14,
+            Livelihood15,
+            Livelihood16,
+            Livelihood17,
+            Livelihood18,
+            Livelihood19,
+            Livelihood20,
+            Livelihood21,
+            Livelihood22,
+            Livelihood23,
+            Livelihood24,
+            Livelihood25,
+            Livelihood26,
+            Livelihood27,
+            Livelihood28,
+            Livelihood29;
 
     EditText ageCOMMUNITYBefore, ageCOMMUNITYAfter, CommunityInformantAge;
 
-    TextView genderBefore, genderAfter, genderInformant, LGASecretariat, State, LocalGov, EmirPalace, KeyMemberOtherOccupationAfter, DHsPalace, VillageHeadPalace,
+    TextView clongitude, genderBefore, genderAfter, genderInformant, LGASecretariat, State, LocalGov, EmirPalace, KeyMemberOtherOccupationAfter, DHsPalace, VillageHeadPalace,
             TownHall, PlayGroundCenter, Primary, Secondary, Technical, Commercial, Tertiary, PrimaryClassRoom, SecondaryClassRoom, TechnicalClassRoom,
             CommercialClassRoom, TertiaryClassRoom, IslamiyaClassRoom, Banks, BanksCondition,
             PrimaryWorkshop, SecondaryWorkshop, TechnicalWorkshop, CommercialWorkshop, TertiaryWorkshop, IslamiyaWorkshop, OtherSchoolWorkshop,
@@ -55,13 +92,17 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             Nutritionist, PublicHealthOfficers, CommunityHealthOfficers, CommunityHealth, ExtensionOfficers, EnvironmentalHealthOfficers, PsychSocial, TraditionalMidwives,
             SourceWater, Condition, ElectricitySource, ElectricityCondition, Roads, RoadsCondition, Railway, RailwayConditions, RailwayFlowSchedule, Airport, AirportConditions,
             SeaTransport, SeaConditions, Communication, InternationalRadio, FederalRadio, StateRadio, PrivateRadio, SateliteTelevision, NTAService, StateTelevisionStation,
-            PrisonService, FederalHighCourt, ShariaCourtOfAppeal, IndustrialCourt, StateHighCourt, MagistrateCourt, CustomaryCourt, Communication1, Communication2, Communication3, Communication4,
-            KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, KeyMemberOtherOccupationBefore;
+            PrisonService, cjtf, FederalHighCourt, ShariaCourtOfAppeal, IndustrialCourt, StateHighCourt, MagistrateCourt, CustomaryCourt, Communication1, Communication2, Communication3, Communication4,
+            KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, Bridge;
 
     private DatabaseReference mDatabase;
 
     static boolean isInitialized = false;
     private static String TAG = "KeyInformantActivity";
+
+    private static final int REQUEST_LOCATION = 1;
+    LocationManager locationManager;
+    String latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -89,6 +130,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         genderBefore = findViewById(R.id.COMMUNITYGenderBefore);
         genderAfter = findViewById(R.id.COMMUNITYGenderAfter);
         genderInformant = findViewById(R.id.InformantGenderText);
+
+        ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
 
         Spinner state = findViewById(R.id.StateSpinner);
@@ -958,13 +1001,14 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         State = findViewById(R.id.StateText);
         LocalGov = findViewById(R.id.localGovText);
         TownVillage = findViewById(R.id.TownVillage);
-        Longitude = findViewById(R.id.Longitude);
-        Latitude = findViewById(R.id.Latitude);
+        clongitude = findViewById(R.id.cLongitude);
+
         Status = findViewById(R.id.Status);
         Population = findViewById(R.id.Population);
 
         RoadsCondition = findViewById(R.id.TrunkText);
         MotoParkText = findViewById(R.id.MotorParkText);
+        Bridge = findViewById(R.id.BridgeText);
 
         COMMUNITYSizeAdultMaleBefore = findViewById(R.id.COMMUNITYSizeAdultMaleBefore);
         COMMUNITYSizeAdultFemaleBefore = findViewById(R.id.COMMUNITYSizeAdultFemaleBefore);
@@ -1121,6 +1165,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         ImmigrationService = findViewById(R.id.ImmigrationText);
         CustomService = findViewById(R.id.CustomsText);
         PrisonService = findViewById(R.id.PrisonText);
+        cjtf = findViewById(R.id.CJTFText);
+
         FederalHighCourt = findViewById(R.id.FederalHighCourtText);
         ShariaCourtOfAppeal = findViewById(R.id.ShariaCourtOfAppealText);
         IndustrialCourt = findViewById(R.id.IndustrialCourtText);
@@ -1142,6 +1188,39 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         Church = findViewById(R.id.Church);
         Shrine = findViewById(R.id.Shrine);
         NGOsCBOs = findViewById(R.id.NGOsCBOs);
+
+        Livelihood1 = findViewById(R.id.Livelihood1);
+        Livelihood2 = findViewById(R.id.Livelihood2);
+        Livelihood3 = findViewById(R.id.Livelihood3);
+        Livelihood4 = findViewById(R.id.Livelihood4);
+        Livelihood5 = findViewById(R.id.Livelihood5);
+        Livelihood6 = findViewById(R.id.Livelihood6);
+        Livelihood7 = findViewById(R.id.Livelihood7);
+        Livelihood8 = findViewById(R.id.Livelihood8);
+        Livelihood9 = findViewById(R.id.Livelihood9);
+
+        Livelihood11 = findViewById(R.id.Livelihood11);
+        Livelihood12 = findViewById(R.id.Livelihood12);
+        Livelihood13 = findViewById(R.id.Livelihood13);
+        Livelihood14 = findViewById(R.id.Livelihood14);
+        Livelihood15 = findViewById(R.id.Livelihood15);
+        Livelihood16 = findViewById(R.id.Livelihood16);
+        Livelihood17 = findViewById(R.id.Livelihood17);
+        Livelihood18 = findViewById(R.id.Livelihood18);
+        Livelihood19 = findViewById(R.id.Livelihood19);
+        Livelihood20 = findViewById(R.id.Livelihood20);
+        Livelihood21 = findViewById(R.id.Livelihood21);
+        Livelihood22 = findViewById(R.id.Livelihood22);
+        Livelihood23 = findViewById(R.id.Livelihood23);
+        Livelihood24 = findViewById(R.id.Livelihood24);
+        Livelihood25 = findViewById(R.id.Livelihood25);
+        Livelihood26 = findViewById(R.id.Livelihood26);
+        Livelihood27 = findViewById(R.id.Livelihood27);
+        Livelihood28 = findViewById(R.id.Livelihood28);
+        Livelihood29 = findViewById(R.id.Livelihood29);
+
+
+
     }
 
     public void FocusSubmit(View view) {
@@ -1153,11 +1232,42 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         final String Val001 = MotoParkText.getText().toString().trim();
 
+        final String Val023 = Livelihood1.getText().toString().trim();
+        final String Val024 = Livelihood2.getText().toString().trim();
+        final String Val025 = Livelihood3.getText().toString().trim();
+        final String Val026 = Livelihood4.getText().toString().trim();
+        final String Val027 = Livelihood5.getText().toString().trim();
+        final String Val028 = Livelihood6.getText().toString().trim();
+        final String Val029 = Livelihood7.getText().toString().trim();
+        final String Val030 = Livelihood8.getText().toString().trim();
+        final String Val031 = Livelihood9.getText().toString().trim();
+
+        final String Val033 = Livelihood11.getText().toString().trim();
+        final String Val034 = Livelihood12.getText().toString().trim();
+        final String Val035 = Livelihood13.getText().toString().trim();
+        final String Val036 = Livelihood14.getText().toString().trim();
+        final String Val037 = Livelihood15.getText().toString().trim();
+        final String Val038 = Livelihood16.getText().toString().trim();
+        final String Val039 = Livelihood17.getText().toString().trim();
+        final String Val040 = Livelihood18.getText().toString().trim();
+        final String Val041 = Livelihood19.getText().toString().trim();
+        final String Val042 = Livelihood20.getText().toString().trim();
+
+        final String Val043 = Livelihood21.getText().toString().trim();
+        final String Val044 = Livelihood22.getText().toString().trim();
+        final String Val045 = Livelihood23.getText().toString().trim();
+        final String Val046 = Livelihood24.getText().toString().trim();
+        final String Val047 = Livelihood25.getText().toString().trim();
+        final String Val048 = Livelihood26.getText().toString().trim();
+        final String Val049 = Livelihood27.getText().toString().trim();
+        final String Val050 = Livelihood28.getText().toString().trim();
+        final String Val051 = Livelihood29.getText().toString().trim();
+
         final String Val1 = State.getText().toString().trim();
         final String Val2 = LocalGov.getText().toString().trim();
         final String Val3 = TownVillage.getText().toString().trim();
-        final String Val4 = Longitude.getText().toString().trim();
-        final String Val5 = Latitude.getText().toString().trim();
+        final String Val4 = clongitude.getText().toString().trim();
+
         final String Val6 = Status.getText().toString().trim();
         final String Val7 = Population.getText().toString().trim();
         final String Val8 = COMMUNITYSizeAdultMaleBefore.getText().toString().trim();
@@ -1292,6 +1402,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val140 = ElectricitySource.getText().toString().trim();
 
         final String Val142 = Roads.getText().toString().trim();
+        final String Val0143 = Bridge.getText().toString().trim();
 
         final String Val144 = Railway.getText().toString().trim();
 
@@ -1321,6 +1432,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val169 = ImmigrationService.getText().toString().trim();
         final String Val170 = CustomService.getText().toString().trim();
         final String Val171 = PrisonService.getText().toString().trim();
+        final String Val002 = cjtf.getText().toString().trim();
 
 
         final String Val174 = FederalHighCourt.getText().toString().trim();
@@ -1329,6 +1441,11 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val177 = StateHighCourt.getText().toString().trim();
         final String Val178 = MagistrateCourt.getText().toString().trim();
         final String Val179 = CustomaryCourt.getText().toString().trim();
+
+        final String Val003 = Communication1.getText().toString().trim();
+        final String Val004 = Communication2.getText().toString().trim();
+        final String Val005 = Communication3.getText().toString().trim();
+        final String Val006 = Communication3.getText().toString().trim();
 
         final String Val181 = Banks.getText().toString().trim();
         final String Val182 = BanksCondition.getText().toString().trim();
@@ -1349,9 +1466,9 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val194 = Shrine.getText().toString().trim();
         final String Val195 = NGOsCBOs.getText().toString().trim();
 
-        final String Val196 = genderBefore.toString().trim();
-        final String Val197 = genderAfter.toString().trim();
-        final String Val198 = genderInformant.toString().trim();
+        final String Val196 = genderBefore.getText().toString().trim();
+        final String Val197 = genderAfter.getText().toString().trim();
+        final String Val198 = genderInformant.getText().toString().trim();
 
         final String Val199 = ageCOMMUNITYBefore.toString().trim();
         final String Val200 = ageCOMMUNITYAfter.toString().trim();
@@ -1361,11 +1478,52 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 !TextUtils.isEmpty(Val2)&&
 
                 !TextUtils.isEmpty(Val001)&&
+                !TextUtils.isEmpty(Val3)&&
+                !TextUtils.isEmpty(Val003)&&
+                !TextUtils.isEmpty(Val004)&&
+                !TextUtils.isEmpty(Val005)&&
+                !TextUtils.isEmpty(Val006)&&
+
+                !TextUtils.isEmpty(Val0143)&&
+
+
+                //Livelihood
+                !TextUtils.isEmpty(Val023)&&
+                !TextUtils.isEmpty(Val024)&&
+                !TextUtils.isEmpty(Val025)&&
+                !TextUtils.isEmpty(Val026)&&
+                !TextUtils.isEmpty(Val027)&&
+                !TextUtils.isEmpty(Val028)&&
+                !TextUtils.isEmpty(Val029)&&
+                !TextUtils.isEmpty(Val030)&&
+                !TextUtils.isEmpty(Val031)&&
+
+                !TextUtils.isEmpty(Val033)&&
+                !TextUtils.isEmpty(Val034)&&
+                !TextUtils.isEmpty(Val035)&&
+                !TextUtils.isEmpty(Val036)&&
+                !TextUtils.isEmpty(Val037)&&
+                !TextUtils.isEmpty(Val037)&&
+                !TextUtils.isEmpty(Val039)&&
+                !TextUtils.isEmpty(Val040)&&
+                !TextUtils.isEmpty(Val041)&&
+                !TextUtils.isEmpty(Val042)&&
+                !TextUtils.isEmpty(Val043)&&
+                !TextUtils.isEmpty(Val044)&&
+                !TextUtils.isEmpty(Val045)&&
+                !TextUtils.isEmpty(Val046)&&
+                !TextUtils.isEmpty(Val047)&&
+                !TextUtils.isEmpty(Val048)&&
+                !TextUtils.isEmpty(Val049)&&
+                !TextUtils.isEmpty(Val050)&&
+                !TextUtils.isEmpty(Val051)&&
+
+
 
                 !TextUtils.isEmpty(Val3)&&
                 !TextUtils.isEmpty(Val4)&&
                 !TextUtils.isEmpty(Val4)&&
-                !TextUtils.isEmpty(Val5)&&
+
                 !TextUtils.isEmpty(Val6)&&
                 !TextUtils.isEmpty(Val7)&&
                 !TextUtils.isEmpty(Val8)&&
@@ -1562,10 +1720,10 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 !TextUtils.isEmpty(Val197)&&
                 !TextUtils.isEmpty(Val198)){
 
-            State.setText("");
+          /**  State.setText("");
             LocalGov.setText("");
             TownVillage.setText("");
-            Longitude.setText("");
+            clongitude.setText("");
             Latitude.setText("");
             Status.setText("");
             Population.setText("");
@@ -1600,7 +1758,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             KeyMemberOccupationBefore.setText("");
             KeyMemberOccupationAfter.setText("");
             KeyMemberOtherOccupationBefore.setText("");
-            KeyMemberOtherOccupationAfter.setText("");
+
             LGASecretariat.setText("");
             EmirPalace.setText("");
             DHsPalace.setText("");
@@ -1685,23 +1843,23 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             PharmacyTechnicians.setText("");
             MedicalLabScientist.setText("");
             PharmacyAssistant.setText("");
-            LaboratoryTechnicians.setText("");
+
             LaboratoryAssistant.setText("");
             HealthSocialWorkers.setText("");
             Nutritionist.setText("");
             PublicHealthOfficers.setText("");
             CommunityHealthOfficers.setText("");
-            CommunityHealth.setText("");
+
             ExtensionOfficers.setText("");
             EnvironmentalHealthOfficers.setText("");
             PsychSocial.setText("");
             TraditionalMidwives.setText("");
             SourceWater.setText("");
-            Condition.setText("");
+
             ElectricitySource.setText("");
             ElectricityCondition.setText("");
             Roads.setText("");
-            RoadsCondition.setText("");
+
             Railway.setText("");
             RailwayConditions.setText("");
             RailwayFlowSchedule.setText("");
@@ -1754,17 +1912,58 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             Church.setText("");
             Shrine.setText("");
             NGOsCBOs.setText("");
+           **/
+
+            Intent ClearAct = new Intent(KeyInformants.this, MenuScreen.class);
+            startActivity(ClearAct);
 
             final DatabaseReference newPost = mDatabase.push();
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     newPost.child("MotoPark").setValue(Val001);
+
+                    newPost.child("HaveThereBeenAnyDestruction").setValue(Val023);
+                    newPost.child("HowManyTimesDidInsurgentAttack").setValue(Val024);
+                    newPost.child("WhatWasTheMajorImpact").setValue(Val025);
+                    newPost.child("WhereDidYouGoAfterDisplaced").setValue(Val026);
+                    newPost.child("HowWasTheCommunityBeingUnderBokoHaram").setValue(Val027);
+                    newPost.child("WhenDidThePeopleReturnedToTheCommunity").setValue(Val028);
+                    newPost.child("HaveSomeoneLostSomeOfTheirBelongings").setValue(Val029);
+                    newPost.child("WhatIsTheSocioEconomicBeforeBokoHaram").setValue(Val030);
+                    newPost.child("WhatIsTheSocioEconomicAfterBokoHaram").setValue(Val031);
+
+                    newPost.child("HavePeopleInTheCommunityRelocatedAsAResultOfBokoHaram").setValue(Val033);
+                    newPost.child("WasThereAnyPeopleOrFamilyInYourCommunityThatDidNotRelocate").setValue(Val034);
+                    newPost.child("HowHasBeenTheLivelihoodOfThoseWhoRemained").setValue(Val035);
+                    newPost.child("HasAnyPersonThatRelocatedReturnedToTheCommunity").setValue(Val036);
+                    newPost.child("HowHasBeenTheirLivelihood").setValue(Val037);
+                    newPost.child("HaveTheReturneeStartedAdjusting").setValue(Val038);
+                    newPost.child("HaveTheReturneeComeUpWithNewMeans").setValue(Val039);
+                    newPost.child("WhatHasBeenResponsibleForTheInability").setValue(Val040);
+                    newPost.child("WhatAreTheNecessaryThingsNeededToGetTheCommunityToOvercomeChallenges").setValue(Val041);
+                    newPost.child("WhatAreTheMajorChallengesAndThreat").setValue(Val042);
+
+                    newPost.child("WhatAreTheMajorCulturalBarrieresToReconstructionProcess").setValue(Val043);
+                    newPost.child("IsThereAnyReconstructionWorkInYourCommunity").setValue(Val044);
+                    newPost.child("WhatTypeAgencyAndReconstructionProjectHadBeenCarriedOut").setValue(Val045);
+                    newPost.child("WhatOtherAssistanceIsReturneeCommunityGetting").setValue(Val046);
+                    newPost.child("AreTheseAssistantAdequateToGuaranteeBasicStandardLiving").setValue(Val047);
+                    newPost.child("HowLongDoesTheOrganizationBeingRenderingAssistant").setValue(Val048);
+                    newPost.child("WhatSpecificInterventionMayBeRelevenatToYourCommunity").setValue(Val049);
+                    newPost.child("WhatDoYouThinkCanMakeYourCommunitySafe").setValue(Val050);
+                    newPost.child("WhatDoYouThinkCanMakeYourCommunitySociaEcononomicallyThriving").setValue(Val051);
+
+                    newPost.child("Airtel").setValue(Val004);
+                    newPost.child("MTN").setValue(Val003);
+                    newPost.child("Glo").setValue(Val005);
+                    newPost.child("Etisalat").setValue(Val006);
+
                     newPost.child("State").setValue(Val1);
                     newPost.child("LocalGovernment").setValue(Val2);
                     newPost.child("TownVillage").setValue(Val3);
-                    newPost.child("GeographicalLocationLongitude").setValue(Val4);
-                    newPost.child("GeographicalLocationLatitude").setValue(Val5);
+                    newPost.child("GeographicalLocationclongitude").setValue(Val4);
+
                     newPost.child("StatusOfTownVillage").setValue(Val6);
                     newPost.child("EstimatedTotalPopulationOfTownVillage").setValue(Val7);
                     newPost.child("NameOfMaleAdultBefore").setValue(Val8);
@@ -1780,11 +1979,11 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                     newPost.child("PregnantBefore").setValue(Val18);
                     newPost.child("LactatingBefore").setValue(Val19);
                     newPost.child("InfantBefore").setValue(Val20);
-                    newPost.child("InfantAfter").setValue(Val21);
-                    newPost.child("ChildrenBefore").setValue(Val22);
-                    newPost.child("ElderlyAfter").setValue(Val23);
-                    newPost.child("DisabledAfter").setValue(Val24);
-                    newPost.child("PregnantAfter").setValue(Val25);
+                    newPost.child("ChildrenBefore").setValue(Val21);
+                    newPost.child("ElderlyAfter").setValue(Val22);
+                    newPost.child("DisabledAfter").setValue(Val23);
+                    newPost.child("PregnantAfter").setValue(Val24);
+                    newPost.child("Lactating").setValue(Val25);
                     newPost.child("InfantAfter").setValue(Val26);
                     newPost.child("ChildrenAfter").setValue(Val27);
                     newPost.child("WhenWasYourCommunityAttackedByInsurgentDeath").setValue(Val28);
@@ -1900,14 +2099,12 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
                     newPost.child("ElectricitySource").setValue(Val140);
 
-                    newPost.child("Roads").setValue(Val142);
-
+                    newPost.child("Trunk").setValue(Val142);
                     newPost.child("Railway").setValue(Val144);
-
                     newPost.child("RailwayFlowSchedule").setValue(Val146);
                     newPost.child("Airport").setValue(Val147);
-
                     newPost.child("SeaTransport").setValue(Val149);
+                    newPost.child("BridgeAndCovert").setValue(Val0143);
 
 
 
@@ -1932,6 +2129,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                     newPost.child("CustomService").setValue(Val170);
 
                     newPost.child("PrisonService").setValue(Val171);
+                    newPost.child("CJTF").setValue(Val002);
 
 
                     newPost.child("FederalHighCourt").setValue(Val174);
@@ -2404,7 +2602,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         else if (spinner.getId() == R.id.BridgeSpinner){
             String BRG = parent.getItemAtPosition(position).toString();
-            Roads.setText(BRG);
+            Bridge.setText(BRG);
         }
 
         else if (spinner.getId() == R.id.MotorParkSpinner){
@@ -2532,6 +2730,11 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             PrisonService.setText(PRS);
         }
 
+        else if (spinner.getId() == R.id.CJTFSpinner){
+            String CJT = parent.getItemAtPosition(position).toString();
+            cjtf.setText(CJT);
+        }
+
         else if (spinner.getId() == R.id.FederalHighCourtSpinner){
             String FHC = parent.getItemAtPosition(position).toString();
             FederalHighCourt.setText(FHC);
@@ -2592,5 +2795,50 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
     @Override
     public void onNothingSelected(AdapterView<?> adapterView) {
 
+    }
+
+    public void cGetLocationDetails(View view) {
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            buildAlertMessageNoGPS();
+        }else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            GetLocationDetails();
+        }
+    }
+
+    private void GetLocationDetails() {
+        if (ActivityCompat.checkSelfPermission(KeyInformants.this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (KeyInformants.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(KeyInformants.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        }else{
+            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if (location != null){
+                double latti = location.getLatitude();
+                double longi = location.getLongitude();
+                latitude = String.valueOf(latti);
+                longitude = String.valueOf(longi);
+
+                clongitude.setText("Your current location is"+ "\n" + "Latitude = " + latitude + "\n" + "longitude = " + longitude);
+            }else {
+                Toast.makeText(this, "Unable to trace your location", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void buildAlertMessageNoGPS() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Please turn on your Location Access")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }
