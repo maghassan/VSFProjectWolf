@@ -16,34 +16,27 @@
         <item>BIU</item>
         <item>CHIBOK</item>
         <item>DAMBOA</item>
-
         <item>DIKWA</item>
         <item>GUBIO</item>
         <item>GUZAMALA</item>
         <item>GWOZA</item>
         <item>HAWUL</item>
         <item>JERE</item>
-
         <item>JERE</item>
         <item>KALA BALGE</item>
         <item>KONDUGA</item>
         <item>KUKAWA</item>
         <item>MAFA</item>
         <item>MAGUMERI</item>
-
         <item>MMC</item>
         <item>MARTE</item>
         <item>MOBBAR</item>
         <item>MONGONU</item>
         <item>NGALA</item>
         <item>NGAZAI</item>
-
         <item>SHANI</item>
         <item>ASKIRAUBA</item>
-        <item>BAMA</item>
-        <item>BIU</item>
-        <item>CHIBOK</item>
-        <item>DAMBOA</item>
+
     </string-array>
 
     <string-array name="occupation">
