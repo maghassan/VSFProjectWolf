@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">VSF E-Survey</string>
+    <string name="app_name">VSF E-Questionnaire Application</string>
 
     <string-array name="states">
         <item>Select State</item>
@@ -36,7 +36,22 @@
         <item>NGAZAI</item>
         <item>SHANI</item>
         <item>ASKIRAUBA</item>
-
+        <item>Local Governments in Yobe State</item>
+        <item>Damaturu</item>
+        <item>Geidam</item>
+        <item>Gujba</item>
+        <item>Gulami</item>
+        <item>Yunusari</item>
+        <item>Yunusafari</item>
+        <item>Tarmuwa</item>
+        <item>Local Governments In Adamawa State</item>
+        <item>Madagali</item>
+        <item>Michika</item>
+        <item>Maiha</item>
+        <item>Mubi North</item>
+        <item>Mubi South</item>
+        <item>Hong</item>
+        <item>Gombi</item>
     </string-array>
 
     <string-array name="local_gov_adamawa">

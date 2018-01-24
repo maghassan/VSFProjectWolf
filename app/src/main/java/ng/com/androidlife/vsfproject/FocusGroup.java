@@ -1,13 +1,22 @@
 package ng.com.androidlife.vsfproject;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.location.Location;
+import android.location.LocationManager;
+import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.design.widget.TextInputEditText;
+import android.support.v4.app.ActivityCompat;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -26,10 +35,16 @@ public class FocusGroup extends AppCompatActivity {
             FocusGroup16,FocusGroup17,FocusGroup18,FocusGroup19,FocusGroup20,
             FocusGroup21,FocusGroup22,FocusGroup23,FocusGroup24,FocusGroup25;
 
+    TextView flongitude;
+
     private DatabaseReference mDatabase;
 
     static boolean isInitialized = false;
     private static String TAG = "KeyInformantActivity";
+
+    private static final int REQUEST_LOCATION = 1;
+    LocationManager locationManager;
+    String latitude, longitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -49,6 +64,8 @@ public class FocusGroup extends AppCompatActivity {
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("FocusGroup");
         mDatabase.keepSynced(true);
+
+        flongitude = findViewById(R.id.fLongitude);
 
         FocusGroup1 = findViewById(R.id.FocusGroup1);
         FocusGroup2 = findViewById(R.id.FocusGroup2);
@@ -109,6 +126,8 @@ public class FocusGroup extends AppCompatActivity {
 
     private void SubmitGroup() {
 
+        final String Val0 = flongitude.getText().toString().trim();
+
         final String Val1 = FocusGroup1.getText().toString().trim();
         final String Val2 = FocusGroup2.getText().toString().trim();
         final String Val3 = FocusGroup3.getText().toString().trim();
@@ -136,6 +155,9 @@ public class FocusGroup extends AppCompatActivity {
         final String Val25 = FocusGroup25.getText().toString().trim();
 
         if (!TextUtils.isEmpty(Val1)&&
+
+                !TextUtils.isEmpty(Val0)&&
+
                 !TextUtils.isEmpty(Val2)&&
                 !TextUtils.isEmpty(Val3)&&
                 !TextUtils.isEmpty(Val4)&&
@@ -165,6 +187,9 @@ public class FocusGroup extends AppCompatActivity {
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    newPost.child("Q26").setValue(Val0);
+
                     newPost.child("Q1").setValue(Val1);
                     newPost.child("Q2").setValue(Val2);
                     newPost.child("Q3").setValue(Val3);
@@ -213,5 +238,50 @@ public class FocusGroup extends AppCompatActivity {
     public void BackToMenu(View view) {
         Intent Back = new Intent(this, MenuScreen.class);
         startActivity(Back);
+    }
+
+    public void fGetLocationDetails(View view) {
+
+        locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
+        if (!locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            buildAlertMessageNoGPS();
+        }else if (locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER)){
+            GetLocationDetails();
+        }
+    }
+
+    private void GetLocationDetails() {
+        if (ActivityCompat.checkSelfPermission(FocusGroup.this, android.Manifest.permission.ACCESS_FINE_LOCATION)
+                != PackageManager.PERMISSION_GRANTED && ActivityCompat.checkSelfPermission
+                (FocusGroup.this, android.Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED){
+            ActivityCompat.requestPermissions(FocusGroup.this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
+        }else{
+            Location location = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
+
+            if (location != null){
+                double latti = location.getLatitude();
+                double longi = location.getLongitude();
+                latitude = String.valueOf(latti);
+                longitude = String.valueOf(longi);
+
+                flongitude.setText("Your current location is"+ "\n" + "Latitude = " + latitude + "\n" + "longitude = " + longitude);
+            }else {
+                Toast.makeText(this, "Unable to trace your location", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void buildAlertMessageNoGPS() {
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Please turn on your Location Access")
+                .setCancelable(false)
+                .setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
+                        startActivity(new Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS));
+                    }
+                });
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
     }
 }

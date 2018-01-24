@@ -43,7 +43,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             OtherSchoolClassRoom,
             Vigelante, OtherSecurity,
             OtherCourt, OtherBank, InsuranceCompanies, Factories, OtherMarket, Hotels, Tourist, Mosques,
-            Church, Shrine, NGOsCBOs, KeyMemberOtherOccupationBefore, cOccupationOtherBefore,
+            Church, Shrine, NGOsCBOs, cOccupationOtherBefore,
             Livelihood1,
             Livelihood2,
             Livelihood4,
@@ -96,6 +96,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
     private DatabaseReference mDatabase;
 
+    Spinner S1, S2, S3;
+
     static boolean isInitialized = false;
     private static String TAG = "KeyInformantActivity";
 
@@ -129,6 +131,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         genderBefore = findViewById(R.id.COMMUNITYGenderBefore);
         genderAfter = findViewById(R.id.COMMUNITYGenderAfter);
         genderInformant = findViewById(R.id.InformantGenderText);
+
+
 
         ActivityCompat.requestPermissions(this, new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, REQUEST_LOCATION);
 
@@ -1052,7 +1056,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         KeyMemberQualificationAfter = findViewById(R.id.cQualificationAfter);
         KeyMemberOccupationBefore = findViewById(R.id.cOccupationBefore);
         KeyMemberOccupationAfter = findViewById(R.id.cOccupationAfter);
-        KeyMemberOtherOccupationBefore = findViewById(R.id.cOccupationOther);
+
         LGASecretariat = findViewById(R.id.LGASecretariatText);
         EmirPalace = findViewById(R.id.EmirTextText);
         DHsPalace = findViewById(R.id.DHsPalaceText);
@@ -1311,7 +1315,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val35 = KeyMemberQualificationAfter.getText().toString().trim();
         final String Val36 = KeyMemberOccupationBefore.getText().toString().trim();
         final String Val37 = KeyMemberOccupationAfter.getText().toString().trim();
-        final String Val38 = KeyMemberOtherOccupationBefore.getText().toString().trim();
+
         final String Val40 = LGASecretariat.getText().toString().trim();
         final String Val41 = EmirPalace.getText().toString().trim();
         final String Val42 = DHsPalace.getText().toString().trim();
@@ -1416,7 +1420,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         final String Val142 = Roads.getText().toString().trim();
         final String Val1421 = Roads2.getText().toString().trim();
-        final String Val0002 = FootpathText.toString().trim();
+        final String Val0002 = FootpathText.getText().toString().trim();
         final String Val0143 = Bridge.getText().toString().trim();
         final String Val144 = Railway.getText().toString().trim();
         final String Val146 = RailwayFlowSchedule.getText().toString().trim();
@@ -1484,9 +1488,9 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val197 = genderAfter.getText().toString().trim();
         final String Val198 = genderInformant.getText().toString().trim();
 
-        final String Val199 = ageCOMMUNITYBefore.toString().trim();
-        final String Val200 = ageCOMMUNITYAfter.toString().trim();
-        final String Val201 = CommunityInformantAge.toString().trim();
+        final String Val199 = ageCOMMUNITYBefore.getText().toString().trim();
+        final String Val200 = ageCOMMUNITYAfter.getText().toString().trim();
+        final String Val201 = CommunityInformantAge.getText().toString().trim();
 
         if (!TextUtils.isEmpty(Val1)&&
                 !TextUtils.isEmpty(Val2)&&
@@ -1574,7 +1578,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 !TextUtils.isEmpty(Val35)&&
                 !TextUtils.isEmpty(Val36)&&
                 !TextUtils.isEmpty(Val37)&&
-                !TextUtils.isEmpty(Val38)&&
+
 
                 !TextUtils.isEmpty(Val41)&&
                 !TextUtils.isEmpty(Val42)&&
@@ -2017,7 +2021,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                     newPost.child("EducationQualificationAfter").setValue(Val35);
                     newPost.child("PrimaryOccupationBefore").setValue(Val36);
                     newPost.child("PrimaryOccupationAfter").setValue(Val37);
-                    newPost.child("OtherOccupationBefore").setValue(Val38);
+
 
                     newPost.child("LGASecretariat").setValue(Val40);
                     newPost.child("EmirsPalace").setValue(Val41);
@@ -2273,6 +2277,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         startActivity(Back);
     }
 
+
+
     @Override
     public void onItemSelected(AdapterView<?> parent, View view, int position, long l) {
 
@@ -2281,7 +2287,17 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         if (spinner.getId() == R.id.StateSpinner){
             String state = parent.getItemAtPosition(position).toString();
             State.setText(state);
-        }else if (spinner.getId() == R.id.LocalGovSpinner){
+        }
+
+
+
+
+
+
+
+
+
+        else if (spinner.getId() == R.id.LocalGovSpinner){
             String localGov = parent.getItemAtPosition(position).toString();
             LocalGov.setText(localGov);
         }else if (spinner.getId() == R.id.cOccupationBeforeSpinner){

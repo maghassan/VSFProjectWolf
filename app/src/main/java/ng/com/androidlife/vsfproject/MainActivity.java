@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
 
     public void Login(View view) {
         Intent Lgn = new Intent(this, MenuScreen.class);
-        if (username.getText().toString().trim().equals("a") && password.getText().toString().trim().equals("a")){
+        if (username.getText().toString().trim().equals("vsf@vsf.org") && password.getText().toString().trim().equals("vsf")){
                 startActivity(Lgn);
             }
             else {
