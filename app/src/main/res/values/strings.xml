@@ -204,4 +204,37 @@
         <item>Agricultural</item>
         <item>Merchant</item>
     </string-array>
+
+    <string name="a">
+        Step 1:
+        \nEnsure the app is installed into the phone and enabled to work.
+        \n(Allow security permission and others)
+        \nStep 2:
+        \nEnable GPS location on the Phone
+        \nStep 3:
+        \nLogin with the approved username and password
+        \nUsername vsf@vsf.org
+        \nPassword: vsf
+    </string>
+
+    <string name="b">
+        Step 4:
+        \nSelect the appropriate questionnaire to be administered
+    </string>
+    <string name="c">
+        Step 5:
+        \nSelect State and LGA for data collection. (Note that all LGs are displayed at once) See picture below.
+        \nStep 5:
+        \nSelect State and LGA for data collection. (Note that all LGs are displayed at once) See picture below.
+        \nStep 6:
+        \nFill in respondent answers on the questionnaire accordingly and for any unanswered question just type NA or NIL in the blank Space. All spaces must be filled.
+    </string>
+    <string name="d">
+        Step 7:
+        \nAfter filling the questionnaire ensure you click location at the final end of the questionnaire for your GPS coordinate.
+        \nStep 8:
+        \nClick on Submit to sync data to he database.
+        \nStep 9:
+        \nClick on Back To Menu to continue administering questionnaire.
+    </string>
 </resources>
