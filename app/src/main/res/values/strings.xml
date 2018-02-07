@@ -138,6 +138,7 @@
         <item>REB</item>
         <item>Private Plant</item>
         <item>Solar</item>
+        <item>Not Available</item>
     </string-array>
 
     <string-array name="water_source">
@@ -150,6 +151,21 @@
         <item>Pond</item>
         <item>Treatment Plant</item>
         <item>Select Source</item>
+        <item>Not Available</item>
+    </string-array>
+
+    <string-array name="water_condition">
+        <item>Available (Throughout the year)</item>
+        <item>Available (During the Raining Season Only)</item>
+        <item>Not Available</item>
+    </string-array>
+
+    <string-array name="media_condition">
+        <item>Available (With Good Reception)</item>
+        <item>Available (With Fair Reception)</item>
+        <item>Available (With poor Reception)</item>
+        <item>Available (But not Functional)</item>
+        <item>Not Available</item>
     </string-array>
 
     <string-array name="sustainable">
@@ -169,6 +185,14 @@
         <item>Access Bank</item>
     </string-array>
 
+    <string-array name="market_Condition">
+        <item>Fully Functional</item>
+        <item>Fairly Functional</item>
+        <item>Poorly Functional</item>
+        <item>Completely Destroyed and Nor Functional</item>
+        <item>Not Destroyed Functional</item>
+    </string-array>
+
     <string-array name="education">
         <item>Available (Adequate)</item>
         <item>Available (Fairly Adequate)</item>
@@ -183,6 +207,7 @@
         <item>Local Government</item>
         <item>Faith Based</item>
         <item>Private Individual</item>
+        <item>Private And Government</item>
     </string-array>
 
     <string-array name="ngo_type">

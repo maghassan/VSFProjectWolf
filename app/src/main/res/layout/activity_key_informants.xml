@@ -1561,7 +1561,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textStyle="bold"
-                android:text="NON STAFF"
+                android:text="NON TEACHING STAFF"
                 android:padding="10dp"
                 android:background="@drawable/out_line"
                 android:layout_margin="5dp"/>
@@ -2036,7 +2036,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
-                    android:text="School Ownership"
+                    android:text="Primary School"
                     android:textColor="@color/colorAccent"
                     android:textStyle="bold"/>
                 <TextView
@@ -4742,7 +4742,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="If yes, what's the major cause. If no, what was the reason?"
+                        android:hint="If yes, what's the major cause. If No just type No"
                         android:id="@+id/Livelihood1"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
@@ -4968,7 +4968,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="If Yes, estimate how people returned. If No write NILL"
+                        android:hint="If Yes, estimate how many people returned. If No write NILL"
                         android:id="@+id/Livelihood14"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -4979,7 +4979,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="How has been their livelihood Poor, Good or Very Good (NIL if not Applicable)"
+                        android:hint="How has been the livelihood condition of the returnees to the community: Poor, Good or Very Good (NIL if not Applicable)"
                         android:id="@+id/Livelihood15"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
@@ -5020,7 +5020,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="What has been responsible for the inability of the returnees/community to get back to the livelihood that not been picked up again?"
+                    android:text="What has been responsible for the inability of the returnees/community to get back to the livelihood that have not been picked up again?"
                     android:textStyle="bold" />
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -5030,7 +5030,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Inability Responsibility"
+                        android:hint="Reasons"
                         android:id="@+id/Livelihood18"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView

@@ -168,7 +168,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         WaterSource.setOnItemSelectedListener(this);
 
         Spinner WaterSourceCondition = findViewById(R.id.cWaterConditionSpinner);
-        ArrayAdapter<CharSequence> waterSourceCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> waterSourceCondition = ArrayAdapter.createFromResource(this, R.array.water_condition, android.R.layout.simple_spinner_item);
         waterSourceCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         WaterSourceCondition.setAdapter(waterSourceCondition);
         WaterSourceCondition.setOnItemSelectedListener(this);
@@ -327,74 +327,74 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
 
         Spinner StaffPrimaryCondition = findViewById(R.id.TeachersPrimarySpinner);
-        ArrayAdapter<CharSequence> adapterdPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterdPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterdPrimaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         StaffPrimaryCondition.setAdapter(adapterdPrimaryCondition);
         StaffPrimaryCondition.setOnItemSelectedListener(this);
 
         Spinner StaffSecondaryCondition = findViewById(R.id.TeachersSecondarySpinner);
-        ArrayAdapter<CharSequence> adapterdSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterdSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterdSecondaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         StaffSecondaryCondition.setAdapter(adapterdSecondaryCondition);
         StaffSecondaryCondition.setOnItemSelectedListener(this);
 
         Spinner StaffTechnicalCondition = findViewById(R.id.TeachersTechnicalSpinner);
-        ArrayAdapter<CharSequence> adapterdTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterdTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterdTechnicalCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         StaffTechnicalCondition.setAdapter(adapterdTechnicalCondition);
         StaffTechnicalCondition.setOnItemSelectedListener(this);
 
         Spinner StaffCommercialCondition = findViewById(R.id.TeachersCommercialSpinner);
-        ArrayAdapter<CharSequence> adapterdCommercialCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterdCommercialCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterdCommercialCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         StaffCommercialCondition.setAdapter(adapterdCommercialCondition);
         StaffCommercialCondition.setOnItemSelectedListener(this);
 
         Spinner StaffTertiaryCondition = findViewById(R.id.TeachersTertiarySpinner);
-        ArrayAdapter<CharSequence> adapterdTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterdTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterdTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         StaffTertiaryCondition.setAdapter(adapterdTertiaryCondition);
         StaffTertiaryCondition.setOnItemSelectedListener(this);
 
         Spinner StaffIslamiyaCondition = findViewById(R.id.TeachersIslamiyaSpinner);
-        ArrayAdapter<CharSequence> adapterdIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterdIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterdIslamiyaCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         StaffIslamiyaCondition.setAdapter(adapterdIslamiyaCondition);
         StaffIslamiyaCondition.setOnItemSelectedListener(this);
 
 
         Spinner NonStaffPrimaryCondition = findViewById(R.id.NonStaffPrimarySpinner);
-        ArrayAdapter<CharSequence> adapterePrimaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterePrimaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterePrimaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         NonStaffPrimaryCondition.setAdapter(adapterePrimaryCondition);
         NonStaffPrimaryCondition.setOnItemSelectedListener(this);
 
         Spinner NonStaffSecondaryCondition = findViewById(R.id.NonStaffSecondarySpinner);
-        ArrayAdapter<CharSequence> adaptereSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptereSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptereSecondaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         NonStaffSecondaryCondition.setAdapter(adaptereSecondaryCondition);
         NonStaffSecondaryCondition.setOnItemSelectedListener(this);
 
         Spinner NonStaffTechnicalCondition = findViewById(R.id.NonStaffTechnicalSpinner);
-        ArrayAdapter<CharSequence> adaptereTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptereTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptereTechnicalCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         NonStaffTechnicalCondition.setAdapter(adaptereTechnicalCondition);
         NonStaffTechnicalCondition.setOnItemSelectedListener(this);
 
         Spinner NonStaffCommercialCondition = findViewById(R.id.NonStaffCommercialSpinner);
-        ArrayAdapter<CharSequence> adaptereCommercialCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptereCommercialCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptereCommercialCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         NonStaffCommercialCondition.setAdapter(adaptereCommercialCondition);
         NonStaffCommercialCondition.setOnItemSelectedListener(this);
 
         Spinner NonStaffTertiaryCondition = findViewById(R.id.NonStaffTertiarySpinner);
-        ArrayAdapter<CharSequence> adaptereTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptereTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptereTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         NonStaffTertiaryCondition.setAdapter(adaptereTertiaryCondition);
         NonStaffTertiaryCondition.setOnItemSelectedListener(this);
 
         Spinner NonStaffIslamiyaCondition = findViewById(R.id.NonStaffIslamiyaSpinner);
-        ArrayAdapter<CharSequence> adaptereIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptereIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptereIslamiyaCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         NonStaffIslamiyaCondition.setAdapter(adaptereIslamiyaCondition);
         NonStaffIslamiyaCondition.setOnItemSelectedListener(this);
@@ -798,43 +798,43 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         //MediaComss
         Spinner MediaCommsTertiaryCondition1 = findViewById(R.id.InternationalRadioSpinner);
-        ArrayAdapter<CharSequence> adapterkaTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkaTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.media_condition, android.R.layout.simple_spinner_item);
         adapterkaTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsTertiaryCondition1.setAdapter(adapterkaTertiaryCondition);
         MediaCommsTertiaryCondition1.setOnItemSelectedListener(this);
 
         Spinner MediaCommsTertiaryCondition2 = findViewById(R.id.FederalRadioSpinner);
-        ArrayAdapter<CharSequence> adapterkalTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkalTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.media_condition, android.R.layout.simple_spinner_item);
         adapterkalTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsTertiaryCondition2.setAdapter(adapterkalTertiaryCondition);
         MediaCommsTertiaryCondition2.setOnItemSelectedListener(this);
 
         Spinner MediaCommsTertiaryCondition3 = findViewById(R.id.PrivateRadioSpinner);
-        ArrayAdapter<CharSequence> adapterkbTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkbTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.media_condition, android.R.layout.simple_spinner_item);
         adapterkbTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsTertiaryCondition3.setAdapter(adapterkbTertiaryCondition);
         MediaCommsTertiaryCondition3.setOnItemSelectedListener(this);
 
         Spinner MediaCommsPrimaryCondition = findViewById(R.id.SateliteSpinner);
-        ArrayAdapter<CharSequence> adapterkcPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkcPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.media_condition, android.R.layout.simple_spinner_item);
         adapterkcPrimaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsPrimaryCondition.setAdapter(adapterkcPrimaryCondition);
         MediaCommsPrimaryCondition.setOnItemSelectedListener(this);
 
         Spinner MediaCommsSecondaryCondition = findViewById(R.id.NTAServiceSpinner);
-        ArrayAdapter<CharSequence> adapterkcSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkcSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.media_condition, android.R.layout.simple_spinner_item);
         adapterkcSecondaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsSecondaryCondition.setAdapter(adapterkcSecondaryCondition);
         MediaCommsSecondaryCondition.setOnItemSelectedListener(this);
 
         Spinner MediaCommsTechnicalCondition = findViewById(R.id.StateTelevisionSpinner);
-        ArrayAdapter<CharSequence> adapterkcTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkcTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.media_condition, android.R.layout.simple_spinner_item);
         adapterkcTechnicalCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsTechnicalCondition.setAdapter(adapterkcTechnicalCondition);
         MediaCommsTechnicalCondition.setOnItemSelectedListener(this);
 
         Spinner MediaCommsCommercialCondition = findViewById(R.id.PrivateTelevisionSpinner);
-        ArrayAdapter<CharSequence> adapterkcCommercialCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkcCommercialCondition = ArrayAdapter.createFromResource(this, R.array.media_condition, android.R.layout.simple_spinner_item);
         adapterkcCommercialCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MediaCommsCommercialCondition.setAdapter(adapterkcCommercialCondition);
         MediaCommsCommercialCondition.setOnItemSelectedListener(this);
@@ -985,25 +985,25 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         //Market
         Spinner MarketTechnicalCondition = findViewById(R.id.DailyMarketSpinner);
-        ArrayAdapter<CharSequence> adapterkxTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkxTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.market_Condition, android.R.layout.simple_spinner_item);
         adapterkxTechnicalCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MarketTechnicalCondition.setAdapter(adapterkxTechnicalCondition);
         MarketTechnicalCondition.setOnItemSelectedListener(this);
 
         Spinner MarketCommercialCondition = findViewById(R.id.WeeklyMarketSpinner);
-        ArrayAdapter<CharSequence> adapterkxCommercialCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkxCommercialCondition = ArrayAdapter.createFromResource(this, R.array.market_Condition, android.R.layout.simple_spinner_item);
         adapterkxCommercialCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MarketCommercialCondition.setAdapter(adapterkxCommercialCondition);
         MarketCommercialCondition.setOnItemSelectedListener(this);
 
         Spinner MarketTertiaryCondition = findViewById(R.id.LivestockMarketSpinner);
-        ArrayAdapter<CharSequence> adapterkxTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkxTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.market_Condition, android.R.layout.simple_spinner_item);
         adapterkxTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MarketTertiaryCondition.setAdapter(adapterkxTertiaryCondition);
         MarketTertiaryCondition.setOnItemSelectedListener(this);
 
         Spinner MarketIslamiyaCondition = findViewById(R.id.SuperMarketsSpinner);
-        ArrayAdapter<CharSequence> adapterkxIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkxIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.market_Condition, android.R.layout.simple_spinner_item);
         adapterkxIslamiyaCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         MarketIslamiyaCondition.setAdapter(adapterkxIslamiyaCondition);
         MarketIslamiyaCondition.setOnItemSelectedListener(this);
