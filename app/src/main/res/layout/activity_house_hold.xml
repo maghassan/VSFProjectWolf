@@ -266,7 +266,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:focusable="true"
-                        android:hint="Name of Male Adult (Age of Adult)"
+                        android:hint="Number of Male Adult"
                         android:id="@+id/HouseHoldSizeAdultMaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -277,7 +277,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name of Female Adult (Age of Adult)"
+                        android:hint="Number of Female Adult"
                         android:id="@+id/HouseHoldSizeAdultFemaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -288,7 +288,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name of Male Children (Age of Adult)"
+                        android:hint="Number of Male Children"
                         android:id="@+id/HouseHoldSizeChildrenMmaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -299,7 +299,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name of Female Children (Age of Adult)"
+                        android:hint="Number of Female Children"
                         android:id="@+id/HouseHoldSizeChildrenFemaleBefore"/>
                 </android.support.design.widget.TextInputLayout>
                 <TextView
@@ -316,7 +316,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name of Male Adult (Age of Adult)"
+                        android:hint="Number of Male Adult"
                         android:id="@+id/HouseHoldSizeAdultMaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -327,7 +327,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name of Female Adult (Age of Adult)"
+                        android:hint="Number of Female Adult"
                         android:id="@+id/HouseHoldSizeAdultFemaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -338,7 +338,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name of Male Children (Age of Adult)"
+                        android:hint="Number of Male Children"
                         android:id="@+id/HouseHoldSizeChildrenMmaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <android.support.design.widget.TextInputLayout
@@ -349,7 +349,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="Name of Female Children (Age of Adult)"
+                        android:hint="Number of Female Children"
                         android:id="@+id/HouseHoldSizeChildrenFemaleAfter"/>
                 </android.support.design.widget.TextInputLayout>
                 <RadioGroup
@@ -1184,7 +1184,7 @@
                 <android.support.design.widget.TextInputEditText
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="If Yes, What has been responsible for the returnee?"
+                    android:hint="If Yes, What has been the reason? If No type NA"
                     android:id="@+id/LivelihoodReturneesLivelyUnable"/>
             </android.support.design.widget.TextInputLayout>
             <TextView
