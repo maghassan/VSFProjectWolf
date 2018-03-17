@@ -4781,7 +4781,7 @@
                 <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:orientation="horizontal">
+                    android:orientation="vertical">
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -5089,7 +5089,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:text="Is there any recontruction work in your community?"
+                    android:text="Is there any reconstructions work in your community?"
                     android:textStyle="bold" />
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
@@ -5099,7 +5099,7 @@
                     <android.support.design.widget.TextInputEditText
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:hint="If Yes, Indicate the new means. If No write NILL"
+                        android:hint="If Yes, Indicate. If No write NILL"
                         android:id="@+id/Livelihood22"/>
                 </android.support.design.widget.TextInputLayout>
 
@@ -5258,6 +5258,16 @@
                     android:text="Get Location"
                     android:layout_margin="10dp"
                     android:onClick="cGetLocationDetails"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Details"
+                    android:id="@+id/usernameK"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:textSize="16sp"
+                    android:textStyle="bold"/>
 
             </LinearLayout>
 

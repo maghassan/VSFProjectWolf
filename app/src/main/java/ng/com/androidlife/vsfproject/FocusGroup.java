@@ -3,6 +3,7 @@ package ng.com.androidlife.vsfproject;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.location.LocationManager;
@@ -14,9 +15,13 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -28,6 +33,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import static java.security.AccessController.getContext;
+
 public class FocusGroup extends AppCompatActivity {
 
     TextInputEditText FocusGroup1, FocusGroup2, FocusGroup3, FocusGroup4, FocusGroup5,
@@ -36,7 +43,9 @@ public class FocusGroup extends AppCompatActivity {
             FocusGroup16,FocusGroup17,FocusGroup18,FocusGroup19,FocusGroup20,
             FocusGroup21,FocusGroup22,FocusGroup23,FocusGroup24,FocusGroup25;
 
-    TextView flongitude;
+    TextView flongitude, DisplayName;
+
+    private String m_Text = "";
 
     private DatabaseReference mDatabase;
 
@@ -52,6 +61,41 @@ public class FocusGroup extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_focus_group);
 
+        //Popup Show
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Please Enter your Name");
+        builder.setCancelable(false);
+
+// Set up the input
+        final EditText input = new EditText(this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+        builder.setView(input);
+
+// Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_Text = input.getText().toString().trim();
+                DisplayName.setText(m_Text);
+
+                if (m_Text.isEmpty()){
+                    Intent YME = new Intent(FocusGroup.this, MenuScreen.class);
+                    startActivity(YME);
+                }
+            }
+        });
+        /**builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.cancel();
+            }
+        });**/
+
+        builder.show();
+
+        //GetUsername
+        //DisplayName.setText(getIntent().getStringExtra("inputEmail"));
         try{
             if (!isInitialized){
                 FirebaseDatabase.getInstance().setPersistenceEnabled(true);
@@ -67,6 +111,9 @@ public class FocusGroup extends AppCompatActivity {
         mDatabase.keepSynced(true);
 
         flongitude = findViewById(R.id.fLongitude);
+
+        DisplayName = findViewById(R.id.username);
+
 
         FocusGroup1 = findViewById(R.id.FocusGroup1);
         FocusGroup2 = findViewById(R.id.FocusGroup2);
@@ -98,36 +145,14 @@ public class FocusGroup extends AppCompatActivity {
     public void GroupSubmit(View view) {
         SubmitGroup();
 
-        FocusGroup1.setText("");
-        FocusGroup2.setText("");
-        FocusGroup3.setText("");
-        FocusGroup4.setText("");
-        FocusGroup5.setText("");
-        FocusGroup6.setText("");
-        FocusGroup7.setText("");
-        FocusGroup8.setText("");
-        FocusGroup9.setText("");
-        FocusGroup10.setText("");
-        FocusGroup11.setText("");
-        FocusGroup12.setText("");
-        FocusGroup13.setText("");
-        FocusGroup14.setText("");
-        FocusGroup15.setText("");
-        FocusGroup16.setText("");
-        FocusGroup17.setText("");
-        FocusGroup18.setText("");
-        FocusGroup19.setText("");
-        FocusGroup20.setText("");
-        FocusGroup21.setText("");
-        FocusGroup22.setText("");
-        FocusGroup23.setText("");
-        FocusGroup24.setText("");
-        FocusGroup25.setText("");
+
     }
 
     private void SubmitGroup() {
 
         final String Val0 = flongitude.getText().toString().trim();
+
+        final String Val26 = DisplayName.getText().toString().trim();
 
         final String Val1 = FocusGroup1.getText().toString().trim();
         final String Val2 = FocusGroup2.getText().toString().trim();
@@ -159,6 +184,8 @@ public class FocusGroup extends AppCompatActivity {
 
                 !TextUtils.isEmpty(Val0)&&
 
+                !TextUtils.isEmpty(Val26)&&
+
                 !TextUtils.isEmpty(Val2)&&
                 !TextUtils.isEmpty(Val3)&&
                 !TextUtils.isEmpty(Val4)&&
@@ -184,12 +211,41 @@ public class FocusGroup extends AppCompatActivity {
                 !TextUtils.isEmpty(Val23)&&
                 !TextUtils.isEmpty(Val24)&&
                 !TextUtils.isEmpty(Val25)){
+
+            FocusGroup1.setText("");
+            FocusGroup2.setText("");
+            FocusGroup3.setText("");
+            FocusGroup4.setText("");
+            FocusGroup5.setText("");
+            FocusGroup6.setText("");
+            FocusGroup7.setText("");
+            FocusGroup8.setText("");
+            FocusGroup9.setText("");
+            FocusGroup10.setText("");
+            FocusGroup11.setText("");
+            FocusGroup12.setText("");
+            FocusGroup13.setText("");
+            FocusGroup14.setText("");
+            FocusGroup15.setText("");
+            FocusGroup16.setText("");
+            FocusGroup17.setText("");
+            FocusGroup18.setText("");
+            FocusGroup19.setText("");
+            FocusGroup20.setText("");
+            FocusGroup21.setText("");
+            FocusGroup22.setText("");
+            FocusGroup23.setText("");
+            FocusGroup24.setText("");
+            FocusGroup25.setText("");
+
             final DatabaseReference newPost = mDatabase.push();
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
 
                     newPost.child("Q26").setValue(Val0);
+
+                    newPost.child("Username").setValue(Val26);
 
                     newPost.child("Q1").setValue(Val1);
                     newPost.child("Q2").setValue(Val2);
@@ -220,9 +276,9 @@ public class FocusGroup extends AppCompatActivity {
                                 @Override
                                 public void onComplete(@NonNull Task<Void> task) {
                                     if (task.isSuccessful()){
-                                        Toast.makeText(FocusGroup.this,"Your Data Is Stored To CloudDatabase", Toast.LENGTH_SHORT);
+                                        Toast.makeText(FocusGroup.this,"Your Data Is Stored To CloudDatabase", Toast.LENGTH_SHORT).show();
                                     }else {
-                                        Toast.makeText(FocusGroup.this,"Data Stored, Connect to Internet to Push to CloudDatabase", Toast.LENGTH_SHORT);
+                                        Toast.makeText(FocusGroup.this,"Data Stored, Connect to Internet to Push to CloudDatabase", Toast.LENGTH_SHORT).show();
                                     }
                                 }
                             });
@@ -233,6 +289,8 @@ public class FocusGroup extends AppCompatActivity {
 
                 }
             });
+        }else {
+            Toast.makeText(FocusGroup.this,"Please Check Unanswered Questions", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -303,6 +361,8 @@ public class FocusGroup extends AppCompatActivity {
             public void run() {
                 doubleBackToExitPressedOnce = false;
             }
-        }, 2000);
+        }, 3000);
     }
+
+
 }

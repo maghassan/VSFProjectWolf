@@ -4,13 +4,31 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MenuScreen extends AppCompatActivity {
+
+    private FirebaseAuth auth;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu_screen);
+
+        auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            /**startActivity(new Intent(MainActivity.this, MainActivity.class));
+             finish();**/
+
+            Toast.makeText(MenuScreen.this, "Welcome!" ,
+                    Toast.LENGTH_SHORT).show();
+        }else if (auth.getCurrentUser() == null){
+            startActivity(new Intent(MenuScreen.this, LoginActivity.class));
+            finish();
+        }
     }
 
     public void OpenHouse(View view) {

@@ -1,45 +1,62 @@
 package ng.com.androidlife.vsfproject;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.firebase.auth.FirebaseAuth;
 
 public class MainActivity extends AppCompatActivity {
 
-    EditText username, password;
+    private FirebaseAuth auth;
+
+    TextView DisplayName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        username = findViewById(R.id.username);
-        password = findViewById(R.id.password);
+        //DisplayName = findViewById(R.id.username);
+
+        //DisplayName.setText(getIntent().getStringExtra("inputEmail"));
+
+        auth = FirebaseAuth.getInstance();
+
+        if (auth.getCurrentUser() != null) {
+            /**startActivity(new Intent(MainActivity.this, MainActivity.class));
+            finish();**/
+
+            Toast.makeText(MainActivity.this, "Welcome!" ,
+                    Toast.LENGTH_SHORT).show();
+        }else if (auth.getCurrentUser() == null){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+            finish();
+        }
     }
 
-    public void Login(View view) {
-        Intent Lgn = new Intent(this, MenuScreen.class);
-        if (username.getText().toString().trim().equals("vsf@vsf.org") && password.getText().toString().trim().equals("vsf")){
-                startActivity(Lgn);
-            }
-            else {
-                Toast.makeText(this, "Incorrect Credentials", Toast.LENGTH_SHORT).show();
-            }
+    public void OpenUserSetting(View view) {
+        Intent UserSettings = new Intent(this, UserSettings.class);
+        startActivity(UserSettings);
     }
 
-    public void Reset(View view) {
-        username.setText("");
-        password.setText("");
+    public void OpenMenu(View view) {
+        Intent OpenMenu = new Intent(this, MenuScreen.class);
+        startActivity(OpenMenu);
     }
 
     @Override
     public void onBackPressed() {
-        Intent a = new Intent(Intent.ACTION_MAIN);
-        a.addCategory(Intent.CATEGORY_HOME);
-        a.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        startActivity(a);
+        super.onBackPressed();
+
+        Intent startMain = new Intent(Intent.ACTION_MAIN);
+        startMain.addCategory(Intent.CATEGORY_HOME);
+        startMain.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(startMain);
+
     }
 }

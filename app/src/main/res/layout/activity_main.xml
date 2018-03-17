@@ -5,66 +5,71 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="ng.com.androidlife.vsfproject.MainActivity">
+    android:fitsSystemWindows="true"
+    tools:context=".MainActivity">
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:orientation="vertical">
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:src="@drawable/vsf"
-            android:layout_margin="10dp"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="5dp"
-                android:src="@drawable/user"/>
-            <EditText
+        android:layout_gravity="center"
+        android:orientation="horizontal"
+        android:paddingBottom="@dimen/activity_vertical_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="3dp"
+            android:layout_margin="10dp"
+            android:onClick="OpenUserSetting">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="username"
-                android:id="@+id/username"/>
-        </LinearLayout>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:layout_margin="10dp">
-            <ImageView
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_margin="5dp"
-                android:src="@drawable/lock"/>
-            <EditText
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:src="@drawable/settings"
+                    android:layout_margin="5dp"
+                    android:scaleType="fitCenter"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="User Settings"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="125dp"
+            android:layout_height="125dp"
+            app:cardElevation="5dp"
+            app:cardCornerRadius="3dp"
+            android:layout_margin="10dp"
+            android:onClick="OpenMenu">
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="5dp"
-                android:hint="password"
-                android:inputType="textPassword"
-                android:id="@+id/password"/>
-        </LinearLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp">
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Login"
-                android:onClick="Login"
-                android:layout_margin="5dp"
-                android:background="@color/colorPrimary"
-                android:textColor="@color/colorAccent"/>
-        </RelativeLayout>
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="75dp"
+                    android:src="@drawable/menu"
+                    android:layout_margin="5dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:text="Questions Menu"
+                    android:textAlignment="center"/>
+            </LinearLayout>
+        </android.support.v7.widget.CardView>
+
     </LinearLayout>
 
 </ScrollView>

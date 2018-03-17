@@ -14,6 +14,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -77,7 +78,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
     EditText ageCOMMUNITYBefore, ageCOMMUNITYAfter, CommunityInformantAge;
 
     TextView clongitude, genderBefore, genderAfter, genderInformant, LGASecretariat, State, LocalGov, EmirPalace, KeyMemberOtherOccupationAfter, DHsPalace, VillageHeadPalace,
-            TownHall, PlayGroundCenter, Primary, Secondary, Technical, Commercial, Tertiary, PrimaryClassRoom, SecondaryClassRoom, TechnicalClassRoom,
+            TownHall, PlayGroundCenter, Primary, Secondary, Technical, TechnicalText, Commercial, Tertiary, PrimaryClassRoom, SecondaryClassRoom, TechnicalClassRoom,
             CommercialClassRoom, TertiaryClassRoom, IslamiyaClassRoom, Banks, BanksCondition,
             PrimaryWorkshop, SecondaryWorkshop, TechnicalWorkshop, CommercialWorkshop, TertiaryWorkshop, IslamiyaWorkshop, OtherSchoolWorkshop,
             MotoParkText, DailyMarket, WeeklyMarket, LivestockMarket, SuperMarkets, FireService, PrintMedia, SocialMedia, PrivateTelevisionService,
@@ -93,11 +94,14 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             SourceWater, Condition, ElectricitySource, ElectricityCondition, Roads, Roads2, RoadsCondition, Railway, RailwayConditions, RailwayFlowSchedule, Airport, AirportConditions,
             SeaTransport, SeaConditions, Communication, InternationalRadio, FederalRadio, StateRadio, PrivateRadio, SateliteTelevision, NTAService, StateTelevisionStation,
             PrisonService, cjtf, FederalHighCourt, ShariaCourtOfAppeal, IndustrialCourt, StateHighCourt, MagistrateCourt, CustomaryCourt, Communication1, Communication2, Communication3, Communication4,
-            KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, Bridge, Laterite, FootpathText, Livelihood3;
+            KeyMemberQualificationBefore, KeyMemberQualificationAfter, KeyMemberOccupationBefore, KeyMemberOccupationAfter, Bridge, Laterite, FootpathText, Livelihood3,
+            WaterCondition, DisplayNameK;
 
     private DatabaseReference mDatabase;
 
     Spinner S1, S2, S3;
+
+    private String m_Text = "";
 
     static boolean isInitialized = false;
     private static String TAG = "KeyInformantActivity";
@@ -110,6 +114,38 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_key_informants);
+
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Please Enter your Name");
+        builder.setCancelable(false);
+
+// Set up the input
+        final EditText input = new EditText(this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+        builder.setView(input);
+
+// Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_Text = input.getText().toString().trim();
+                DisplayNameK.setText(m_Text);
+
+                if (m_Text.isEmpty()){
+                    Intent YMEK = new Intent(KeyInformants.this, MenuScreen.class);
+                    startActivity(YMEK);
+                }
+            }
+        });
+        /**builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+        dialog.cancel();
+        }
+        });**/
+
+        builder.show();
 
         try{
             if (!isInitialized){
@@ -132,6 +168,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         genderBefore = findViewById(R.id.COMMUNITYGenderBefore);
         genderAfter = findViewById(R.id.COMMUNITYGenderAfter);
         genderInformant = findViewById(R.id.InformantGenderText);
+
+        DisplayNameK = findViewById(R.id.usernameK);
 
 
 
@@ -604,109 +642,109 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
         //Health Staff
         Spinner HealthStaffTertiaryCondition1 = findViewById(R.id.DoctorsSpinner);
-        ArrayAdapter<CharSequence> adapterkTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterkTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiaryCondition1.setAdapter(adapterkTertiaryCondition);
         HealthStaffTertiaryCondition1.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTertiaryCondition2 = findViewById(R.id.NursesSpinner);
-        ArrayAdapter<CharSequence> adapterklTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterklTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterklTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiaryCondition2.setAdapter(adapterklTertiaryCondition);
         HealthStaffTertiaryCondition2.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTertiaryCondition3 = findViewById(R.id.MidwivesSpinner);
-        ArrayAdapter<CharSequence> adapterjlTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterjlTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adapterjlTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiaryCondition3.setAdapter(adapterjlTertiaryCondition);
         HealthStaffTertiaryCondition3.setOnItemSelectedListener(this);
 
         Spinner HealthStaffPrimaryCondition = findViewById(R.id.NursesMidwivesSpinner);
-        ArrayAdapter<CharSequence> adaptermPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermPrimaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermPrimaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffPrimaryCondition.setAdapter(adaptermPrimaryCondition);
         HealthStaffPrimaryCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffSecondaryCondition = findViewById(R.id.PharmacistSpinner);
-        ArrayAdapter<CharSequence> adaptermSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermSecondaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermSecondaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffSecondaryCondition.setAdapter(adaptermSecondaryCondition);
         HealthStaffSecondaryCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTechnicalCondition = findViewById(R.id.RadiographersSpinner);
-        ArrayAdapter<CharSequence> adaptermTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermTechnicalCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermTechnicalCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTechnicalCondition.setAdapter(adaptermTechnicalCondition);
         HealthStaffTechnicalCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffCommercialCondition = findViewById(R.id.PharmacyTechniciansSpinner);
-        ArrayAdapter<CharSequence> adaptermCommercialCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermCommercialCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermCommercialCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffCommercialCondition.setAdapter(adaptermCommercialCondition);
         HealthStaffCommercialCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTertiaryCondition = findViewById(R.id.MedicalLabScientistSpinner);
-        ArrayAdapter<CharSequence> adaptermTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermTertiaryCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermTertiaryCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiaryCondition.setAdapter(adaptermTertiaryCondition);
         HealthStaffTertiaryCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffIslamiyaCondition = findViewById(R.id.PharmacyAssistantSpinner);
-        ArrayAdapter<CharSequence> adaptermIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermIslamiyaCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermIslamiyaCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffIslamiyaCondition.setAdapter(adaptermIslamiyaCondition);
         HealthStaffIslamiyaCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTertiarykCondition = findViewById(R.id.LaboratoryAssistantSpinner);
-        ArrayAdapter<CharSequence> adaptermTertiarykCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermTertiarykCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermTertiarykCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiarykCondition.setAdapter(adaptermTertiarykCondition);
         HealthStaffTertiarykCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffIslamiyakCondition = findViewById(R.id.HealthSocialWorkersSpinner);
-        ArrayAdapter<CharSequence> adaptermIslamiyakCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermIslamiyakCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermIslamiyakCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffIslamiyakCondition.setAdapter(adaptermIslamiyakCondition);
         HealthStaffIslamiyakCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTertiaryjCondition = findViewById(R.id.NutritionistSpinner);
-        ArrayAdapter<CharSequence> adaptermTertiaryjCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermTertiaryjCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermTertiaryjCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiaryjCondition.setAdapter(adaptermTertiaryjCondition);
         HealthStaffTertiaryjCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffIslamiyajCondition = findViewById(R.id.PublicHealthOfficersSpinner);
-        ArrayAdapter<CharSequence> adaptermIslamiyajCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermIslamiyajCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermIslamiyajCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffIslamiyajCondition.setAdapter(adaptermIslamiyajCondition);
         HealthStaffIslamiyajCondition.setOnItemSelectedListener(this);
 
         Spinner HealthStaffIslamiyaConditiona = findViewById(R.id.CommunityHealthOfficersSpinner);
-        ArrayAdapter<CharSequence> adaptermIslamiyaConditionz = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermIslamiyaConditionz = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermIslamiyaConditionz.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffIslamiyaConditiona.setAdapter(adaptermIslamiyaConditionz);
         HealthStaffIslamiyaConditiona.setOnItemSelectedListener(this);
 
         Spinner HealthStaffIslamiyaConditionb = findViewById(R.id.ExtensionOfficersSpinner);
-        ArrayAdapter<CharSequence> adaptermTertiaryxCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermTertiaryxCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermTertiaryxCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffIslamiyaConditionb.setAdapter(adaptermTertiaryxCondition);
         HealthStaffIslamiyaConditionb.setOnItemSelectedListener(this);
 
         Spinner HealthStaffIslamiyaConditionc = findViewById(R.id.EnviromentalOfficersSpinner);
-        ArrayAdapter<CharSequence> adaptermIslamiyaxCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermIslamiyaxCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermIslamiyaxCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffIslamiyaConditionc.setAdapter(adaptermIslamiyaxCondition);
         HealthStaffIslamiyaConditionc.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTertiaryyConditiond = findViewById(R.id.PsychoSocialSpinner);
-        ArrayAdapter<CharSequence> adaptermTertiaryyCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermTertiaryyCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermTertiaryyCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiaryyConditiond.setAdapter(adaptermTertiaryyCondition);
         HealthStaffTertiaryyConditiond.setOnItemSelectedListener(this);
 
         Spinner HealthStaffTertiaryyConditione = findViewById(R.id.TradionalMiddwivesSpinner);
-        ArrayAdapter<CharSequence> adaptermIslamiyayCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adaptermIslamiyayCondition = ArrayAdapter.createFromResource(this, R.array.education, android.R.layout.simple_spinner_item);
         adaptermIslamiyayCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         HealthStaffTertiaryyConditione.setAdapter(adaptermIslamiyayCondition);
         HealthStaffTertiaryyConditione.setOnItemSelectedListener(this);
@@ -880,7 +918,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         SecurityTertiaryCondition2.setOnItemSelectedListener(this);
 
         Spinner SecurityTertiaryCondition3 = findViewById(R.id.PoliceSpinner);
-        ArrayAdapter<CharSequence> adapterkbTertiaryxCondition = ArrayAdapter.createFromResource(this, R.array.school_type, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> adapterkbTertiaryxCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
         adapterkbTertiaryxCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         SecurityTertiaryCondition3.setAdapter(adapterkbTertiaryxCondition);
         SecurityTertiaryCondition3.setOnItemSelectedListener(this);
@@ -1151,8 +1189,11 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         EnvironmentalHealthOfficers = findViewById(R.id.EnvromentalOfficersText);
         PsychSocial = findViewById(R.id.PsychoSocialText);
         TraditionalMidwives = findViewById(R.id.TradionalMidwivesText);
-        SourceWater = findViewById(R.id.cwaterConditionText);
+        SourceWater = findViewById(R.id.cwaterSourceText);
+        WaterCondition = findViewById(R.id.cwaterConditionText);
         ElectricitySource = findViewById(R.id.cElectricitySource);
+        ElectricityCondition = findViewById(R.id.cConditionElectricity);
+
         Roads = findViewById(R.id.TrunkText);
         Roads2 = findViewById(R.id.Trunk2Text);
         Railway = findViewById(R.id.RailwayText);
@@ -1247,6 +1288,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
     }
 
     private void SubmitToDB() {
+
+        final String Val999 = DisplayNameK.getText().toString().trim();
 
         final String Val023 = Livelihood1.getText().toString().trim();
         final String Val024 = Livelihood2.getText().toString().trim();
@@ -1416,8 +1459,10 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         final String Val136 = PsychSocial.getText().toString().trim();
         final String Val137 = TraditionalMidwives.getText().toString().trim();
         final String Val138 = SourceWater.getText().toString().trim();
+        final String Val1111 = WaterCondition.getText().toString().trim();
 
         final String Val140 = ElectricitySource.getText().toString().trim();
+        final String Val0410 = ElectricitySource.getText().toString().trim();
 
         final String Val142 = Roads.getText().toString().trim();
         final String Val1421 = Roads2.getText().toString().trim();
@@ -1496,6 +1541,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         if (!TextUtils.isEmpty(Val1)&&
                 !TextUtils.isEmpty(Val2)&&
 
+                !TextUtils.isEmpty(Val999)&&
+
                 !TextUtils.isEmpty(Val001)&&
                 !TextUtils.isEmpty(Val3)&&
                 !TextUtils.isEmpty(Val003)&&
@@ -1520,6 +1567,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 !TextUtils.isEmpty(Val029)&&
                 !TextUtils.isEmpty(Val030)&&
                 !TextUtils.isEmpty(Val031)&&
+
+                !TextUtils.isEmpty(Val0410)&&
 
                 !TextUtils.isEmpty(Val033)&&
                 !TextUtils.isEmpty(Val034)&&
@@ -1692,6 +1741,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 !TextUtils.isEmpty(Val147)&&
 
                 !TextUtils.isEmpty(Val149)&&
+                !TextUtils.isEmpty(Val1111)&&
 
 
 
@@ -1947,6 +1997,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                 public void onDataChange(DataSnapshot dataSnapshot) {
                     newPost.child("MotoPark").setValue(Val001);
 
+                    newPost.child("Username").setValue(Val999);
+
                     newPost.child("HaveThereBeenAnyDestruction").setValue(Val023);
                     newPost.child("HowManyTimesDidInsurgentAttack").setValue(Val024);
                     newPost.child("WhatWasTheMajorImpact").setValue(Val025);
@@ -2122,8 +2174,10 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
                     newPost.child("PsychSocial").setValue(Val136);
                     newPost.child("TraditionalMidwives").setValue(Val137);
                     newPost.child("SourceWater").setValue(Val138);
+                    newPost.child("WaterCondition").setValue(Val1111);
 
                     newPost.child("ElectricitySource").setValue(Val140);
+                    newPost.child("Electricity Condition").setValue(Val0410);
 
                     newPost.child("TrunkState").setValue(Val142);
                     newPost.child("TrunkFederal").setValue(Val1421);
@@ -2208,6 +2262,8 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
 
                 }
             });
+        }else {
+            Toast.makeText(KeyInformants.this,"Please check Unanswered Questions", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -2348,7 +2404,10 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             SecondaryClassRoom.setText(ClassSec);
         }else if (spinner.getId() == R.id.ClassroomTechnicalSpinner){
             String ClassTec = parent.getItemAtPosition(position).toString();
-            CommercialClassRoom.setText(ClassTec);
+            TechnicalClassRoom.setText(ClassTec);
+        }else if (spinner.getId() == R.id.ClassroomCommercialSpinner){
+            String ClassTer = parent.getItemAtPosition(position).toString();
+            CommercialClassRoom.setText(ClassTer);
         }else if (spinner.getId() == R.id.ClassroomTertiarySpinner){
             String ClassTer = parent.getItemAtPosition(position).toString();
             TertiaryClassRoom.setText(ClassTer);
@@ -2357,20 +2416,25 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             IslamiyaClassRoom.setText(ClassIslam);
         }else if (spinner.getId() == R.id.LaboratoriesPrimarySpinner){
             String LabPri = parent.getItemAtPosition(position).toString();
-            Laboratories.setText(LabPri);
+            PrimaryWorkshop.setText(LabPri);
         }else if (spinner.getId() == R.id.LaboratoriesSecondarySpinner){
             String LabSec = parent.getItemAtPosition(position).toString();
-            Laboratories.setText(LabSec);
+            SecondaryWorkshop.setText(LabSec);
         }else if (spinner.getId() == R.id.LaboratoriesTechnicalSpinner){
             String LabTec = parent.getItemAtPosition(position).toString();
-            Laboratories.setText(LabTec);
+            TechnicalWorkshop.setText(LabTec);
         }else if (spinner.getId() == R.id.LaboratoriesTertiarySpinner){
             String LabTer = parent.getItemAtPosition(position).toString();
-            Laboratories.setText(LabTer);
+            CommercialWorkshop.setText(LabTer);
+        }else if (spinner.getId() == R.id.LaboratoriesCommercialSpinner){
+            String LabIslam = parent.getItemAtPosition(position).toString();
+            TertiaryWorkshop.setText(LabIslam);
         }else if (spinner.getId() == R.id.LaboratoriesIslamiyaSpinner){
             String LabIslam = parent.getItemAtPosition(position).toString();
-            Laboratories.setText(LabIslam);
-        }else if (spinner.getId() == R.id.TeachersPrimarySpinner){
+            IslamiyaWorkshop.setText(LabIslam);
+        }
+
+        else if (spinner.getId() == R.id.TeachersPrimarySpinner){
             String TeaPri = parent.getItemAtPosition(position).toString();
             StaffPrimary.setText(TeaPri);
         }else if (spinner.getId() == R.id.TeachersSecondarySpinner){
@@ -2379,6 +2443,9 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         }else if (spinner.getId() == R.id.TeachersTechnicalSpinner){
             String TeaTec = parent.getItemAtPosition(position).toString();
             StaffTechnical.setText(TeaTec);
+        }else if (spinner.getId() == R.id.TeachersCommercialSpinner){
+            String LabIslam = parent.getItemAtPosition(position).toString();
+            StaffCommercial.setText(LabIslam);
         }else if (spinner.getId() == R.id.TeachersTertiarySpinner){
             String TeaTer = parent.getItemAtPosition(position).toString();
             StaffTertiary.setText(TeaTer);
@@ -2396,7 +2463,7 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             NonStaffTechnical.setText(NonStaffTec);
         }else if (spinner.getId() == R.id.NonStaffTertiarySpinner){
             String NonStaffTer = parent.getItemAtPosition(position).toString();
-            NonStaffCommercial.setText(NonStaffTer);
+            NonStaffTertiary.setText(NonStaffTer);
         }else if (spinner.getId() == R.id.NonStaffCommercialSpinner){
             String NonStaffIslam = parent.getItemAtPosition(position).toString();
             NonStaffCommercial.setText(NonStaffIslam);
@@ -2412,18 +2479,18 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         }else if (spinner.getId() == R.id.SportingTechnicalSpinner){
             String SportingTec = parent.getItemAtPosition(position).toString();
             SportingTechnical.setText(SportingTec);
-        }else if (spinner.getId() == R.id.SportingTertiarySpinner){
+        }else if (spinner.getId() == R.id.SportingCommercialSpinner){
             String SportingTer = parent.getItemAtPosition(position).toString();
             SportingCommercial.setText(SportingTer);
-        }else if (spinner.getId() == R.id.SportingIslamiyaSpinner){
+        }else if (spinner.getId() == R.id.SportingTertiarySpinner){
             String SportingIslam = parent.getItemAtPosition(position).toString();
-            SportingCommercial.setText(SportingIslam);
+            SportingTertiary.setText(SportingIslam);
         }else if (spinner.getId() == R.id.SportingIslamiyaSpinner){
             String IslamStaff = parent.getItemAtPosition(position).toString();
             SportingIslamiya.setText(IslamStaff);
-        }else  if (spinner.getId() == R.id.StaffHousingSpinner){
+        }else if (spinner.getId() == R.id.StaffHousingSpinner){
             String StaffHouse = parent.getItemAtPosition(position).toString();
-            StaffAccommodation.setText(StaffHouse);
+            OtherStaffHousing.setText(StaffHouse);
         }else  if (spinner.getId() == R.id.StudentsHostelSpinner){
             String StudHostel = parent.getItemAtPosition(position).toString();
             StudentHostel.setText(StudHostel);
@@ -2444,13 +2511,13 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             OwnerShipTechnical.setText(OwnershipTec);
         }else if (spinner.getId() == R.id.OwnershipTertiarySpinner){
             String OwnershipTer = parent.getItemAtPosition(position).toString();
-            OwnerShipCommercial.setText(OwnershipTer);
+            OwnerShipTertiary.setText(OwnershipTer);
         }else if (spinner.getId() == R.id.OwnershipCommercialSpinner){
-            String OwnershipIslam = parent.getItemAtPosition(position).toString();
-            OwnerShipIslamiya.setText(OwnershipIslam);
+            String OnwernshipCom = parent.getItemAtPosition(position).toString();
+            OwnerShipCommercial.setText(OnwernshipCom);
         }else if (spinner.getId() == R.id.OwnershipIslamiyaSpinner){
-            String IslamStaff = parent.getItemAtPosition(position).toString();
-            OwnerShipIslamiya.setText(IslamStaff);
+            String OwnerShipIsl = parent.getItemAtPosition(position).toString();
+            OwnerShipIslamiya.setText(OwnerShipIsl);
         }else if (spinner.getId() == R.id.HealthPostSpinner){
             String HPost = parent.getItemAtPosition(position).toString();
             HealthPost.setText(HPost);
@@ -2501,15 +2568,21 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             Pharmaceuticals.setText(PHN);
         }
 
-        else if (spinner.getId() == R.id.StaffHousingSpinner){
-            String STF = parent.getItemAtPosition(position).toString();
-            OtherStaffHousing.setText(STF);
-        }
-
         else if (spinner.getId() == R.id.ElectricitySpinner){
             String ELC = parent.getItemAtPosition(position).toString();
             ElectricitySupply.setText(ELC);
         }
+
+        else if (spinner.getId() == R.id.cElectricitySourceSpinner){
+            String ELCs = parent.getItemAtPosition(position).toString();
+            ElectricitySource.setText(ELCs);
+        }
+
+        else if (spinner.getId() == R.id.cConditionElectricitySpinner){
+            String ELCc = parent.getItemAtPosition(position).toString();
+            ElectricityCondition.setText(ELCc);
+        }
+
 
         else if (spinner.getId() == R.id.ColdStoreSpinner){
             String CLD = parent.getItemAtPosition(position).toString();
@@ -2606,14 +2679,14 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             TraditionalMidwives.setText(TRD);
         }
 
-        else if (spinner.getId() == R.id.WaterSourceSpinner){
+        else if (spinner.getId() == R.id.cWaterSourceSpinner){
             String WTs = parent.getItemAtPosition(position).toString();
             SourceWater.setText(WTs);
         }
 
-        else if (spinner.getId() == R.id.WaterConditionSpinner){
+        else if (spinner.getId() == R.id.cWaterConditionSpinner){
             String WTc = parent.getItemAtPosition(position).toString();
-            Condition.setText(WTc);
+            WaterCondition.setText(WTc);
         }
 
         else if (spinner.getId() == R.id.RailwaySpinner){
@@ -2634,6 +2707,11 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
         else if (spinner.getId() == R.id.SeaPortSpinner){
             String SEA = parent.getItemAtPosition(position).toString();
             SeaTransport.setText(SEA);
+        }
+
+        else if (spinner.getId() == R.id.LateriteRoadSpinner){
+            String LTA = parent.getItemAtPosition(position).toString();
+            Laterite.setText(LTA);
         }
 
         else if (spinner.getId() == R.id.TrunkSpinner){
@@ -2836,6 +2914,11 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             MotoParkText.setText(OPT);
         }
 
+        else if (spinner.getId() == R.id.ShariaCourtOfAppealSpinner){
+            String SHA = parent.getItemAtPosition(position).toString();
+            ShariaCourtOfAppeal.setText(SHA);
+        }
+
         else if (spinner.getId() == R.id.SuperMarketsSpinner){
             String SPM = parent.getItemAtPosition(position).toString();
             SuperMarkets.setText(SPM);
@@ -2913,6 +2996,6 @@ public class KeyInformants extends AppCompatActivity implements AdapterView.OnIt
             public void run() {
                 doubleBackToExitPressedOnce = false;
             }
-        }, 2000);
+        }, 3000);
     }
 }

@@ -16,6 +16,7 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
@@ -54,7 +55,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
     TextView genderBefore, genderAfter, genderInformant, AdoptedText, State, LocalGov, MemberOccupationBefore, MemberOccupationAfter,
             RespondentIncomeBefore, RespondentIncomeAfter, ElectricitySource, ElectricityCondition, Longitude;
 
-    TextView waterSourceText, waterConditionText;
+    TextView waterSourceText, waterConditionText, DisplayNameH;
 
     EditText ageBefore, ageAfter, ageInformant;
 
@@ -64,6 +65,8 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
 
     private DatabaseReference mDatabase;
 
+    private String m_Text = "";
+
     static boolean isInitialized = false;
     private static String TAG = "HouseHoldActivity";
 
@@ -72,6 +75,39 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_house_hold);
+
+        //Popup Show
+        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setTitle("Please Enter your Name");
+        builder.setCancelable(false);
+
+// Set up the input
+        final EditText input = new EditText(this);
+// Specify the type of input expected; this, for example, sets the input as a password, and will mask the text
+        input.setInputType(InputType.TYPE_CLASS_TEXT | InputType.TYPE_TEXT_FLAG_AUTO_COMPLETE);
+        builder.setView(input);
+
+// Set up the buttons
+        builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                m_Text = input.getText().toString().trim();
+                DisplayNameH.setText(m_Text);
+
+                if (m_Text.isEmpty()){
+                    Intent YME = new Intent(HouseHold.this, MenuScreen.class);
+                    startActivity(YME);
+                }
+            }
+        });
+        /**builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
+        @Override
+        public void onClick(DialogInterface dialog, int which) {
+        dialog.cancel();
+        }
+        });**/
+
+        builder.show();
 
         try{
             if (!isInitialized){
@@ -139,7 +175,7 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
         SourceElectricity.setOnItemSelectedListener(this);
 
         Spinner WaterCondition = findViewById(R.id.WaterConditionSpinner);
-        ArrayAdapter<CharSequence> waterCondition = ArrayAdapter.createFromResource(this, R.array.condition, android.R.layout.simple_spinner_item);
+        ArrayAdapter<CharSequence> waterCondition = ArrayAdapter.createFromResource(this, R.array.water_condition, android.R.layout.simple_spinner_item);
         waterCondition.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         WaterCondition.setAdapter(waterCondition);
         WaterCondition.setOnItemSelectedListener(this);
@@ -151,6 +187,8 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
         ConditionElectricity.setOnItemSelectedListener(this);
 
         //General
+
+        DisplayNameH = findViewById(R.id.usernameH);
 
         State = findViewById(R.id.State);
         LocalGov = findViewById(R.id.LocalGov);
@@ -248,6 +286,8 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
 
     private void Submit() {
 
+        final String Val00 = DisplayNameH.getText().toString().trim();
+
         final String Val23 = Livelihood.getText().toString().trim();
         final String Val24 = LivelihoodBeforeDisplaced.getText().toString().trim();
         final String Val25 = LivelihoodAfterDisplaced.getText().toString().trim();
@@ -330,6 +370,9 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
         final String HouseHoldMemberChildrenLostAfterVal = HouseHoldMemberChildrenLostAfter.getText().toString().trim();
 
         if (!TextUtils.isEmpty(StateVal)&&
+
+                !TextUtils.isEmpty(Val00)&&
+
                 !TextUtils.isEmpty(LocalGovVal)&&
                 !TextUtils.isEmpty(TownVillageVal)&&
                 !TextUtils.isEmpty(LongitudeVal)&&
@@ -489,6 +532,9 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
             mDatabase.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(DataSnapshot dataSnapshot) {
+
+                    newPost.child("Username").setValue(Val00);
+
                     newPost.child("State").setValue(StateVal);
                     newPost.child("LocalGovernment").setValue(LocalGovVal);
                     newPost.child("TownVillage").setValue(TownVillageVal);
@@ -583,6 +629,8 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
 
                 }
             });
+        }else {
+            Toast.makeText(HouseHold.this,"Please check Unanswered Questions", Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -740,6 +788,6 @@ public class HouseHold extends AppCompatActivity implements AdapterView.OnItemSe
             public void run() {
                 doubleBackToExitPressedOnce = false;
             }
-        }, 2000);
+        }, 3000);
     }
 }
